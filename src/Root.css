@@ -1,0 +1,10 @@
+#root {
+  max-width: 2880px;
+  width: 100%;
+}
+
+.pages {
+  color: #224a23;
+  margin-left: 20px;
+  margin-right: 2rem;
+}

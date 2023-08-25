@@ -1,0 +1,44 @@
+.announcements-container {
+  display: grid;
+  height: 500px;
+  margin-top: 10px;
+}
+
+.announcements-flex-container {
+  display: flex;
+  height: 100px;
+}
+
+.announcements-flex-container > * {
+  flex: 1;
+}
+
+.announcement-header {
+  height: 100px;
+  width: 250px;
+  margin: 0 auto;
+  font-size: 26px;
+  text-align: center;
+}
+
+.announcement-header.active {
+  border-bottom: 3px solid #ffdd40;
+}
+
+.announcement-header:after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 0;
+  background: transparent;
+  transition: width 1s ease, background-color 0s ease;
+}
+
+.announcement-header:hover:after {
+  width: 100%;
+  background: #ffdd40;
+}
+
+.announcement-card > .icon {
+  margin: 0 auto;
+}

@@ -1,0 +1,38 @@
+.welcome-message-container {
+  border-radius: 10px;
+  margin-top: 8px;
+  height: 450px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.welcome-message-container:before {
+  z-index: -1;
+  position: absolute;
+  height: 400px;
+  width: 100%;
+  left: 0;
+  top: 0;
+  content: url('../../assets/filteredMasjid.jpg');
+  transform: scaleX(-1);
+  opacity: 0.4;
+}
+
+.welcome-message-container > .header {
+  margin: 0 auto;
+  font-size: 26px;
+  text-align: center;
+  border-bottom: 3px solid #224a23;
+}
+
+.welcome-message-content {
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.welcome-message-text {
+  margin-left: 30px;
+}

@@ -1,0 +1,12 @@
+#donate-button {
+  color: #fff;
+  border: 1px solid #fff;
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+#donate-button:hover {
+  box-shadow: 0 0 10px #000;
+  background-color: #89C68B;
+  color: #000;
+}
