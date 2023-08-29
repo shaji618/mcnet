@@ -7,7 +7,7 @@ const requestUrl =
 
 function PrayerTimingsTable() {
   const [prayerData, setPrayerData] = useState({
-    results: { Fajr: '', Dhuhr: '', Asr: '', Maghrib: '', Isha: '' }
+    results: { Fajr: '', Duha: '', Dhuhr: '', Asr: '', Maghrib: '', Isha: '' }
   });
 
   const [loading, setLoading] = useState(true);
@@ -71,7 +71,7 @@ function PrayerTimingsTable() {
             </tr>
             <tr>
               <td>Sunrise</td>
-              <td>{prayerData.results.Fajr.replace(/%/g, '')}</td>
+              <td>{prayerData.results.Duha.replace(/%/g, '')}</td>
             </tr>
             <tr>
               <td>Dhuhr</td>
