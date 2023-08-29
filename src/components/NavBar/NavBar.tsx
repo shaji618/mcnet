@@ -15,7 +15,6 @@ const NavBar = () => {
         <div className='nav-container'>
           <NavLink to='/' className='nav-logo'>
             <Logo />
-            <i className='fas fa-code'></i>
           </NavLink>
 
           <ul className='nav-menu'>
@@ -60,9 +59,6 @@ const NavBar = () => {
               <DonateButton />
             </li>
           </ul>
-          <div className='nav-icon' onClick={handleClick}>
-            <i className={click ? 'fas fa-times' : 'fas fa-bars'}></i>
-          </div>
         </div>
       </nav>
     </>
