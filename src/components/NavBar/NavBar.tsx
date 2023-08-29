@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './NavBar.css';
 import DonateButton from '../DonateButton/DonateButton';
+import { ReactComponent as Logo } from '../../../public/logo.svg';
 
 const NavBar = () => {
   const [click, setClick] = useState(false);
@@ -13,7 +14,7 @@ const NavBar = () => {
       <nav className='navbar'>
         <div className='nav-container'>
           <NavLink to='/' className='nav-logo'>
-            MCNET
+            <Logo />
             <i className='fas fa-code'></i>
           </NavLink>
 
