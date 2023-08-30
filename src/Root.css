@@ -5,6 +5,8 @@
 
 .pages {
   color: #224a23;
-  margin: 0 auto;
   max-width: 1600px;
+  margin-left: 20px;
+  margin-right: 2rem;
+  margin: 0 auto;
 }

@@ -1,7 +1,5 @@
+import ServicesOverview from '../components/ServicesOverview/ServicesOverview';
+
 export const Services = () => {
-  return (
-    <div>
-      <h1>Services</h1>
-    </div>
-  );
+  return <ServicesOverview />;
 };
