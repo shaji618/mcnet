@@ -1,0 +1,46 @@
+#services-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  justify-items: center;
+  margin-top: 10px;
+  grid-gap: 0px 30px;
+}
+
+#services-icons-container {
+  flex-direction: column;
+  align-items: stretch;
+  flex-grow: 1;
+}
+
+.service-icon {
+  margin-bottom: 5px;
+  border: 1px solid #e7e9eb;
+  border-radius: 10px;
+  padding: 40px;
+  cursor: pointer;
+  font-size: 40px;
+  text-align: center;
+}
+
+.service-icon-header {
+  border-bottom: 3px solid #fff;
+}
+
+.service-icon-header.active {
+  border-bottom: 3px solid #ffdd40;
+}
+
+.service-icon:hover:after {
+  width: 100%;
+  background: #ffdd40;
+}
+
+.service-icon:after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 0;
+  background: transparent;
+  transition: width 1s ease, background-color 0s ease;
+  margin-top: -3px;
+}

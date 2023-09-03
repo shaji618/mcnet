@@ -11,6 +11,7 @@
 
 .announcements-flex-container > * {
   flex: 1;
+  cursor: pointer;
 }
 
 .announcement-header {

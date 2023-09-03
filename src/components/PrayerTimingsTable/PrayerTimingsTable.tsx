@@ -5,9 +5,9 @@ import './PrayerTimingsTable.css';
 const requestUrl =
   'http://islamicfinder.us/index.php/api/prayer_times?country=US&zipcode=37604';
 
-function PrayerTimingsTable() {
+const PrayerTimingsTable = () => {
   const [prayerData, setPrayerData] = useState({
-    results: { Fajr: '', Dhuhr: '', Asr: '', Maghrib: '', Isha: '' }
+    results: { Fajr: '', Duha: '', Dhuhr: '', Asr: '', Maghrib: '', Isha: '' }
   });
 
   const [loading, setLoading] = useState(true);
@@ -71,7 +71,7 @@ function PrayerTimingsTable() {
             </tr>
             <tr>
               <td>Sunrise</td>
-              <td>{prayerData.results.Fajr.replace(/%/g, '')}</td>
+              <td>{prayerData.results.Duha.replace(/%/g, '')}</td>
             </tr>
             <tr>
               <td>Dhuhr</td>
@@ -94,6 +94,6 @@ function PrayerTimingsTable() {
       )}
     </div>
   );
-}
+};
 
 export default PrayerTimingsTable;
