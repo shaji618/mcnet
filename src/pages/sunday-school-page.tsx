@@ -1,9 +1,17 @@
+import sundaySchoolImg from'../assets/sundaySchool.jpg';
+
 export const SundaySchool = () => {
   return (
     <div>
       <body>
         <div id="SundaySchoolSummary">
           <h1 id="SundaySchoolHeader">Sunday School</h1>
+          <img 
+          id="SundaySchoolImage" 
+          src={sundaySchoolImg} 
+          height={350}
+          width={700}
+          />
           <p>Let's learn Arabic, Islamic studies, and Quran at Sunday School</p>
         </div>
         <div id="TeacherInfoSection">
@@ -23,11 +31,11 @@ export const SundaySchool = () => {
         </div>
         <div id="CostSection">
           <h2 id="CostHeader">Dues/Cost</h2>
-          <p>Tuition for the program is: </p>
+          <p>Tuition for the program is: $100 </p>
         </div>
         <div id="TimingsSection">
           <h2 id="TimingsHeader">Timings</h2>
-          <p>Classes are held on Sundays from start time to end time</p>
+          <p>Classes are held on Sundays from 11:30-12</p>
         </div>
     </body>
   </div>
