@@ -1,0 +1,43 @@
+  .sunday-school-table {
+    border-collapse: collapse;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    width: 70%;
+    box-shadow: 0 0 10px #000;
+  }
+
+  #TeacherImage{
+    max-width: 50%;
+    max-height: 50%;
+  }
+  
+  .sunday-school-table-table th {
+      color: #224a23;
+  }
+  
+  .sunday-school-table-table th,
+  .sunday-school-table td {
+    padding: 12px 15px;
+  }
+  
+  .sunday-school-tabletbody tr {
+      border-bottom: 1px solid #dddddd;
+  }
+  
+  .sunday-school-table tbody tr:nth-of-type(odd) {
+      background-color: #f3f3f3;
+  }
+  
+  .sunday-school-table tbody tr:nth-of-type(even) {
+      background-color: #89C68B;
+  }
+  
+  .sunday-school-tabletbody tr:last-of-type {
+      border-bottom: 2px solid #224a23;
+  }
+  
+  
