@@ -1,5 +1,10 @@
-import ServicesOverview from '../components/ServicesOverview/ServicesOverview';
+import ServicesList from '../components/ServicesList';
+import Page from '../layout/Page';
 
 export const Services = () => {
-  return <ServicesOverview />;
+  return (
+    <Page>
+      <ServicesList />
+    </Page>
+  );
 };
