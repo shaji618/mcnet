@@ -1,10 +1,14 @@
 import { Avatar, Box, Stack, Typography } from '@mui/material';
-import { appPrimaryColor, appTertiaryColor } from '../util/constants';
+import {
+  appPrimaryColor,
+  appSecondaryColor,
+  appTertiaryColor
+} from '../util/constants';
 import { ReactComponent as PrayerHands } from '../assets/prayerHands.svg';
 import { ReactComponent as WeddingRings } from '../assets/wedding.svg';
 import { ReactComponent as Funeral } from '../assets/funeral.svg';
 import { ReactNode, SyntheticEvent, useState } from 'react';
-import ConnectWithoutContactOutlinedIcon from '@mui/icons-material/ConnectWithoutContactOutlined';
+import Diversity1Icon from '@mui/icons-material/Diversity1';
 import ServicesAccordion from './ServicesAccordion';
 
 export type Services = 'chaplaincy' | 'matrimonial' | 'funeral' | 'interfaith';
@@ -25,11 +29,11 @@ const IconSelector = (props: {
           width: 150,
           margin: '0 auto',
           '&:hover': {
-            backgroundColor: appTertiaryColor,
+            backgroundColor: appSecondaryColor,
             cursor: 'pointer'
           },
           '&.active': {
-            backgroundColor: appTertiaryColor
+            backgroundColor: appSecondaryColor
           }
         }}
       >
@@ -121,8 +125,8 @@ const ServicesList = () => {
           <IconSelector
             active={serviceActive === 'interfaith'}
             svgComponent={
-              <ConnectWithoutContactOutlinedIcon
-                sx={{ color: appPrimaryColor, height: 90, width: 90 }}
+              <Diversity1Icon
+                sx={{ color: appPrimaryColor, height: '50%', width: '50%' }}
               />
             }
             title='INTERFAITH ADVOCACY'

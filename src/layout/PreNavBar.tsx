@@ -12,6 +12,9 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import PhoneOutlinedIcon from '@mui/icons-material/PhoneOutlined';
 import { appPrimaryColor } from '../util/constants';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import { Link } from '@mui/material';
 
 function ResponsiveAppBar() {
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
@@ -54,7 +57,19 @@ function ResponsiveAppBar() {
             </Box>
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
+          <Box sx={{ flexGrow: 0, mt: 0.75 }}>
+            <Link
+              href='https://www.facebook.com/groups/1719215861643598/'
+              target='_blank'
+            >
+              <FacebookIcon fontSize='large' sx={{ color: '#4267B2', mx: 1 }} />
+            </Link>
+            <Link href='https://twitter.com/mymcnet' target='_blank'>
+              <TwitterIcon fontSize='large' sx={{ color: '#1DA1F2' }} />
+            </Link>
+          </Box>
+
+          <Box sx={{ flexGrow: 0, ml: 1 }}>
             <Tooltip title='Open settings'>
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <AccountCircleOutlinedIcon fontSize='large' />
