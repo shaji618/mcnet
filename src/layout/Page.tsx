@@ -57,7 +57,7 @@ const pageTheme = createTheme({
 const Page: FC<PropsWithChildren> = (props: Props) => {
   return (
     <ThemeProvider theme={pageTheme}>
-      <Box mx={3}>{props.children}</Box>
+      <Box mb={3} mx={3}>{props.children}</Box>
     </ThemeProvider>
   );
 };
