@@ -1,9 +1,8 @@
-import { Avatar, Box, Stack, Typography } from '@mui/material';
-import {
-  appPrimaryColor,
-  appSecondaryColor,
-  appTertiaryColor
-} from '../util/constants';
+import Avatar from '@mui/material/Avatar';
+import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+import { appPrimaryColor, appSecondaryColor } from '../util/constants';
 import { ReactComponent as PrayerHands } from '../assets/prayerHands.svg';
 import { ReactComponent as WeddingRings } from '../assets/wedding.svg';
 import { ReactComponent as Funeral } from '../assets/funeral.svg';
@@ -81,24 +80,6 @@ const ServicesList = () => {
 
   return (
     <>
-      <Typography
-        sx={{
-          textAlign: 'center',
-          textDecoration: `underline ${appTertiaryColor} 1px`,
-          textUnderlineOffset: '0.3em'
-        }}
-        variant='h3'
-      >
-        MCNET SERVICES
-      </Typography>
-      <Typography component='div' mt={3} textAlign='center'>
-        MCNET provides a number of services for our{' '}
-        <Box fontStyle='italic' display='inline'>
-          Ummah
-        </Box>
-        .{'  '}
-        Please see below for further information.
-      </Typography>
       <Stack direction='row' mt={2} spacing={14} justifyContent='center'>
         <Box mr={1} onClick={(e) => handleClick(e, 'chaplaincy')}>
           <IconSelector

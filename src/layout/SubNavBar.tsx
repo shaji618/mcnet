@@ -1,9 +1,12 @@
-import { Box, Chip, Divider, Typography } from '@mui/material';
+import Box from '@mui/material/Box';
 import {
   appPrimaryColor,
   appSecondaryColor,
   appTertiaryColor
 } from '../util/constants';
+import Typography from '@mui/material/Typography';
+import Divider from '@mui/material/Divider';
+import Chip from '@mui/material/Chip';
 
 const SubAlertBar = () => {
   return (

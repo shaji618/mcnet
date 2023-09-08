@@ -1,11 +1,18 @@
-import { FC, PropsWithChildren, ReactNode } from 'react';
-import { Box } from '@mui/material';
+import { FC, ReactNode } from 'react';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from '@mui/material/styles';
-import { appPrimaryColor, appSecondaryColor } from '../util/constants';
+import {
+  appPrimaryColor,
+  appSecondaryColor,
+  appTertiaryColor
+} from '../util/constants';
 
 type Props = {
-  children?: ReactNode;
+  headerText?: string;
+  headerBody?: string | ReactNode;
+  children: ReactNode;
 };
 
 const pageTheme = createTheme({
@@ -50,14 +57,43 @@ const pageTheme = createTheme({
           }
         }
       }
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          color: appPrimaryColor,
+          outlineColor: appPrimaryColor,
+          borderColor: appPrimaryColor,
+          '&:hover': {
+            backgroundColor: appSecondaryColor,
+            color: appPrimaryColor,
+            borderColor: appTertiaryColor
+          }
+        }
+      }
     }
   }
 });
 
-const Page: FC<PropsWithChildren> = (props: Props) => {
+const Page: FC<Props> = (props: Props) => {
   return (
     <ThemeProvider theme={pageTheme}>
-      <Box mb={3} mx={3}>{props.children}</Box>
+      <Typography
+        sx={{
+          textAlign: 'center',
+          textDecoration: `underline ${appTertiaryColor} 1px`,
+          textUnderlineOffset: '0.3em'
+        }}
+        variant='h3'
+      >
+        {props.headerText?.toUpperCase()}
+      </Typography>
+      <Typography component='div' mb={3} mt={3} textAlign='center'>
+        {props.headerBody}
+      </Typography>
+      <Box mb={3} mx={3}>
+        {props.children}
+      </Box>
     </ThemeProvider>
   );
 };

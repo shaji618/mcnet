@@ -1,19 +1,17 @@
-import {
-  Box,
-  Link,
-  SvgIcon,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Typography
-} from '@mui/material';
 import { useEffect, useState } from 'react';
 import { appPrimaryColor, appSecondaryColor } from '../util/constants';
 import { ReactComponent as Spinner } from '../assets/spinner.svg';
 import moment from 'moment';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import TableContainer from '@mui/material/TableContainer';
+import Table from '@mui/material/Table';
+import TableRow from '@mui/material/TableRow';
+import TableHead from '@mui/material/TableHead';
+import TableCell from '@mui/material/TableCell';
+import TableBody from '@mui/material/TableBody';
+import SvgIcon from '@mui/material/SvgIcon';
+import Link from '@mui/material/Link';
 
 const requestUrl =
   'http://islamicfinder.us/index.php/api/prayer_times?country=US&zipcode=37604';
