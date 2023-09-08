@@ -12,7 +12,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { appPrimaryColor, appSecondaryColor } from '../util/constants';
 import { ReactComponent as Logo } from '../../public/logo.svg';
 import { NavLink } from 'react-router-dom';
-import { SvgIcon } from '@mui/material';
+import SvgIcon from '@mui/material/SvgIcon';
 import DonateButton from '../components/DonateButton';
 import SubAlertBar from './SubNavBar';
 
@@ -22,9 +22,9 @@ const pages = [
   'Programs',
   'Sunday School',
   'Jummah Prayers',
-  'Contact',
   'Upcoming Projects',
-  'Community Service'
+  'Community Service',
+  'Contact'
 ];
 
 const StyledMenuItem = (props: {

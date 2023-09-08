@@ -14,7 +14,7 @@ import { appPrimaryColor } from '../util/constants';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import { Link } from '@mui/material';
+import Link from '@mui/material/Link';
 
 function ResponsiveAppBar() {
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);

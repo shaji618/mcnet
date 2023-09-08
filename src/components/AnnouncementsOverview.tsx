@@ -1,12 +1,3 @@
-import {
-  Avatar,
-  Box,
-  Grid,
-  List,
-  ListItem,
-  Stack,
-  Typography
-} from '@mui/material';
 import { ReactComponent as Megaphone } from '../assets/loudspeaker.svg';
 import { ReactComponent as Microphone } from '../assets/microphone.svg';
 import { ReactComponent as CalendarIcon } from '../assets/calendar.svg';
@@ -14,6 +5,13 @@ import { ReactNode, useState } from 'react';
 import { appTertiaryColor } from '../util/constants';
 import Calendar from 'react-calendar';
 import './styles/react-calendar.css';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import Avatar from '@mui/material/Avatar';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
 
 const HeaderIcon = (props: {
   active?: boolean;
@@ -57,6 +55,7 @@ const AnnouncementsOverview = () => {
   const [announcementState, setAnnouncementState] = useState<
     'announcements' | 'pressReleases' | 'events'
   >('announcements');
+  
   return (
     <Box width='100%' height='750px'>
       <Typography mb={1} textAlign='center'>

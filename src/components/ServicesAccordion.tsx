@@ -7,23 +7,21 @@ import MuiAccordionSummary, {
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import { AliasesCSSProperties } from '@mui/system/styleFunctionSx/AliasesCSSProperties';
-import {
-  Box,
-  Chip,
-  Divider,
-  List,
-  ListItem,
-  Link as MaterialLink,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableRow
-} from '@mui/material';
+import MaterialLink from '@mui/material/Link';
 import { Link } from 'react-router-dom';
 import { appSecondaryColor, appTertiaryColor } from '../util/constants';
 import { SyntheticEvent } from 'react';
 import { Services } from './ServicesList';
+import Box from '@mui/material/Box';
+import Divider from '@mui/material/Divider';
+import Chip from '@mui/material/Chip';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import TableContainer from '@mui/material/TableContainer';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableRow from '@mui/material/TableRow';
+import TableCell from '@mui/material/TableCell';
 
 const Accordion = styled((props: AccordionProps) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
