@@ -8,11 +8,13 @@ import {
   appSecondaryColor,
   appTertiaryColor
 } from '../util/constants';
+import ConstructionIcon from '@mui/icons-material/Construction';
 
 type Props = {
-  headerText?: string;
+  children?: ReactNode;
   headerBody?: string | ReactNode;
-  children: ReactNode;
+  headerText?: string;
+  isUnderConstruction?: boolean;
 };
 
 const pageTheme = createTheme({
@@ -86,12 +88,27 @@ const Page: FC<Props> = (props: Props) => {
         }}
         variant='h3'
       >
-        {props.headerText?.toUpperCase()}
+        {props.isUnderConstruction
+          ? 'UNDER CONSTRUCTION'
+          : props.headerText?.toUpperCase()}
       </Typography>
       <Typography component='div' mb={3} mt={3} textAlign='center'>
-        {props.headerBody}
+        {props.isUnderConstruction
+          ? 'This page is under construction.'
+          : props.headerBody}
       </Typography>
       <Box mb={3} mx={3}>
+        {props.isUnderConstruction && (
+          <Box textAlign='center'>
+            <ConstructionIcon
+              sx={{
+                color: appPrimaryColor,
+                height: '50%',
+                width: '50%'
+              }}
+            />
+          </Box>
+        )}
         {props.children}
       </Box>
     </ThemeProvider>

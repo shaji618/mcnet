@@ -1,7 +1,5 @@
+import Page from '../layout/Page';
+
 export const Programs = () => {
-  return (
-    <div>
-      <h1>Programs</h1>
-    </div>
-  );
+  return <Page headerText='PROGRAMS' isUnderConstruction></Page>;
 };

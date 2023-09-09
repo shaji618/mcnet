@@ -23,7 +23,7 @@ const pages = [
   'Sunday School',
   'Jummah Prayers',
   'Upcoming Projects',
-  'Community Service',
+  'Archive',
   'Contact'
 ];
 
