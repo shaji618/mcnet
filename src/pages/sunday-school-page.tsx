@@ -1,7 +1,5 @@
+import Page from '../layout/Page';
+
 export const SundaySchool = () => {
-  return (
-    <div>
-      <h1>Sunday School</h1>
-    </div>
-  );
+  return <Page headerText='SUNDAY SCHOOL' isUnderConstruction></Page>;
 };

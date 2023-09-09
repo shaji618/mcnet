@@ -135,6 +135,7 @@ const PrayerTimings = () => {
                     href={`https://www.islamicfinder.org/prayer-times/printmonthlyprayer/?timeInterval=month&month=${
                       getCurrentDate().month
                     }&year=${getCurrentDate().year}&calendarType=Gregorian`}
+                    rel='noreferrer'
                     target='_blank'
                   >
                     here

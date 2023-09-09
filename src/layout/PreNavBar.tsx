@@ -38,6 +38,7 @@ function ResponsiveAppBar() {
             <MenuItem
               color={appPrimaryColor}
               href='https://www.google.com/maps/place/Islamic+Center+of+Johnson+City/@36.2855078,-82.4076369,17z/data=!4m15!1m8!3m7!1s0x885a635ecc697bbb:0x583dc06d8c043738!2s3010+Antioch+Rd,+Johnson+City,+TN+37604!3b1!8m2!3d36.2855035!4d-82.405062!16s%2Fg%2F11hz60tsmq!3m5!1s0x885a63592cd88895:0xc08a52a825181ae4!8m2!3d36.2854108!4d-82.4051509!16s%2Fg%2F11b6v3k_ds?entry=ttu'
+              rel='noreferrer'
               target='_blank'
             >
               <LocationOnOutlinedIcon sx={{ mr: 3 }} />
@@ -60,11 +61,16 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 0, mt: 0.75 }}>
             <Link
               href='https://www.facebook.com/groups/1719215861643598/'
+              rel='noreferrer'
               target='_blank'
             >
               <FacebookIcon fontSize='large' sx={{ color: '#4267B2', mx: 1 }} />
             </Link>
-            <Link href='https://twitter.com/mymcnet' target='_blank'>
+            <Link
+              href='https://twitter.com/mymcnet'
+              rel='noreferrer'
+              target='_blank'
+            >
               <TwitterIcon fontSize='large' sx={{ color: '#1DA1F2' }} />
             </Link>
           </Box>

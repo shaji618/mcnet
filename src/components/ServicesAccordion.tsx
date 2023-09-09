@@ -129,6 +129,7 @@ const ServicesAccordion = (props: {
         <AccordionDetails>
           <MaterialLink
             href='https://quran.com/50?startingVerse=43'
+            rel='noreferrer'
             target='_blank'
           >
             <Typography
@@ -239,6 +240,7 @@ const ServicesAccordion = (props: {
         <AccordionDetails>
           <MaterialLink
             href='https://quran.com/49?startingVerse=13'
+            rel='noreferrer'
             target='_blank'
           >
             <Typography
@@ -363,6 +365,7 @@ const ServicesAccordion = (props: {
                       In order to pray, Muslim men and women perform{' '}
                       <MaterialLink
                         href='https://en.wikipedia.org/wiki/Wudu'
+                        rel='noreferrer'
                         target='_blank'
                       >
                         <Box fontStyle='italic' display='inline'>
@@ -411,6 +414,7 @@ const ServicesAccordion = (props: {
                       <Typography>
                         <MaterialLink
                           href='https://en.wikipedia.org/wiki/Imam'
+                          rel='noreferrer'
                           target='_blank'
                         >
                           <Box fontStyle='italic' display='inline'>
@@ -431,6 +435,7 @@ const ServicesAccordion = (props: {
                           towards the direction of the{' '}
                           <MaterialLink
                             href='https://en.wikipedia.org/wiki/Kaaba'
+                            rel='noreferrer'
                             target='_blank'
                           >
                             <Box fontStyle='italic' display='inline'>
@@ -458,6 +463,7 @@ const ServicesAccordion = (props: {
                           the{' '}
                           <MaterialLink
                             href='https://en.wikipedia.org/wiki/Quran'
+                            rel='noreferrer'
                             target='_blank'
                           >
                             <Box fontStyle='italic' display='inline'>
@@ -493,6 +499,7 @@ const ServicesAccordion = (props: {
                           blessing of food during{' '}
                           <MaterialLink
                             href='https://en.wikipedia.org/wiki/Salah'
+                            rel='noreferrer'
                             target='_blank'
                           >
                             <Box fontStyle='italic' display='inline'>

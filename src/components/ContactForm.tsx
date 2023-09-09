@@ -6,6 +6,9 @@ import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import Snackbar from '@mui/material/Snackbar';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 
 const ContactForm = () => {
   const [fullName, setFullName] = useState('');
@@ -16,6 +19,8 @@ const ContactForm = () => {
   const [emailTouched, setEmailTouched] = useState(false);
   const [phoneNumberTouched, setPhoneNumberTouched] = useState(false);
   const [messageTouched, setMessageTouched] = useState(false);
+
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
 
   const handlePhoneNumberChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -34,6 +39,7 @@ const ContactForm = () => {
     setPhoneNumber('');
     setMessage('');
     setMessageTouched(false);
+    setSnackbarOpen(true);
     console.log(
       'name: ',
       fullName,
@@ -44,6 +50,18 @@ const ContactForm = () => {
       'message: ',
       message
     );
+  };
+
+  const handleSnackbarClose = (
+    // @ts-ignore
+    event: React.SyntheticEvent | Event,
+    reason?: string
+  ) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setSnackbarOpen(false);
   };
 
   const emailErrorCondition =
@@ -61,88 +79,115 @@ const ContactForm = () => {
     phoneNumber !== '';
 
   return (
-    <Card
-      sx={{ bgcolor: `${appSecondaryColor}1F`, padding: '2em' }}
-      variant='outlined'
-    >
-      <Typography textAlign='center' variant='h5'>
-        Contact us
-      </Typography>
-      <Typography mb={2} textAlign='center'>
-        MCNET will be in touch as soon as possible.
-      </Typography>
-      <TextField
-        color='success'
-        error={fullNameTouched && fullName === ''}
-        fullWidth
-        helperText={
-          fullNameTouched && fullName === '' ? 'Please enter your name.' : ' '
-        }
-        label='Name'
-        onChange={(e) => setFullName(e.target.value)}
-        onFocus={() => setFullNameTouched(true)}
-        required
-        sx={{
-          mb: 1
-        }}
-        type='text'
-        value={fullName}
+    <>
+      <Card
+        sx={{ bgcolor: `${appSecondaryColor}1F`, padding: '2em' }}
         variant='outlined'
-      />
-      <TextField
-        color='success'
-        error={emailErrorCondition}
-        fullWidth
-        helperText={
-          emailErrorCondition ? 'Please enter a valid email address.' : ' '
+      >
+        <Typography textAlign='center' variant='h5'>
+          Contact us
+        </Typography>
+        <Typography mb={2} textAlign='center'>
+          MCNET will be in touch as soon as possible.
+        </Typography>
+        <TextField
+          color='success'
+          error={fullNameTouched && fullName === ''}
+          fullWidth
+          helperText={
+            fullNameTouched && fullName === '' ? 'Please enter your name.' : ' '
+          }
+          label='Name'
+          onChange={(e) => setFullName(e.target.value)}
+          onFocus={() => setFullNameTouched(true)}
+          required
+          sx={{
+            mb: 1
+          }}
+          type='text'
+          value={fullName}
+          variant='outlined'
+        />
+        <TextField
+          color='success'
+          error={emailErrorCondition}
+          fullWidth
+          helperText={
+            emailErrorCondition ? 'Please enter a valid email address.' : ' '
+          }
+          label='Email'
+          onChange={(e) => setEmail(e.target.value)}
+          onFocus={() => setEmailTouched(true)}
+          sx={{ mb: 1 }}
+          type='email'
+          value={email}
+          variant='outlined'
+        />
+        <TextField
+          color='success'
+          error={phoneNumberErrorCondition}
+          fullWidth
+          helperText={
+            phoneNumberErrorCondition
+              ? 'Please enter a valid phone number.'
+              : ' '
+          }
+          label='Phone number'
+          onChange={(e) => handlePhoneNumberChange(e)}
+          onFocus={() => setPhoneNumberTouched(true)}
+          sx={{ mb: 1 }}
+          type='tel'
+          value={phoneNumber}
+          variant='outlined'
+        />
+        <TextField
+          color='success'
+          error={messageTouched && message.length <= 5}
+          fullWidth
+          helperText={
+            messageTouched && message.length <= 5
+              ? 'Message needs to be at least five characters.'
+              : ' '
+          }
+          label='Message'
+          minRows={5}
+          maxRows={5}
+          multiline
+          onFocus={() => setMessageTouched(true)}
+          onChange={(e) => setMessage(e.target.value)}
+          required
+          sx={{ mb: 2 }}
+          value={message}
+          variant='outlined'
+        />
+        <Button
+          fullWidth
+          onSubmit={handleSubmit}
+          type='submit'
+          variant='outlined'
+        >
+          Send
+        </Button>
+      </Card>
+      <Snackbar
+        action={
+          <>
+            <IconButton
+              aria-label='close'
+              color='inherit'
+              sx={{ p: 0.5 }}
+              onClick={handleSnackbarClose}
+            >
+              <CloseIcon />
+            </IconButton>
+          </>
         }
-        label='Email'
-        onChange={(e) => setEmail(e.target.value)}
-        onFocus={() => setEmailTouched(true)}
-        sx={{ mb: 1 }}
-        type='email'
-        value={email}
-        variant='outlined'
+        autoHideDuration={5000}
+        message='Message sent!'
+        onClose={handleSnackbarClose}
+        open={snackbarOpen}
       />
-      <TextField
-        color='success'
-        error={phoneNumberErrorCondition}
-        fullWidth
-        helperText={
-          phoneNumberErrorCondition ? 'Please enter a valid phone number.' : ' '
-        }
-        label='Phone number'
-        onChange={(e) => handlePhoneNumberChange(e)}
-        onFocus={() => setPhoneNumberTouched(true)}
-        sx={{ mb: 1 }}
-        type='tel'
-        value={phoneNumber}
-        variant='outlined'
-      />
-      <TextField
-        color='success'
-        error={messageTouched && message.length <= 5}
-        fullWidth
-        helperText={
-          messageTouched && message.length <= 5
-            ? 'Message needs to be at least five characters.'
-            : ' '
-        }
-        label='Message'
-        minRows={5}
-        maxRows={5}
-        multiline
-        onFocus={() => setMessageTouched(true)}
-        onChange={(e) => setMessage(e.target.value)}
-        required
-        sx={{ mb: 2 }}
-        value={message}
-        variant='outlined'
-      />
-      <Button fullWidth onClick={handleSubmit} type='submit' variant='outlined'>
-        Send
-      </Button>
-    </Card>
+    </>
   );
 };
 
