@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { appPrimaryColor, appSecondaryColor } from '../util/constants';
-import { ReactComponent as Spinner } from '../assets/spinner.svg';
+import { ReactComponent as Spinner } from '../assets/svg-icons/spinner.svg';
 import moment from 'moment';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';

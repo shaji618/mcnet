@@ -1,8 +1,7 @@
 import { FC, ReactNode } from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { createTheme } from '@mui/material/styles';
-import { ThemeProvider } from '@mui/material/styles';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {
   appPrimaryColor,
   appSecondaryColor,
@@ -78,6 +77,7 @@ const pageTheme = createTheme({
 });
 
 const Page: FC<Props> = (props: Props) => {
+  const { children, headerBody, headerText, isUnderConstruction } = props;
   return (
     <ThemeProvider theme={pageTheme}>
       <Typography
@@ -88,17 +88,13 @@ const Page: FC<Props> = (props: Props) => {
         }}
         variant='h3'
       >
-        {props.isUnderConstruction
-          ? 'UNDER CONSTRUCTION'
-          : props.headerText?.toUpperCase()}
+        {isUnderConstruction ? 'UNDER CONSTRUCTION' : headerText?.toUpperCase()}
       </Typography>
       <Typography component='div' mb={3} mt={3} textAlign='center'>
-        {props.isUnderConstruction
-          ? 'This page is under construction.'
-          : props.headerBody}
+        {isUnderConstruction ? 'This page is under construction.' : headerBody}
       </Typography>
       <Box mb={3} mx={3}>
-        {props.isUnderConstruction && (
+        {isUnderConstruction && (
           <Box textAlign='center'>
             <ConstructionIcon
               sx={{
@@ -109,7 +105,7 @@ const Page: FC<Props> = (props: Props) => {
             />
           </Box>
         )}
-        {props.children}
+        {children}
       </Box>
     </ThemeProvider>
   );

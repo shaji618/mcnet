@@ -10,21 +10,21 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { appPrimaryColor, appSecondaryColor } from '../util/constants';
-import { ReactComponent as Logo } from '../../public/logo.svg';
+import { ReactComponent as Logo } from '../assets/svg-icons/logo.svg';
 import { NavLink } from 'react-router-dom';
 import SvgIcon from '@mui/material/SvgIcon';
 import DonateButton from '../components/DonateButton';
 import SubAlertBar from './SubNavBar';
 
 const pages = [
-  'About',
+  'Information',
+  'About Us',
   'Services',
   'Programs',
   'Sunday School',
   'Jummah Prayers',
   'Upcoming Projects',
-  'Archive',
-  'Contact'
+  'Contact Us'
 ];
 
 const StyledMenuItem = (props: {

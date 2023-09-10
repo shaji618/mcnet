@@ -1,6 +1,6 @@
-import { ReactComponent as Megaphone } from '../assets/loudspeaker.svg';
-import { ReactComponent as Microphone } from '../assets/microphone.svg';
-import { ReactComponent as CalendarIcon } from '../assets/calendar.svg';
+import { ReactComponent as Megaphone } from '../assets/svg-icons/loudspeaker.svg';
+import { ReactComponent as Microphone } from '../assets/svg-icons/microphone.svg';
+import { ReactComponent as CalendarIcon } from '../assets/svg-icons/calendar.svg';
 import { ReactNode, useState } from 'react';
 import { appTertiaryColor } from '../util/constants';
 import Calendar from 'react-calendar';
@@ -18,11 +18,12 @@ const HeaderIcon = (props: {
   icon: ReactNode;
   headerText: string;
 }) => {
+  const { active, icon, headerText } = props;
   return (
     <Grid item md={4}>
       <Box>
         <Avatar
-          className={props.active ? 'active' : ''}
+          className={active ? 'active' : ''}
           sx={{
             border: '1px solid #000',
             height: '9em',
@@ -40,9 +41,9 @@ const HeaderIcon = (props: {
           variant='rounded'
         >
           <Stack direction='column'>
-            {props.icon}
+            {icon}
             <Typography textAlign='center'>
-              {props.headerText.toUpperCase()}
+              {headerText.toUpperCase()}
             </Typography>
           </Stack>
         </Avatar>
@@ -55,7 +56,7 @@ const AnnouncementsOverview = () => {
   const [announcementState, setAnnouncementState] = useState<
     'announcements' | 'pressReleases' | 'events'
   >('announcements');
-  
+
   return (
     <Box width='100%' height='750px'>
       <Typography mb={1} textAlign='center'>

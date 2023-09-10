@@ -68,16 +68,17 @@ const ServicesAccordion = (props: {
   serviceActive: Services | false;
   sx?: AliasesCSSProperties;
 }) => {
+  const { expanded, handleChange, onClick, serviceActive, sx } = props;
   return (
-    <Box sx={props.sx}>
+    <Box sx={sx}>
       <Accordion
-        expanded={props.serviceActive === 'chaplaincy'}
-        onChange={props.handleChange('chaplaincy')}
+        expanded={serviceActive === 'chaplaincy'}
+        onChange={handleChange('chaplaincy')}
       >
         <AccordionSummary
           aria-controls='chaplaincyd-content'
           id='chaplaincyd-header'
-          onClick={(e) => props.onClick(e, 'chaplaincy')}
+          onClick={(e) => onClick(e, 'chaplaincy')}
         >
           <Typography variant='h5'>Chaplaincy Services</Typography>
         </AccordionSummary>
@@ -91,13 +92,13 @@ const ServicesAccordion = (props: {
         </AccordionDetails>
       </Accordion>
       <Accordion
-        expanded={props.expanded === 'matrimonial'}
-        onChange={props.handleChange('matrimonial')}
+        expanded={expanded === 'matrimonial'}
+        onChange={handleChange('matrimonial')}
       >
         <AccordionSummary
           aria-controls='matrimoniald-content'
           id='matrimoniald-header'
-          onClick={(e) => props.onClick(e, 'matrimonial')}
+          onClick={(e) => onClick(e, 'matrimonial')}
         >
           <Typography variant='h5'>Matrimonial Services</Typography>
         </AccordionSummary>
@@ -116,13 +117,13 @@ const ServicesAccordion = (props: {
         </AccordionDetails>
       </Accordion>
       <Accordion
-        expanded={props.expanded === 'funeral'}
-        onChange={props.handleChange('funeral')}
+        expanded={expanded === 'funeral'}
+        onChange={handleChange('funeral')}
       >
         <AccordionSummary
           aria-controls='funerald-content'
           id='funerald-header'
-          onClick={(e) => props.onClick(e, 'funeral')}
+          onClick={(e) => onClick(e, 'funeral')}
         >
           <Typography variant='h5'>Funeral Services</Typography>
         </AccordionSummary>
@@ -227,13 +228,13 @@ const ServicesAccordion = (props: {
         </AccordionDetails>
       </Accordion>
       <Accordion
-        expanded={props.expanded === 'interfaith'}
-        onChange={props.handleChange('interfaith')}
+        expanded={expanded === 'interfaith'}
+        onChange={handleChange('interfaith')}
       >
         <AccordionSummary
           aria-controls='interfaithd-content'
           id='interfaithd-header'
-          onClick={(e) => props.onClick(e, 'interfaith')}
+          onClick={(e) => onClick(e, 'interfaith')}
         >
           <Typography variant='h5'>Interfaith Advocacy</Typography>
         </AccordionSummary>

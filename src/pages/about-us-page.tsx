@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import { appTertiaryColor } from '../util/constants';
 import { HashLink } from 'react-router-hash-link';
 
-export const About = () => {
+export const AboutUs = () => {
   return (
     <>
       <Page

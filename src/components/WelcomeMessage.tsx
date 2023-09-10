@@ -1,7 +1,7 @@
 import Image from 'mui-image';
 import { Link } from 'react-router-dom';
 import { appSecondaryColor } from '../util/constants';
-import croppedRainbowMasjid from '../assets/croppedRainbowMasjid.png';
+import croppedRainbowMasjid from '../assets/mosque-photos/croppedRainbowMasjid.png';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';

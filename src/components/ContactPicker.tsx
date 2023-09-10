@@ -14,7 +14,7 @@ import {
   appSecondaryColor,
   appTertiaryColor
 } from '../util/constants';
-import { ReactComponent as PhoneIcon } from '../assets/phoneIcon.svg';
+import { ReactComponent as PhoneIcon } from '../assets/svg-icons/phoneIcon.svg';
 import Tooltip from '@mui/material/Tooltip';
 
 type Picker = 'address' | 'phoneNumber' | 'email';
@@ -26,16 +26,17 @@ const Picker = (props: {
   onClick: () => void;
   textContent: ReactNode;
 }) => {
+  const { active, archerElId, icon, onClick, textContent } = props;
   return (
-    <ArcherElement id={props.archerElId}>
+    <ArcherElement id={archerElId}>
       <Stack
         alignItems='center'
         direction='row'
-        onClick={props.onClick}
+        onClick={onClick}
         sx={{ cursor: 'pointer' }}
       >
         <Avatar
-          className={props.active ? 'active' : ''}
+          className={active ? 'active' : ''}
           sx={{
             height: '50px',
             width: '50px',
@@ -50,9 +51,9 @@ const Picker = (props: {
             }
           }}
         >
-          {props.icon}
+          {icon}
         </Avatar>
-        {props.textContent}
+        {textContent}
       </Stack>
     </ArcherElement>
   );
