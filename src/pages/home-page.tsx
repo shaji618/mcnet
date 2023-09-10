@@ -1,11 +1,15 @@
-import { Grid, Typography } from '@mui/material';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
 import WelcomeMessage from '../components/WelcomeMessage';
 import Page from '../layout/Page';
 import PrayerTimings from '../components/PrayerTimings';
 import { appTertiaryColor } from '../util/constants';
 import AnnouncementsOverview from '../components/AnnouncementsOverview';
 import Image from 'mui-image';
-import filteredMasjid from '../assets/filteredMasjid.jpg';
+import filteredMasjid from '../assets/mosque-photos/filteredMasjid.jpg';
+import HomePageFlipCards from '../components/HomePageFlipCards';
+import Link from '@mui/material/Link';
 
 export const Home = () => {
   return (
@@ -46,6 +50,29 @@ export const Home = () => {
           </Grid>
         </Grid>
       </Grid>
+      <Box mb={4}>
+        <Typography
+          my={2}
+          textAlign='center'
+          variant='h3'
+          sx={{
+            textDecoration: `underline ${appTertiaryColor} 1px`,
+            textUnderlineOffset: '15px'
+          }}
+        >
+          WHO WE ARE
+        </Typography>
+        <HomePageFlipCards />
+        <Link
+          href='https://en.wikipedia.org/wiki/Five_Pillars_of_Islam'
+          rel='noreferrer'
+          target='_blank'
+        >
+          <Typography fontSize={12} my={4} textAlign='center'>
+            To find out more about the pillars of Islam, click here.
+          </Typography>
+        </Link>
+      </Box>
     </Page>
   );
 };

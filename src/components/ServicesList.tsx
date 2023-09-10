@@ -3,9 +3,9 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { appPrimaryColor, appSecondaryColor } from '../util/constants';
-import { ReactComponent as PrayerHands } from '../assets/prayerHands.svg';
-import { ReactComponent as WeddingRings } from '../assets/wedding.svg';
-import { ReactComponent as Funeral } from '../assets/funeral.svg';
+import { ReactComponent as PrayerHands } from '../assets/svg-icons/prayerHands.svg';
+import { ReactComponent as WeddingRings } from '../assets/svg-icons/wedding.svg';
+import { ReactComponent as Funeral } from '../assets/svg-icons/funeral.svg';
 import { ReactNode, SyntheticEvent, useState } from 'react';
 import Diversity1Icon from '@mui/icons-material/Diversity1';
 import ServicesAccordion from './ServicesAccordion';
@@ -17,10 +17,12 @@ const IconSelector = (props: {
   svgComponent: ReactNode;
   title: string;
 }) => {
+  const { active, svgComponent, title } = props;
+
   return (
     <Stack>
       <Avatar
-        className={props.active ? 'active' : ''}
+        className={active ? 'active' : ''}
         sx={{
           border: `1px solid ${appPrimaryColor}`,
           borderRadius: '50%',
@@ -36,7 +38,7 @@ const IconSelector = (props: {
           }
         }}
       >
-        {props.svgComponent}
+        {svgComponent}
       </Avatar>
       <Typography
         mt={2}
@@ -45,7 +47,7 @@ const IconSelector = (props: {
         textAlign='center'
         width={200}
       >
-        {props.title.toUpperCase()}
+        {title.toUpperCase()}
       </Typography>
     </Stack>
   );

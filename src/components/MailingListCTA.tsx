@@ -12,7 +12,7 @@ import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import CardMedia from '@mui/material/CardMedia';
-import snowyMasjid from '../assets/snowyMasjid.jpg';
+import snowyMasjid from '../assets/mosque-photos/snowyMasjid.jpg';
 import CardContent from '@mui/material/CardContent';
 import Snackbar from '@mui/material/Snackbar';
 import CloseIcon from '@mui/icons-material/Close';

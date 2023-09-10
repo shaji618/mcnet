@@ -5,7 +5,7 @@ import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 import MailingListCTA from '../components/MailingListCTA';
 
-export const Contact = () => {
+export const ContactUs = () => {
   return (
     <Page
       headerText='GET IN TOUCH WITH US'

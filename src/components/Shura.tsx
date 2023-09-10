@@ -3,11 +3,11 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import sMalikHeadshot from '../assets/sMalikHeadshot.jpg';
+import sMalikHeadshot from '../assets/headshots/sMalikHeadshot.jpg';
 import Link from '@mui/material/Link';
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
-import aWarsyHeadshot from '../assets/aWarsyHeadshot.png';
+import aWarsyHeadshot from '../assets/headshots/aWarsyHeadshot.png';
 import Stack from '@mui/material/Stack';
 import { appSecondaryColor } from '../util/constants';
 import PersonIcon from '@mui/icons-material/Person';
@@ -18,11 +18,13 @@ const MemberCard = (props: {
   name: string;
   title: string;
 }) => {
+  const { email, img, name, title } = props;
+
   return (
     <Grid item md={4}>
       <Card sx={{ height: 420, width: 300 }}>
-        {props.img ? (
-          <CardMedia sx={{ height: 300 }} image={props.img} />
+        {img ? (
+          <CardMedia sx={{ height: 300 }} image={img} />
         ) : (
           <CardMedia>
             <PersonIcon sx={{ height: 300, width: 300 }} />
@@ -33,16 +35,16 @@ const MemberCard = (props: {
         )}
         <CardContent>
           <Typography gutterBottom mb={0} variant='h5'>
-            {props.name}
+            {name}
           </Typography>
           <Stack direction='row'>
             <WorkOutlineIcon sx={{ color: appSecondaryColor, mr: 1 }} />
-            <Typography>{props.title}</Typography>
+            <Typography>{title}</Typography>
           </Stack>
           <Stack direction='row' overflow='visible'>
             <ContactMailIcon sx={{ color: appSecondaryColor, mr: 1 }} />
-            <Link href={`mailto:${props.email}`}>
-              <Typography>{props.email}</Typography>
+            <Link href={`mailto:${email}`}>
+              <Typography>{email}</Typography>
             </Link>
           </Stack>
         </CardContent>
