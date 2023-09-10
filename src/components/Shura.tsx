@@ -21,7 +21,7 @@ const MemberCard = (props: {
   const { email, img, name, title } = props;
 
   return (
-    <Grid item md={4}>
+    <Grid item md={3} mr={1}>
       <Card sx={{ height: 420, width: 300 }}>
         {img ? (
           <CardMedia sx={{ height: 300 }} image={img} />
@@ -56,7 +56,7 @@ const MemberCard = (props: {
 const Shura = () => {
   return (
     <>
-      <Grid container margin='0 auto' mt={2} spacing={2}>
+      <Grid justifyContent='center' container mt={2} spacing={2}>
         <MemberCard
           email='smalik@mcnethostname.org'
           img={sMalikHeadshot}

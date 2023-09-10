@@ -8,11 +8,12 @@ import MailingListCTA from '../components/MailingListCTA';
 export const ContactUs = () => {
   return (
     <Page
+      childrenBoxSx={{ display: 'grid', justifyItems: 'center' }}
       headerText='GET IN TOUCH WITH US'
       headerBody='MCNET offers several lines of communication.  Reach out to us with any inquiries, comments, or concerns you might have related to MCNET activities!'
     >
       <ContactPicker />
-      <Grid item container direction='row' justifyContent='center' mt={4}>
+      <Grid container direction='row' display='grid-inline' justifyItems='center' mt={4}>
         <Grid item mr={2} width='48%'>
           <ContactForm />
         </Grid>

@@ -80,7 +80,7 @@ const HomePageFlipCard = (props: {
 
 const HomePageFlipCards = () => {
   return (
-    <Grid container spacing={12}>
+    <Grid container justifyContent='center' spacing={12}>
       <HomePageFlipCard
         backContent={
           <>

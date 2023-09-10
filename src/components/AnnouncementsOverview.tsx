@@ -62,7 +62,7 @@ const AnnouncementsOverview = () => {
       <Typography mb={1} textAlign='center'>
         Communications
       </Typography>
-      <Grid container>
+      <Grid container justifyContent='center'>
         <Box mr={1} onClick={() => setAnnouncementState('announcements')}>
           <HeaderIcon
             active={announcementState === 'announcements'}
