@@ -66,7 +66,11 @@ const ProjectCard = (props: {
         invisible={!areFundsNeededMet}
       >
         <Stack>
-          <ReactCardFlip infinite isFlipped={isFlipped}>
+          <ReactCardFlip
+            flipDirection='vertical'
+            infinite
+            isFlipped={isFlipped}
+          >
             <Box onClick={handleClick} width={500}>
               <Typography mb={2} mt={1} textAlign='center' variant='h5'>
                 {headerText}
