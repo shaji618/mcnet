@@ -14,7 +14,7 @@ import SvgIcon from '@mui/material/SvgIcon';
 import Link from '@mui/material/Link';
 
 const requestUrl =
-  'http://islamicfinder.us/index.php/api/prayer_times?country=US&zipcode=37604';
+  'https://islamicfinder.us/index.php/api/prayer_times?country=US&zipcode=37604';
 
 const PrayerTimings = () => {
   const [prayerData, setPrayerData] = useState({

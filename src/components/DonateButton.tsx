@@ -4,7 +4,7 @@ import {
   appSecondaryColor,
   appTertiaryColor
 } from '../util/constants';
-import { SxProps } from '@mui/material';
+import { SxProps } from '@mui/material/styles';
 
 // TODO: use https://www.npmjs.com/package/@paypal/react-paypal-js ?
 const DonateButton = (props: { sx?: SxProps }) => {

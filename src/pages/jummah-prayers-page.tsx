@@ -1,10 +1,10 @@
 import Typography from '@mui/material/Typography';
-import JummahPrayerTable from '../components/JummahPrayerTable';
+import FridayPrayerTable from '../components/JummahPrayerTable';
 import Page from '../layout/Page';
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 
-export const JummahPrayers = () => {
+const JummahPrayers = () => {
   return (
     <Page
       headerText='JUMMAH PRAYERS'
@@ -13,7 +13,7 @@ export const JummahPrayers = () => {
           Friday (in Arabic,{' '}
           <Box display='inline' fontStyle='italic'>
             Jummah
-          </Box>{' '}
+          </Box>
           ) is considered to be the holiest day of the week in Islam. Muslims{' '}
           are required to gather for a{' '}
           <Link
@@ -31,7 +31,9 @@ export const JummahPrayers = () => {
         </Typography>
       }
     >
-      <JummahPrayerTable />
+      <FridayPrayerTable />
     </Page>
   );
 };
+
+export default JummahPrayers;
