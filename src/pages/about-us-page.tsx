@@ -12,7 +12,7 @@ export const AboutUs = () => {
       <Page
         headerText='OUR STORY'
         headerBody={
-          <HashLink smooth to='/about#shura'>
+          <HashLink smooth to='/about-us#shura'>
             Click here to jump to see the members of our board, the{' '}
             <Box display='inline' fontStyle='italic'>
               Shura

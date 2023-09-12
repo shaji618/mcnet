@@ -9,7 +9,7 @@ import { Programs } from './pages/programs-page';
 import { SundaySchool } from './pages/sunday-school-page';
 import { ContactUs } from './pages/contact-us-page';
 import PreNavBar from './layout/PreNavBar';
-import { JummahPrayers } from './pages/jummah-prayers-page';
+import JummahPrayers from './pages/jummah-prayers-page';
 import { UpcomingProjects } from './pages/upcoming-projects-page';
 import Information from './pages/information-page';
 import NotFoundPage from './pages/not-found-page';
@@ -19,7 +19,7 @@ const Root = () => {
   return (
     <>
       {/* <HashRouter basename={process.env.PUBLIC_URL}> */}
-        <BrowserRouter>
+      <BrowserRouter>
         <PreNavBar />
         <NavBar />
         <Routes>
@@ -35,7 +35,7 @@ const Root = () => {
           <Route path='*' element={<NotFoundPage />} />
         </Routes>
         <Footer />
-        </BrowserRouter>
+      </BrowserRouter>
       {/* </HashRouter> */}
     </>
   );
