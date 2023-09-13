@@ -42,7 +42,7 @@ const ExpandContent = (props: { khutbaUrl: string; recordingUrl: string }) => {
 const JummahPrayerTable = () => {
   const rows: IRow[] = [
     {
-      columnOneData: 'Shaji Samiuddin',
+      columnOneData: 'Jabbar Ghazi',
       columnTwoData: 'September 2, 2023',
       expand: {
         child: (
@@ -54,7 +54,7 @@ const JummahPrayerTable = () => {
       }
     },
     {
-      columnOneData: 'Shahram Malik',
+      columnOneData: 'Adnan Sleiman',
       columnTwoData: 'September 9, 2023',
       expand: {
         child: (
@@ -66,7 +66,7 @@ const JummahPrayerTable = () => {
       }
     },
     {
-      columnOneData: 'Adil Warsy',
+      columnOneData: 'Fahad Touma',
       columnTwoData: 'September 16, 2023',
       expand: {
         child: (
