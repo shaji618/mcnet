@@ -14,7 +14,7 @@ import { ReactNode, useState } from 'react';
 
 export interface IRow {
   columnOneData: string;
-  columnTwoData: string;
+  columnTwoData: string | ReactNode;
   expand?: { child: ReactNode };
 }
 
@@ -56,14 +56,18 @@ const Row = (props: { row: IRow }) => {
 };
 
 const ArchiveTable = (
-  props: { rows: IRow[] } & { columnOneHeader: string; columnTwoHeader: string }
+  props: { rows: IRow[] } & {
+    columnOneHeader: string;
+    columnTwoHeader: string;
+    hideExpandColumn?: boolean;
+  }
 ) => {
   return (
     <TableContainer component={Paper}>
       <Table aria-label='collapsible table'>
         <TableHead>
           <TableRow>
-            <TableCell>Expand</TableCell>
+            {!props.hideExpandColumn && <TableCell>Expand</TableCell>}
             <TableCell>{props.columnOneHeader}</TableCell>
             <TableCell>{props.columnTwoHeader}</TableCell>
           </TableRow>

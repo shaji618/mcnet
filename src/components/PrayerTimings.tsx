@@ -12,6 +12,7 @@ import TableCell from '@mui/material/TableCell';
 import TableBody from '@mui/material/TableBody';
 import SvgIcon from '@mui/material/SvgIcon';
 import Link from '@mui/material/Link';
+import { getCurrentDate } from '../util/helpers';
 
 const requestUrl =
   'https://islamicfinder.us/index.php/api/prayer_times?country=US&zipcode=37604';
@@ -41,26 +42,6 @@ const PrayerTimings = () => {
     } catch (err) {
       console.log(err);
     }
-  };
-
-  const getCurrentDate = () => {
-    const todaysDate = new Date();
-    const options = {
-      weekday: 'long',
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    };
-
-    return {
-      formatted: todaysDate.toLocaleDateString(
-        'en-US',
-        // @ts-ignore
-        options
-      ),
-      month: todaysDate.getMonth(),
-      year: todaysDate.getFullYear()
-    };
   };
 
   const prayerRows = [
