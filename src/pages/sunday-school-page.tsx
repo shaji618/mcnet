@@ -6,18 +6,72 @@ import Link from '@mui/material/Link';
 import { appTertiaryColor } from '../util/constants';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import Table from '@mui/material/Table';
+import TableRow from '@mui/material/TableRow';
+import TableCell from '@mui/material/TableCell';
+import TableHead from '@mui/material/TableHead';
+import Chip from '@mui/material/Chip';
 
 export const SundaySchool = () => {
   return (
     <Page
       headerBody={
         <>
-          <Typography>
-            MCNET's Sunday school is a volunteer-run program designed to teach
-            young Muslims about their religion.
+          <Typography mb={2}>
+            The Islamic school of Northeast Tennessee (ISNET) started back in
+            1994 at ETSU campus. Currently, it runs in the Masjid on Sundays
+            between 11:30 AM to 3 PM. The teachers are volunteers from within
+            the Muslim community. It offers classes for Arabic language, Islamic
+            studies and Quran translation. The school follows the Johnson city
+            school calendar. The fall semester runs from August to December, and
+            the Spring semester runs from January to May. Semester fee is $ 75
+            per child and $ 75 for registration for new students and book money.
+            Students are registered from age 5 and above. The school provides
+            the books and the lunch. Over the course of time, it has grown from
+            only a few students to more than 80 students currently. Presently we
+            have students attending from as far as 75 miles away, from Abingdon,
+            Norton, and Bristol, VA.
           </Typography>
+          <Typography
+            sx={{
+              textDecoration: `underline ${appTertiaryColor} 1px`,
+              textUnderlineOffset: '0.3em'
+            }}
+            variant='h5'
+          >
+            SCHEDULE
+          </Typography>
+          <Table sx={{ mb: 2 }}>
+            <TableHead>
+              <TableRow>
+                <TableCell>Batch</TableCell>
+                <TableCell>Duration of Class</TableCell>
+                <TableCell>Class Details</TableCell>
+                <TableCell>Class Time</TableCell>
+                <TableCell>Days of Week</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableRow>
+              <TableCell>KE-B001</TableCell>
+              <TableCell>
+                <Chip
+                  label='1st April 2018 to 31st July 2018'
+                  variant='outlined'
+                />
+              </TableCell>
+              <TableCell>
+                Classes for Arabic language, Islamic studies and Quran
+                translation for kids
+              </TableCell>
+              <TableCell>
+                <Chip label='11:30 AM To 03:00 PM' variant='outlined' />
+              </TableCell>
+              <TableCell>
+                <Chip label='Sunday' variant='outlined' />
+              </TableCell>
+            </TableRow>
+          </Table>
           <Typography fontSize={22} fontWeight={500}>
             A LINK TO THE SCHOOL CHARTER CAN BE FOUND{' '}
             <Link href='' rel='noreferrer' target='_blank'>
@@ -74,40 +128,7 @@ export const SundaySchool = () => {
             </ListItem>
             <ListItem>
               <Typography>
-                <Box display='inline' fontStyle='italic'>
-                  Fiqh
-                </Box>
-                :{' '}
-                <Link
-                  href='https://google.com'
-                  rel='noreferrer'
-                  target='_blank'
-                >
-                  Google
-                </Link>
-              </Typography>
-            </ListItem>
-            <ListItem>
-              <Typography>
-                <Box display='inline' fontStyle='italic'>
-                  Seerah
-                </Box>
-                :{' '}
-                <Link
-                  href='https://google.com'
-                  rel='noreferrer'
-                  target='_blank'
-                >
-                  Google
-                </Link>
-              </Typography>
-            </ListItem>
-            <ListItem>
-              <Typography>
-                <Box display='inline' fontStyle='italic'>
-                  Hadith
-                </Box>
-                :{' '}
+                Islamic Studies :{' '}
                 <Link
                   href='https://google.com'
                   rel='noreferrer'
@@ -157,40 +178,7 @@ export const SundaySchool = () => {
             </ListItem>
             <ListItem>
               <Typography>
-                <Box display='inline' fontStyle='italic'>
-                  Fiqh
-                </Box>
-                :{' '}
-                <Link
-                  href='https://google.com'
-                  rel='noreferrer'
-                  target='_blank'
-                >
-                  Google
-                </Link>
-              </Typography>
-            </ListItem>
-            <ListItem>
-              <Typography>
-                <Box display='inline' fontStyle='italic'>
-                  Seerah
-                </Box>
-                :{' '}
-                <Link
-                  href='https://google.com'
-                  rel='noreferrer'
-                  target='_blank'
-                >
-                  Google
-                </Link>
-              </Typography>
-            </ListItem>
-            <ListItem>
-              <Typography>
-                <Box display='inline' fontStyle='italic'>
-                  Hadith
-                </Box>
-                :{' '}
+                Islamic Studies :{' '}
                 <Link
                   href='https://google.com'
                   rel='noreferrer'

@@ -10,7 +10,6 @@ const SundaySchoolPrincipal = () => {
       <Typography
         sx={{
           mb: 2,
-          //   textAlign: 'center',
           textDecoration: `underline ${appTertiaryColor} 1px`,
           textUnderlineOffset: '0.3em'
         }}
@@ -22,14 +21,14 @@ const SundaySchoolPrincipal = () => {
         <Grid item md={6}>
           <HeadshotCard
             dimensions={{ height: 'auto', width: 275 }}
-            email={'${name}@mcnethostname.org'}
-            name={'${name}'}
+            email={'ezamani@mcnethostname.org'}
+            name='Edra Zamani'
             title={'Principal'}
           />
         </Grid>
         <Grid item md={6}>
           <Typography>
-            The Sunday school principal is {'${name}'}. She has been a pillar of
+            The Sunday school principal is Edra Zamani. She has been a pillar of
             the community in Johnson City for over 20 years and has served as
             the Sunday school's principal for the last eight years. During the
             week, she works as a doctor at Princeton-Plainsboro Teaching
