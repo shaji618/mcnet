@@ -15,6 +15,7 @@ import {
   appTertiaryColor
 } from '../util/constants';
 import { ReactComponent as PhoneIcon } from '../assets/svg-icons/phoneIcon.svg';
+import { ReactComponent as MCNETIcon } from '../assets/svg-icons/logo.svg';
 import Tooltip from '@mui/material/Tooltip';
 
 type Picker = 'address' | 'phoneNumber' | 'email';
@@ -94,7 +95,9 @@ const ContactPicker = () => {
               }
             ]}
           >
-            <Avatar sx={{ height: '100px', width: '100px' }} />
+              <Avatar sx={{ height: '100px', width: '100px', bgcolor:'#224a23' }} >
+                  <MCNETIcon />
+              </Avatar>
           </ArcherElement>
           <Stack spacing={13}>
             <Picker
