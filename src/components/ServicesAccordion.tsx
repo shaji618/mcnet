@@ -87,7 +87,7 @@ const ServicesAccordion = (props: {
             If you need assistance with your spiritual needs, please contact the
             local hospital chaplain and ask for a Muslim chaplain. If they do
             not have a Muslim chaplain, then{' '}
-            <Link to='/contact'>contact MCNET</Link> for assistance.
+            <Link to='/contact-us'>contact MCNET</Link> for assistance.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -112,7 +112,7 @@ const ServicesAccordion = (props: {
           <Typography>
             If you would like to be married at MCNET or request an MCNET Imam to
             officiate your wedding ceremony, please{' '}
-            <Link to='/contact'>contact MCNET</Link> at (423)975-6681.
+            <Link to='/contact-us'>contact MCNET</Link> at (423)975-6681.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -168,7 +168,7 @@ const ServicesAccordion = (props: {
           </Typography>
           <Typography>
             To schedule and/ or accommodate a funeral, please{' '}
-            <Link to='/contact'>contact MCNET</Link> or one of the following
+            <Link to='/contact-us'>contact MCNET</Link> or one of the following
             people:
           </Typography>
           <List sx={{ ml: 2 }}>
@@ -550,7 +550,7 @@ const ServicesAccordion = (props: {
           <Typography mt={2}>
             If you would like to attend an event or want to talk to our board
             members for religious questions or for your research papers please
-            don't hesitate to <Link to='/contact'>contact us</Link>!
+            don't hesitate to <Link to='/contact-us'>contact us</Link>!
           </Typography>
         </AccordionDetails>
       </Accordion>
