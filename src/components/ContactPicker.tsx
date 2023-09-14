@@ -1,6 +1,7 @@
 import { ArcherContainer, ArcherElement } from 'react-archer';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import PhoneOutlinedIcon from '@mui/icons-material/PhoneOutlined';
+import PhonelinkRingIcon from '@mui/icons-material/PhonelinkRing';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import Stack from '@mui/material/Stack';
@@ -14,7 +15,6 @@ import {
   appSecondaryColor,
   appTertiaryColor
 } from '../util/constants';
-import { ReactComponent as PhoneIcon } from '../assets/svg-icons/phoneIcon.svg';
 import { ReactComponent as MCNETIcon } from '../assets/svg-icons/logo.svg';
 import Tooltip from '@mui/material/Tooltip';
 
@@ -152,11 +152,12 @@ const ContactPicker = () => {
                     width: 300,
                     '&:hover': {
                       backgroundColor: appTertiaryColor,
+                      color: appPrimaryColor,
                       cursor: 'pointer'
                     }
                   }}
                 >
-                  <PhoneIcon height={200} />
+                  <PhonelinkRingIcon sx={{ height: '50%', width: '50%' }} />
                 </Avatar>
               </Link>
             </Tooltip>
