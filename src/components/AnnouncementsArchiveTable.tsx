@@ -141,47 +141,71 @@ const AnnouncementsArchiveTable = (props: { boxSx?: SxProps }) => {
             </Typography>
             <Typography>These measures are the following, Please</Typography>
             <List sx={{ ml: 2 }}>
-              <ListItem>Bring and wear your own mask at all times.</ListItem>
               <ListItem>
-                Make sure you have your Wudu at home & only use Masjid bathrooms
-                for emergency.
+                <Typography>
+                  Bring and wear your own mask at all times.
+                </Typography>
               </ListItem>
               <ListItem>
-                Place your shoes on the rack outside the Masjid. Do NOT enter
-                with shoes on.
+                <Typography>
+                  Make sure you have your Wudu at home & only use Masjid
+                  bathrooms for emergency.
+                </Typography>
               </ListItem>
               <ListItem>
-                Maintain social distancing of 6 feet at all times, even during
-                the salah.
-              </ListItem>
-              <ListItem>Avoid hugging or shaking hands.</ListItem>
-              <ListItem>
-                Turn on the UV air cleaner when you enter the prayer hall and
-                turn it off after every one has left.
+                <Typography>
+                  Place your shoes on the rack outside the Masjid. Do NOT enter
+                  with shoes on.
+                </Typography>
               </ListItem>
               <ListItem>
-                No need to bring your own sajjadah as the masjid is been
-                disinfected by UV light prior to the salah.
+                <Typography>
+                  Maintain social distancing of 6 feet at all times, even during
+                  the salah.
+                </Typography>
               </ListItem>
               <ListItem>
-                If there is no space in the prayer hall then you may use the
-                other rooms prepared for the salah and if those rooms are
-                occupied, we will not be able to accommodate you and please do
-                not join the prayer. For this reason we recommend you come early
-                to have a place.
+                <Typography>Avoid hugging or shaking hands.</Typography>
               </ListItem>
               <ListItem>
-                If you are feeling ill, have fever or coughing please do not
-                come to the masjid till you feel fully recovered with a week of
-                no symptoms.
+                <Typography>
+                  Turn on the UV air cleaner when you enter the prayer hall and
+                  turn it off after every one has left.
+                </Typography>
               </ListItem>
               <ListItem>
-                Stay in your spot during the khutbah, salah and Sunnah
-                afterwards.
+                <Typography>
+                  No need to bring your own sajjadah as the masjid is been
+                  disinfected by UV light prior to the salah.
+                </Typography>
               </ListItem>
               <ListItem>
-                Children younger than 10 and elderly to avoid attending the
-                Salah.{' '}
+                <Typography>
+                  If there is no space in the prayer hall then you may use the
+                  other rooms prepared for the salah and if those rooms are
+                  occupied, we will not be able to accommodate you and please do
+                  not join the prayer. For this reason we recommend you come
+                  early to have a place.
+                </Typography>
+              </ListItem>
+              <ListItem>
+                <Typography>
+                  If you are feeling ill, have fever or coughing please do not
+                  come to the masjid till you feel fully recovered with a week
+                  of no symptoms.
+                </Typography>
+              </ListItem>
+              <ListItem>
+                <Typography>
+                  Stay in your spot during the khutbah, salah and Sunnah
+                  afterwards.
+                </Typography>
+              </ListItem>
+              <ListItem>
+                <Typography>
+                  Children younger than 10 and elderly to avoid attending the
+                  Salah.
+                </Typography>
               </ListItem>
             </List>
             <Typography>
@@ -217,7 +241,7 @@ const AnnouncementsArchiveTable = (props: { boxSx?: SxProps }) => {
               Sunnah of our beloved prophet Muhammad Sallalahu Alaihi Wa Sallam
               as he said "If you hear of an outbreak of plague in a land, do not
               enter it; but if the plague breaks out in a place while you are in
-              it, do not leave that place."{' '}
+              it, do not leave that place."
             </Typography>
             <Typography>Sahih al-Bukhari 5728</Typography>
             <Typography fontFamily='Noto Sans Arabic, sans-serif'>
@@ -421,9 +445,9 @@ const AnnouncementsArchiveTable = (props: { boxSx?: SxProps }) => {
             </Typography>
             <Typography>
               Please email us back with your request and your personal
-              information (name, phone number, address) and we will
-              inshaâ€™allah try our best to use all resources we have to assist
-              you and your family.{' '}
+              information (name, phone number, address) and we will insha'allah
+              try our best to use all resources we have to assist you and your
+              family.
             </Typography>
             <Typography>
               If you have any questions or require any assistance, please do not

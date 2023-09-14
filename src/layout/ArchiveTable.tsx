@@ -46,7 +46,7 @@ const Row = (props: { row: IRow }) => {
         >
           {row.expand && (
             <Collapse in={open} timeout='auto' unmountOnExit>
-              <Box sx={{ margin: 1 }}>{row.expand.child}</Box>
+              <Box sx={{ margin: 1, maxWidth: 1000 }}>{row.expand.child}</Box>
             </Collapse>
           )}
         </TableCell>
