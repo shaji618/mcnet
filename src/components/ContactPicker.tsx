@@ -95,7 +95,7 @@ const ContactPicker = () => {
               }
             ]}
           >
-              <Avatar sx={{ height: '100px', width: '100px', bgcolor:'#224a23' }} >
+              <Avatar sx={{ height: '100px', width: '100px', bgcolor: appPrimaryColor }} >
                   <MCNETIcon />
               </Avatar>
           </ArcherElement>
