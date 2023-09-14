@@ -1,6 +1,7 @@
 import { ArcherContainer, ArcherElement } from 'react-archer';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import PhoneOutlinedIcon from '@mui/icons-material/PhoneOutlined';
+import SmartphoneOutlinedIcon from '@mui/icons-material/SmartphoneOutlined';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import Stack from '@mui/material/Stack';
@@ -14,7 +15,6 @@ import {
   appSecondaryColor,
   appTertiaryColor
 } from '../util/constants';
-import { ReactComponent as PhoneIcon } from '../assets/svg-icons/phoneIcon.svg';
 import { ReactComponent as MCNETIcon } from '../assets/svg-icons/logo.svg';
 import Tooltip from '@mui/material/Tooltip';
 
@@ -134,6 +134,7 @@ const ContactPicker = () => {
               <CardMedia
                 component='iframe'
                 image='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3216.1047652679135!2d-82.40763692433264!3d36.28550779654397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x885a635ecc697bbb%3A0x583dc06d8c043738!2s3010%20Antioch%20Rd%2C%20Johnson%20City%2C%20TN%2037604!5e0!3m2!1sen!2sus!4v1693968027634!5m2!1sen!2sus'
+                // TODO: remove explicit width
                 sx={{ border: '0px', height: '100%', width: 400 }}
               />
             </ArcherElement>
@@ -152,11 +153,12 @@ const ContactPicker = () => {
                     width: 300,
                     '&:hover': {
                       backgroundColor: appTertiaryColor,
+                      color: appPrimaryColor,
                       cursor: 'pointer'
                     }
                   }}
                 >
-                  <PhoneIcon height={200} />
+                  <SmartphoneOutlinedIcon sx={{ height: '50%', width: '50%'}} />
                 </Avatar>
               </Link>
             </Tooltip>
