@@ -2,8 +2,10 @@ import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import { NavLink } from 'react-router-dom';
+import { PATHS } from '../util/constants';
+import { ReactElement } from 'react';
 
-const MCNETHistory = () => {
+const MCNETHistory = (): ReactElement => {
   return (
     <>
       <Typography>
@@ -132,7 +134,7 @@ const MCNETHistory = () => {
         Muslims. New and existing programs continuously widen its outreach and
         evangelizes the teaching of sharing, sacrificing and standing by not
         only for the community or country, but for all of humanity. See our
-        programs <NavLink to='/programs'>here</NavLink>.
+        programs <NavLink to={PATHS.PROGRAMS_PAGE}>here</NavLink>.
       </Typography>
     </>
   );

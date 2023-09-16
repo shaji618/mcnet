@@ -1,10 +1,12 @@
 import Typography from '@mui/material/Typography';
-import ArchiveTable, { IRow } from '../layout/ArchiveTable';
-import { appTertiaryColor } from '../util/constants';
+import ArchiveTable, { ArchiveTableRow } from '../layout/ArchiveTable';
 import Box from '@mui/material/Box';
+import BodySubHeader from '../layout/BodySubheader';
+import { ReactElement } from 'react';
+import { ANNOUNCEMENT_TYPES } from '../util/constants';
 
-const PressReleasesArchiveTable = () => {
-  const rows: IRow[] = [
+const PressReleasesArchiveTable = (): ReactElement => {
+  const rows: ArchiveTableRow[] = [
     {
       columnOneData: 'Islam Forbids Extremism',
       columnTwoData: 'April 2, 2018',
@@ -29,17 +31,8 @@ const PressReleasesArchiveTable = () => {
   ];
 
   return (
-    <Box id='press-releases'>
-      <Typography
-        sx={{
-          textAlign: 'center',
-          textDecoration: `underline ${appTertiaryColor} 1px`,
-          textUnderlineOffset: '0.3em'
-        }}
-        variant='h4'
-      >
-        PRESS RELEASES ARCHIVE
-      </Typography>
+    <Box id={ANNOUNCEMENT_TYPES.PRESS_RELEASES}>
+      <BodySubHeader>PRESS RELEASES ARCHIVE</BodySubHeader>
       <ArchiveTable
         rows={rows}
         columnOneHeader={'Title'}

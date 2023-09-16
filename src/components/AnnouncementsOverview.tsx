@@ -1,10 +1,12 @@
 import { ReactComponent as Megaphone } from '../assets/svg-icons/loudspeaker.svg';
 import { ReactComponent as Microphone } from '../assets/svg-icons/microphone.svg';
 import { ReactComponent as CalendarIcon } from '../assets/svg-icons/calendar.svg';
-import { ReactNode, useState } from 'react';
-import { appTertiaryColor } from '../util/constants';
-import Calendar from 'react-calendar';
-import './styles/react-calendar.css';
+import { ReactElement, ReactNode, useState } from 'react';
+import {
+  ANNOUNCEMENT_TYPES,
+  APP_TERTIARY_COLOR,
+  PATHS
+} from '../util/constants';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
@@ -12,12 +14,18 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
+import { HashLink } from 'react-router-hash-link';
+import { DailyEventsTable } from './EventsCalendar';
+import { dailyEventRows } from '../data/dailyEventRows';
+
+export type Announcements =
+  (typeof ANNOUNCEMENT_TYPES)[keyof typeof ANNOUNCEMENT_TYPES];
 
 const HeaderIcon = (props: {
   active?: boolean;
   icon: ReactNode;
   headerText: string;
-}) => {
+}): ReactElement => {
   const { active, icon, headerText } = props;
   return (
     <Grid item md={4}>
@@ -31,11 +39,11 @@ const HeaderIcon = (props: {
             padding: '0 1em  0 1em',
             width: '9em',
             '&:hover': {
-              backgroundColor: appTertiaryColor,
+              backgroundColor: APP_TERTIARY_COLOR,
               cursor: 'pointer'
             },
             '&.active': {
-              backgroundColor: appTertiaryColor
+              backgroundColor: APP_TERTIARY_COLOR
             }
           }}
           variant='rounded'
@@ -52,10 +60,10 @@ const HeaderIcon = (props: {
   );
 };
 
-const AnnouncementsOverview = () => {
-  const [announcementState, setAnnouncementState] = useState<
-    'announcements' | 'pressReleases' | 'events'
-  >('announcements');
+const AnnouncementsOverview = (): ReactElement => {
+  const [announcementState, setAnnouncementState] = useState<Announcements>(
+    ANNOUNCEMENT_TYPES.ANNOUNCEMENTS
+  );
 
   return (
     <Box width='100%' height='750px'>
@@ -63,9 +71,14 @@ const AnnouncementsOverview = () => {
         Communications
       </Typography>
       <Grid container justifyContent='center'>
-        <Box mr={1} onClick={() => setAnnouncementState('announcements')}>
+        <Box
+          mr={1}
+          onClick={(): void =>
+            setAnnouncementState(ANNOUNCEMENT_TYPES.ANNOUNCEMENTS)
+          }
+        >
           <HeaderIcon
-            active={announcementState === 'announcements'}
+            active={announcementState === ANNOUNCEMENT_TYPES.ANNOUNCEMENTS}
             icon={
               <Megaphone
                 style={{ height: '5em', width: '5em', margin: '0 auto' }}
@@ -74,9 +87,14 @@ const AnnouncementsOverview = () => {
             headerText='ANNOUNCEMENTS'
           />
         </Box>
-        <Box mr={1} onClick={() => setAnnouncementState('pressReleases')}>
+        <Box
+          mr={1}
+          onClick={(): void =>
+            setAnnouncementState(ANNOUNCEMENT_TYPES.PRESS_RELEASES)
+          }
+        >
           <HeaderIcon
-            active={announcementState === 'pressReleases'}
+            active={announcementState === ANNOUNCEMENT_TYPES.PRESS_RELEASES}
             icon={
               <Microphone
                 style={{ height: '5em', width: '5em', margin: '0 auto' }}
@@ -85,7 +103,7 @@ const AnnouncementsOverview = () => {
             headerText='PRESS RELEASES'
           />
         </Box>
-        <Box onClick={() => setAnnouncementState('events')}>
+        <Box onClick={(): void => setAnnouncementState('events')}>
           <HeaderIcon
             active={announcementState === 'events'}
             icon={
@@ -97,7 +115,7 @@ const AnnouncementsOverview = () => {
           />
         </Box>
         <Grid item md={12}>
-          {announcementState === 'announcements' && (
+          {announcementState === ANNOUNCEMENT_TYPES.ANNOUNCEMENTS && (
             <>
               <Typography variant='h5'>Eid 2023</Typography>
               <Typography>EID MUBARAK to all of you!</Typography>
@@ -142,12 +160,18 @@ const AnnouncementsOverview = () => {
                 </ListItem>
               </List>
               <Typography>BarakAllaaho Feekom</Typography>
-              <Typography color='gray'>
+              <Typography color='gray' mb={2}>
                 Posted on April 20, 2023 by MCNET
               </Typography>
+              <HashLink
+                smooth
+                to={`${PATHS.INFORMATION_PAGE}#${ANNOUNCEMENT_TYPES.ANNOUNCEMENTS}`}
+              >
+                To see previous announcements, click here.
+              </HashLink>
             </>
           )}
-          {announcementState === 'pressReleases' && (
+          {announcementState === ANNOUNCEMENT_TYPES.PRESS_RELEASES && (
             <>
               <Typography variant='h5'>Islam Forbids Extremism</Typography>
               <Typography>
@@ -161,12 +185,28 @@ const AnnouncementsOverview = () => {
                 shall be as if he had saved the life of all mankind.
               </Typography>
               <Typography>-- Qur'an 5:32</Typography>
-              <Typography color='gray'>
+              <Typography color='gray' mb={2}>
                 Posted on April 2, 2018 by MCNET
               </Typography>
+              <HashLink
+                smooth
+                to={`${PATHS.INFORMATION_PAGE}#${ANNOUNCEMENT_TYPES.PRESS_RELEASES}`}
+              >
+                To see previous press releases, click here.
+              </HashLink>
             </>
           )}
-          {announcementState === 'events' && <Calendar />}
+          {announcementState === 'events' && (
+            <>
+              <DailyEventsTable rows={dailyEventRows} />
+              <HashLink
+                smooth
+                to={`${PATHS.INFORMATION_PAGE}#${ANNOUNCEMENT_TYPES.EVENTS}`}
+              >
+                To see a full calendar of events, click here.
+              </HashLink>
+            </>
+          )}
         </Grid>
       </Grid>
     </Box>

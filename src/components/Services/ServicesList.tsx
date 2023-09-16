@@ -2,21 +2,32 @@ import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import { appPrimaryColor, appSecondaryColor } from '../util/constants';
-import { ReactComponent as PrayerHands } from '../assets/svg-icons/prayerHands.svg';
-import { ReactComponent as WeddingRings } from '../assets/svg-icons/wedding.svg';
-import { ReactComponent as Funeral } from '../assets/svg-icons/funeral.svg';
-import { ReactNode, SyntheticEvent, useState } from 'react';
+import {
+  APP_PRIMARY_COLOR,
+  APP_SECONDARY_COLOR,
+  SERVICE_TYPES
+} from '../../util/constants';
+import { ReactComponent as PrayerHands } from '../../assets/svg-icons/prayerHands.svg';
+import { ReactComponent as WeddingRings } from '../../assets/svg-icons/wedding.svg';
+import { ReactComponent as Funeral } from '../../assets/svg-icons/funeral.svg';
+import {
+  ReactElement,
+  ReactNode,
+  SyntheticEvent,
+  useEffect,
+  useState
+} from 'react';
 import Diversity1Icon from '@mui/icons-material/Diversity1';
 import ServicesAccordion from './ServicesAccordion';
+import { useLocation } from 'react-router-dom';
 
-export type Services = 'chaplaincy' | 'matrimonial' | 'funeral' | 'interfaith';
+export type Services = (typeof SERVICE_TYPES)[keyof typeof SERVICE_TYPES];
 
 const IconSelector = (props: {
   active?: boolean;
   svgComponent: ReactNode;
   title: string;
-}) => {
+}): ReactElement => {
   const { active, svgComponent, title } = props;
 
   return (
@@ -24,17 +35,17 @@ const IconSelector = (props: {
       <Avatar
         className={active ? 'active' : ''}
         sx={{
-          border: `1px solid ${appPrimaryColor}`,
+          border: `1px solid ${APP_PRIMARY_COLOR}`,
           borderRadius: '50%',
           height: 150,
           width: 150,
           margin: '0 auto',
           '&:hover': {
-            backgroundColor: appSecondaryColor,
+            backgroundColor: APP_SECONDARY_COLOR,
             cursor: 'pointer'
           },
           '&.active': {
-            backgroundColor: appSecondaryColor
+            backgroundColor: APP_SECONDARY_COLOR
           }
         }}
       >
@@ -53,12 +64,22 @@ const IconSelector = (props: {
   );
 };
 
-const ServicesList = () => {
+const ServicesList = (): ReactElement => {
+  const { hash } = useLocation();
+
   const [serviceActive, setServiceActive] = useState<Services | false>(
-    'chaplaincy'
+    SERVICE_TYPES.CHAPLAINCY
+  );
+  const [expanded, setExpanded] = useState<Services | false>(
+    SERVICE_TYPES.CHAPLAINCY
   );
 
-  const [expanded, setExpanded] = useState<Services | false>('chaplaincy');
+  useEffect(() => {
+    if (hash) {
+      setServiceActive(hash.replace('#', ''));
+      setExpanded(hash.replace('#', ''));
+    }
+  }, [hash]);
 
   const handleChange =
     (panel: Services) =>
@@ -75,41 +96,63 @@ const ServicesList = () => {
     // @ts-ignore
     event: React.MouseEvent<HTMLElement>,
     panel: Services
-  ) => {
+  ): void => {
+    if (window.location.hash) {
+      window.history.replaceState('', document.title, window.location.pathname);
+    }
+
     setExpanded(expanded === panel ? false : panel);
     setServiceActive(serviceActive !== panel ? panel : false);
   };
 
   return (
     <>
-      <Stack direction='row' mt={2} spacing={14} justifyContent='center'>
-        <Box mr={1} onClick={(e) => handleClick(e, 'chaplaincy')}>
+      <Stack
+        direction='row'
+        mt={2}
+        spacing={14}
+        sx={{ display: { xs: 'none', sm: 'none', md: 'flex' } }}
+        justifyContent='center'
+      >
+        <Box
+          mr={1}
+          onClick={(e): void => handleClick(e, SERVICE_TYPES.CHAPLAINCY)}
+        >
           <IconSelector
-            active={serviceActive === 'chaplaincy'}
+            active={serviceActive === SERVICE_TYPES.CHAPLAINCY}
             svgComponent={<PrayerHands height='50%' width='50%' />}
             title='CHAPLAINCY'
           />
         </Box>
-        <Box mr={1} onClick={(e) => handleClick(e, 'matrimonial')}>
+        <Box
+          mr={1}
+          onClick={(e): void => handleClick(e, SERVICE_TYPES.MATRIMONIAL)}
+        >
           <IconSelector
-            active={serviceActive === 'matrimonial'}
+            active={serviceActive === SERVICE_TYPES.MATRIMONIAL}
             svgComponent={<WeddingRings height='50%' width='50%' />}
             title='MATRIMONIAL SERVICES'
           />
         </Box>
-        <Box mr={1} onClick={(e) => handleClick(e, 'funeral')}>
+        <Box
+          mr={1}
+          onClick={(e): void => handleClick(e, SERVICE_TYPES.FUNERAL)}
+        >
           <IconSelector
-            active={serviceActive === 'funeral'}
+            active={serviceActive === SERVICE_TYPES.FUNERAL}
             svgComponent={<Funeral height='50%' width='50%' />}
             title='FUNERAL SERVICES'
           />
         </Box>
-        <Box mr={1} onClick={(e) => handleClick(e, 'interfaith')}>
+        <Box
+          mr={1}
+          onClick={(e): void => handleClick(e, SERVICE_TYPES.INTERFAITH)}
+        >
           <IconSelector
-            active={serviceActive === 'interfaith'}
+            active={serviceActive === SERVICE_TYPES.INTERFAITH}
             svgComponent={
               <Diversity1Icon
-                sx={{ color: appPrimaryColor, height: '50%', width: '50%' }}
+                sx={{ color: APP_PRIMARY_COLOR, height: '50%', width: '50%' }}
               />
             }
             title='INTERFAITH ADVOCACY'

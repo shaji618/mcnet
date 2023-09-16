@@ -3,7 +3,12 @@ export const currencyFormatter = new Intl.NumberFormat('en-US', {
   currency: 'USD'
 });
 
-export const getCurrentDate = () => {
+export const getCurrentDate = (): {
+  formatted: string;
+  month: number;
+  todaysDate: Date;
+  year: number;
+} => {
   const todaysDate = new Date();
   const options = {
     weekday: 'long',
@@ -19,6 +24,7 @@ export const getCurrentDate = () => {
       options
     ),
     month: todaysDate.getMonth(),
+    todaysDate,
     year: todaysDate.getFullYear()
   };
 };

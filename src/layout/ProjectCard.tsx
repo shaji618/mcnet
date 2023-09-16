@@ -3,17 +3,17 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import {
-  appPrimaryColor,
-  appSecondaryColor,
-  appTertiaryColor
+  APP_PRIMARY_COLOR,
+  APP_SECONDARY_COLOR,
+  APP_TERTIARY_COLOR
 } from '../util/constants';
-import { MouseEvent, ReactNode, useState } from 'react';
+import { MouseEvent, ReactElement, ReactNode, useState } from 'react';
 import Grid from '@mui/material/Grid';
 import ReactCardFlip from 'react-card-flip';
 import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
 import Badge from '@mui/material/Badge';
 import { currencyFormatter } from '../util/helpers';
-import DonateButton from './DonateButton';
+import DonateButton from '../components/DonateButton';
 import Chip from '@mui/material/Chip';
 
 const ProjectCard = (props: {
@@ -23,7 +23,7 @@ const ProjectCard = (props: {
   headerText: string;
   image: ReactNode;
   status: 'GOAL MET' | 'FUNDRAISING' | 'PLANNING';
-}) => {
+}): ReactElement => {
   const { backContent, fundsRaised, fundTarget, headerText, image, status } =
     props;
   const [isFlipped, setIsFlipped] = useState(false);
@@ -31,7 +31,7 @@ const ProjectCard = (props: {
   const fundsNeededRatio = fundsRaised / fundTarget;
   const areFundsNeededMet = fundsNeededRatio === 1;
 
-  const getChipColor = () => {
+  const getChipColor = (): 'primary' | 'success' | 'warning' => {
     switch (status) {
       case 'GOAL MET':
         return 'success';
@@ -43,7 +43,7 @@ const ProjectCard = (props: {
     }
   };
 
-  const handleClick = (event: MouseEvent<HTMLElement>) => {
+  const handleClick = (event: MouseEvent<HTMLElement>): void => {
     event.preventDefault();
     setIsFlipped(!isFlipped);
   };
@@ -55,7 +55,7 @@ const ProjectCard = (props: {
       mr={4}
       sx={{
         border: `1px solid ${
-          areFundsNeededMet ? appSecondaryColor : appTertiaryColor
+          areFundsNeededMet ? APP_SECONDARY_COLOR : APP_TERTIARY_COLOR
         }`,
         cursor: 'pointer'
       }}
@@ -79,7 +79,7 @@ const ProjectCard = (props: {
                 <Stack>
                   <CircularProgress
                     size={200}
-                    sx={{ color: appSecondaryColor }}
+                    sx={{ color: APP_SECONDARY_COLOR }}
                     value={fundsNeededRatio * 100}
                     variant='determinate'
                   />
@@ -125,8 +125,8 @@ const ProjectCard = (props: {
           </ReactCardFlip>
           <DonateButton
             sx={{
-              color: appPrimaryColor,
-              borderColor: appPrimaryColor,
+              color: APP_PRIMARY_COLOR,
+              borderColor: APP_PRIMARY_COLOR,
               mb: 2,
               mr: 2
             }}
@@ -135,7 +135,7 @@ const ProjectCard = (props: {
             <SwapHorizIcon
               sx={{
                 float: 'right',
-                color: appSecondaryColor
+                color: APP_SECONDARY_COLOR
               }}
             />
           </Box>

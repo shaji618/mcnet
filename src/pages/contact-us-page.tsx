@@ -4,8 +4,9 @@ import ContactForm from '../components/ContactForm';
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 import MailingListCTA from '../components/MailingListCTA';
+import { ReactElement } from 'react';
 
-export const ContactUs = () => {
+export const ContactUs = (): ReactElement => {
   return (
     <Page
       childrenBoxSx={{ display: 'grid', justifyItems: 'center' }}
@@ -13,7 +14,13 @@ export const ContactUs = () => {
       headerBody='MCNET offers several lines of communication.  Reach out to us with any inquiries, comments, or concerns you might have related to MCNET activities!'
     >
       <ContactPicker />
-      <Grid container direction='row' display='grid-inline' justifyItems='center' mt={4}>
+      <Grid
+        container
+        direction='row'
+        display='grid-inline'
+        justifyItems='center'
+        mt={4}
+      >
         <Grid item mr={2} width='48%'>
           <ContactForm />
         </Grid>

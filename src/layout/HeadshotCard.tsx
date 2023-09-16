@@ -8,7 +8,7 @@ import Stack from '@mui/material/Stack';
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import Link from '@mui/material/Link';
-import { appSecondaryColor } from '../util/constants';
+import { APP_SECONDARY_COLOR } from '../util/constants';
 
 const HeadshotCard = (props: {
   dimensions?: { height: string | number; width: string | number };
@@ -37,11 +37,11 @@ const HeadshotCard = (props: {
             {name}
           </Typography>
           <Stack direction='row'>
-            <WorkOutlineIcon sx={{ color: appSecondaryColor, mr: 1 }} />
+            <WorkOutlineIcon sx={{ color: APP_SECONDARY_COLOR, mr: 1 }} />
             <Typography>{title}</Typography>
           </Stack>
           <Stack direction='row' overflow='visible'>
-            <ContactMailIcon sx={{ color: appSecondaryColor, mr: 1 }} />
+            <ContactMailIcon sx={{ color: APP_SECONDARY_COLOR, mr: 1 }} />
             <Link href={`mailto:${email}`}>
               <Typography>{email}</Typography>
             </Link>

@@ -1,7 +1,7 @@
 // TODO: wire this up to the back end
 
-import { ChangeEvent, FormEvent, useState } from 'react';
-import { appSecondaryColor } from '../util/constants';
+import { ChangeEvent, FormEvent, ReactElement, useState } from 'react';
+import { APP_SECONDARY_COLOR } from '../util/constants';
 import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
@@ -10,7 +10,7 @@ import Snackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 
-const ContactForm = () => {
+const ContactForm = (): ReactElement => {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -24,14 +24,14 @@ const ContactForm = () => {
 
   const handlePhoneNumberChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  ): void => {
     const value = e.target.value;
     if (value === '' || /^[0-9\s\+\-\(\)]+$/.test(value)) {
       setPhoneNumber(value);
     }
   };
 
-  const handleSubmit = (event: FormEvent) => {
+  const handleSubmit = (event: FormEvent): void => {
     event.preventDefault();
     setFullName('');
     setFullNameTouched(false);
@@ -56,7 +56,7 @@ const ContactForm = () => {
     // @ts-ignore
     event: React.SyntheticEvent | Event,
     reason?: string
-  ) => {
+  ): void => {
     if (reason === 'clickaway') {
       return;
     }
@@ -81,7 +81,7 @@ const ContactForm = () => {
   return (
     <>
       <Card
-        sx={{ bgcolor: `${appSecondaryColor}1F`, padding: '2em' }}
+        sx={{ bgcolor: `${APP_SECONDARY_COLOR}1F`, padding: '2em' }}
         variant='outlined'
       >
         <Typography textAlign='center' variant='h5'>
@@ -98,8 +98,8 @@ const ContactForm = () => {
             fullNameTouched && fullName === '' ? 'Please enter your name.' : ' '
           }
           label='Name'
-          onChange={(e) => setFullName(e.target.value)}
-          onFocus={() => setFullNameTouched(true)}
+          onChange={(e): void => setFullName(e.target.value)}
+          onFocus={(): void => setFullNameTouched(true)}
           required
           sx={{
             mb: 1
@@ -116,8 +116,8 @@ const ContactForm = () => {
             emailErrorCondition ? 'Please enter a valid email address.' : ' '
           }
           label='Email'
-          onChange={(e) => setEmail(e.target.value)}
-          onFocus={() => setEmailTouched(true)}
+          onChange={(e): void => setEmail(e.target.value)}
+          onFocus={(): void => setEmailTouched(true)}
           sx={{ mb: 1 }}
           type='email'
           value={email}
@@ -133,8 +133,8 @@ const ContactForm = () => {
               : ' '
           }
           label='Phone number'
-          onChange={(e) => handlePhoneNumberChange(e)}
-          onFocus={() => setPhoneNumberTouched(true)}
+          onChange={(e): void => handlePhoneNumberChange(e)}
+          onFocus={(): void => setPhoneNumberTouched(true)}
           sx={{ mb: 1 }}
           type='tel'
           value={phoneNumber}
@@ -153,8 +153,8 @@ const ContactForm = () => {
           minRows={5}
           maxRows={5}
           multiline
-          onFocus={() => setMessageTouched(true)}
-          onChange={(e) => setMessage(e.target.value)}
+          onFocus={(): void => setMessageTouched(true)}
+          onChange={(e): void => setMessage(e.target.value)}
           required
           sx={{ mb: 2 }}
           value={message}

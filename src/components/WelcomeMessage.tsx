@@ -1,13 +1,14 @@
 import Image from 'mui-image';
 import { Link } from 'react-router-dom';
-import { appSecondaryColor } from '../util/constants';
+import { APP_SECONDARY_COLOR, PATHS, SERVICE_TYPES } from '../util/constants';
 import croppedRainbowMasjid from '../assets/mosque-photos/croppedRainbowMasjid.png';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import { ReactElement } from 'react';
 
 // TODO: fix the mobile layout here
-const WelcomeText = () => {
+const WelcomeText = (): ReactElement => {
   return (
     <>
       <Typography sx={{ mb: 2, mt: 1 }}>
@@ -27,21 +28,34 @@ const WelcomeText = () => {
       <Typography>
         The mosque hosts communal prayers for the five daily prayers and the{' '}
         <Link
-          style={{ color: appSecondaryColor, textDecoration: 'inherit' }}
+          style={{ color: APP_SECONDARY_COLOR, textDecoration: 'inherit' }}
           to='/jummah-prayers'
         >
           Friday sermons
         </Link>
-        . In addition community services such as matrimonial and funeral
+        . In addition community services such as{' '}
+        <Link
+          style={{ color: APP_SECONDARY_COLOR, textDecoration: 'inherit' }}
+          to={`${PATHS.SERVICES_PAGE}#${SERVICE_TYPES.MATRIMONIAL}`}
+        >
+          matrimonial
+        </Link>{' '}
+        and{' '}
+        <Link
+          style={{ color: APP_SECONDARY_COLOR, textDecoration: 'inherit' }}
+          to={`${PATHS.SERVICES_PAGE}#${SERVICE_TYPES.FUNERAL}`}
+        >
+          funeral
+        </Link>{' '}
         services are provided to local Muslims.
       </Typography>
     </>
   );
 };
 
-const WelcomeMessage = () => {
+const WelcomeMessage = (): ReactElement => {
   return (
-    <Box sx={{ flexGrow: 1, margin: '0 auto' }}>
+    <Box mb={2} sx={{ flexGrow: 1, margin: '0 auto' }}>
       <Grid
         columns={{ xs: 4, sm: 8, md: 12 }}
         container

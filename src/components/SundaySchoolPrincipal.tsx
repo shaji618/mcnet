@@ -1,22 +1,14 @@
 import Typography from '@mui/material/Typography';
-import { appTertiaryColor } from '../util/constants';
 import HeadshotCard from '../layout/HeadshotCard';
 import Stack from '@mui/material/Stack';
 import Grid from '@mui/material/Grid';
+import BodySubHeader from '../layout/BodySubheader';
+import { ReactElement } from 'react';
 
-const SundaySchoolPrincipal = () => {
+const SundaySchoolPrincipal = (): ReactElement => {
   return (
     <Stack>
-      <Typography
-        sx={{
-          mb: 2,
-          textDecoration: `underline ${appTertiaryColor} 1px`,
-          textUnderlineOffset: '0.3em'
-        }}
-        variant='h5'
-      >
-        MEET THE PRINCIPAL
-      </Typography>
+      <BodySubHeader>MEET THE PRINCIPAL</BodySubHeader>
       <Grid container alignItems='center'>
         <Grid item md={6}>
           <HeadshotCard

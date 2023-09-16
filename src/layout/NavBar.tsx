@@ -9,7 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import { appPrimaryColor, appSecondaryColor } from '../util/constants';
+import { APP_PRIMARY_COLOR, APP_SECONDARY_COLOR } from '../util/constants';
 import { ReactComponent as Logo } from '../assets/svg-icons/logo.svg';
 import { NavLink } from 'react-router-dom';
 import SvgIcon from '@mui/material/SvgIcon';
@@ -38,11 +38,11 @@ const StyledMenuItem = (props: {
       {isMobile ? (
         <MenuItem key={pageTitle} onClick={onClick}>
           <Typography
-            color={appPrimaryColor}
+            color={APP_PRIMARY_COLOR}
             textAlign='center'
             sx={{
               '&:hover': {
-                color: appSecondaryColor
+                color: APP_SECONDARY_COLOR
               }
             }}
           >
@@ -58,7 +58,7 @@ const StyledMenuItem = (props: {
             color: 'white',
             display: 'block',
             '&:hover': {
-              color: appSecondaryColor
+              color: APP_SECONDARY_COLOR
             }
           }}
         >
@@ -82,7 +82,7 @@ const NavBar = () => {
 
   return (
     <>
-      <AppBar position='sticky' sx={{ backgroundColor: appPrimaryColor }}>
+      <AppBar position='sticky' sx={{ backgroundColor: APP_PRIMARY_COLOR }}>
         <Container maxWidth='xl'>
           <Toolbar disableGutters>
             <SvgIcon

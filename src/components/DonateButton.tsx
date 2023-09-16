@@ -1,13 +1,14 @@
 import Button from '@mui/material/Button';
 import {
-  appPrimaryColor,
-  appSecondaryColor,
-  appTertiaryColor
+  APP_PRIMARY_COLOR,
+  APP_SECONDARY_COLOR,
+  APP_TERTIARY_COLOR
 } from '../util/constants';
 import { SxProps } from '@mui/material/styles';
+import { ReactElement } from 'react';
 
 // TODO: use https://www.npmjs.com/package/@paypal/react-paypal-js ?
-const DonateButton = (props: { sx?: SxProps }) => {
+const DonateButton = (props: { sx?: SxProps }): ReactElement => {
   return (
     <Button
       variant='outlined'
@@ -17,9 +18,9 @@ const DonateButton = (props: { sx?: SxProps }) => {
         outlineColor: '#fff',
         borderColor: '#fff',
         '&:hover': {
-          backgroundColor: appSecondaryColor,
-          color: appPrimaryColor,
-          borderColor: appTertiaryColor
+          backgroundColor: APP_SECONDARY_COLOR,
+          color: APP_PRIMARY_COLOR,
+          borderColor: APP_TERTIARY_COLOR
         },
         ...props.sx
       }}

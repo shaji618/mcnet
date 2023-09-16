@@ -1,14 +1,18 @@
 import Typography from '@mui/material/Typography';
-import ArchiveTable, { IRow } from '../layout/ArchiveTable';
+import ArchiveTable, { ArchiveTableRow } from '../layout/ArchiveTable';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import Link from '@mui/material/Link';
-import { appTertiaryColor } from '../util/constants';
 import Box from '@mui/material/Box';
 import { SxProps } from '@mui/material/styles';
+import BodySubHeader from '../layout/BodySubheader';
+import { ReactElement } from 'react';
+import { ANNOUNCEMENT_TYPES } from '../util/constants';
 
-const AnnouncementsArchiveTable = (props: { boxSx?: SxProps }) => {
-  const rows: IRow[] = [
+const AnnouncementsArchiveTable = (props: {
+  boxSx?: SxProps;
+}): ReactElement => {
+  const rows: ArchiveTableRow[] = [
     {
       columnOneData: 'Eid 2023',
       columnTwoData: 'April 20, 2023',
@@ -392,27 +396,41 @@ const AnnouncementsArchiveTable = (props: { boxSx?: SxProps }) => {
               are attending. We however strongly encourage the following:
             </Typography>
             <List sx={{ ml: 2 }}>
-              <ListItem>Only young and healthy people to attend.</ListItem>
               <ListItem>
-                If you have any symptoms of cold and congestion, please stay at
-                home till you fully recover.
+                <Typography>
+                  Only young and healthy people to attend.
+                </Typography>
               </ListItem>
               <ListItem>
-                Make every effort to make Wudu (ablution) at home to avoid
-                congestion in the bathroom area.
+                <Typography>
+                  If you have any symptoms of cold and congestion, please stay
+                  at home till you fully recover.
+                </Typography>
               </ListItem>
               <ListItem>
-                Make your stay at the masjid short and try to leave as soon as
-                prayer is over.
+                <Typography>
+                  Make every effort to make Wudu (ablution) at home to avoid
+                  congestion in the bathroom area.
+                </Typography>
               </ListItem>
               <ListItem>
-                Bring your own prayer rug as there are recent data suggesting
-                the virus may stay alive for longer period on surfaces than
-                thought originally.
+                <Typography>
+                  Make your stay at the masjid short and try to leave as soon as
+                  prayer is over.
+                </Typography>
               </ListItem>
               <ListItem>
-                Bring hand sanitizer with you if you have one and wash your
-                hands with soap and water frequently.
+                <Typography>
+                  Bring your own prayer rug as there are recent data suggesting
+                  the virus may stay alive for longer period on surfaces than
+                  thought originally.
+                </Typography>
+              </ListItem>
+              <ListItem>
+                <Typography>
+                  Bring hand sanitizer with you if you have one and wash your
+                  hands with soap and water frequently.
+                </Typography>
               </ListItem>
             </List>
             <Typography>
@@ -466,17 +484,8 @@ const AnnouncementsArchiveTable = (props: { boxSx?: SxProps }) => {
   ];
 
   return (
-    <Box sx={{ ...props.boxSx }}>
-      <Typography
-        sx={{
-          textAlign: 'center',
-          textDecoration: `underline ${appTertiaryColor} 1px`,
-          textUnderlineOffset: '0.3em'
-        }}
-        variant='h4'
-      >
-        ANNOUNCEMENTS ARCHIVE
-      </Typography>
+    <Box id={ANNOUNCEMENT_TYPES.ANNOUNCEMENTS} sx={{ ...props.boxSx }}>
+      <BodySubHeader>ANNOUNCEMENTS ARCHIVE</BodySubHeader>
       <ArchiveTable
         rows={rows}
         columnOneHeader={'Title'}

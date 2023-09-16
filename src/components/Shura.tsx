@@ -2,8 +2,9 @@ import Grid from '@mui/material/Grid';
 import sMalikHeadshot from '../assets/headshots/sMalikHeadshot.jpg';
 import aWarsyHeadshot from '../assets/headshots/aWarsyHeadshot.png';
 import HeadshotCard from '../layout/HeadshotCard';
+import { ReactElement } from 'react';
 
-const Shura = () => {
+const Shura = (): ReactElement => {
   return (
     <>
       <Grid justifyContent='center' container mt={2} spacing={2}>

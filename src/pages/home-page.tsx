@@ -4,28 +4,19 @@ import Typography from '@mui/material/Typography';
 import WelcomeMessage from '../components/WelcomeMessage';
 import Page from '../layout/Page';
 import PrayerTimings from '../components/PrayerTimings';
-import { appTertiaryColor } from '../util/constants';
 import AnnouncementsOverview from '../components/AnnouncementsOverview';
 import Image from 'mui-image';
 import filteredMasjid from '../assets/mosque-photos/filteredMasjid.jpg';
 import HomePageFlipCards from '../components/HomePageFlipCards';
 import Link from '@mui/material/Link';
+import BodySubHeader from '../layout/BodySubheader';
+import { ReactElement } from 'react';
 
-export const Home = () => {
+export const Home = (): ReactElement => {
   return (
     <Page>
       <WelcomeMessage />
-      <Typography
-        my={7}
-        textAlign='center'
-        variant='h3'
-        sx={{
-          textDecoration: `underline ${appTertiaryColor} 1px`,
-          textUnderlineOffset: '15px'
-        }}
-      >
-        INFORMATION
-      </Typography>
+      <BodySubHeader variant='h3'>INFORMATION</BodySubHeader>
       <Grid container spacing={3} direction='row' alignItems='stretch'>
         <Grid item md={6}>
           <AnnouncementsOverview />
@@ -50,28 +41,18 @@ export const Home = () => {
           </Grid>
         </Grid>
       </Grid>
-      <Box mb={4}>
-        <Typography
-          my={2}
-          textAlign='center'
-          variant='h3'
-          sx={{
-            textDecoration: `underline ${appTertiaryColor} 1px`,
-            textUnderlineOffset: '15px'
-          }}
-        >
-          WHO WE ARE
-        </Typography>
+      <Box my={4}>
+        <BodySubHeader variant='h3'>WHO WE ARE</BodySubHeader>
         <HomePageFlipCards />
-        <Link
-          href='https://en.wikipedia.org/wiki/Five_Pillars_of_Islam'
-          rel='noreferrer'
-          target='_blank'
-        >
-          <Typography fontSize={12} my={4} textAlign='center'>
+        <Typography fontSize={12} my={3} textAlign='center'>
+          <Link
+            href='https://en.wikipedia.org/wiki/Five_Pillars_of_Islam'
+            rel='noreferrer'
+            target='_blank'
+          >
             To find out more about the pillars of Islam, click here.
-          </Typography>
-        </Link>
+          </Link>
+        </Typography>
       </Box>
     </Page>
   );

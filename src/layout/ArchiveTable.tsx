@@ -10,45 +10,41 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import { ReactNode, useState } from 'react';
+import { ReactElement, ReactNode, useState } from 'react';
 
-export interface IRow {
+export interface ArchiveTableRow {
   columnOneData: string;
   columnTwoData: string | ReactNode;
-  expand?: { child: ReactNode };
+  expand: { child: ReactNode };
 }
 
-const Row = (props: { row: IRow }) => {
+const Row = (props: { row: ArchiveTableRow }): ReactElement => {
   const { row } = props;
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
-        {row.expand && (
-          <TableCell>
-            <IconButton
-              aria-label='expand row'
-              size='small'
-              onClick={() => setOpen(!open)}
-            >
-              {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-            </IconButton>
-          </TableCell>
-        )}
+      <TableRow
+        onClick={(): void => setOpen(!open)}
+        sx={{
+          cursor: 'pointer',
+          '& > *': { borderBottom: 'unset' }
+        }}
+      >
+        <TableCell>
+          <IconButton aria-label='expand row' size='small'>
+            {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+          </IconButton>
+        </TableCell>
+
         <TableCell>{row.columnOneData}</TableCell>
         <TableCell>{row.columnTwoData}</TableCell>
       </TableRow>
       <TableRow>
-        <TableCell
-          style={{ paddingBottom: 0, paddingTop: 0 }}
-          colSpan={row.expand ? 3 : 2}
-        >
-          {row.expand && (
-            <Collapse in={open} timeout='auto' unmountOnExit>
-              <Box sx={{ margin: 1, maxWidth: 1000 }}>{row.expand.child}</Box>
-            </Collapse>
-          )}
+        <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={3}>
+          <Collapse in={open} timeout='auto' unmountOnExit>
+            <Box sx={{ margin: 1, maxWidth: 1000 }}>{row.expand.child}</Box>
+          </Collapse>
         </TableCell>
       </TableRow>
     </>
@@ -56,18 +52,17 @@ const Row = (props: { row: IRow }) => {
 };
 
 const ArchiveTable = (
-  props: { rows: IRow[] } & {
+  props: { rows: ArchiveTableRow[] } & {
     columnOneHeader: string;
     columnTwoHeader: string;
-    hideExpandColumn?: boolean;
   }
-) => {
+): ReactElement => {
   return (
     <TableContainer component={Paper}>
       <Table aria-label='collapsible table'>
         <TableHead>
           <TableRow>
-            {!props.hideExpandColumn && <TableCell>Expand</TableCell>}
+            <TableCell>Expand</TableCell>
             <TableCell>{props.columnOneHeader}</TableCell>
             <TableCell>{props.columnTwoHeader}</TableCell>
           </TableRow>

@@ -1,3 +1,31 @@
-export const appPrimaryColor = '#224a23';
-export const appSecondaryColor = '#89c68b';
-export const appTertiaryColor = '#ffdd40';
+// Paths
+export const PATHS = {
+  ABOUT_US: '/about-us',
+  CONTACT_US_PAGE: '/contact-us',
+  INFORMATION_PAGE: '/information',
+  JUMMAH_PRAYERS_PAGE: '/jummah-prayers',
+  PROGRAMS_PAGE: '/programs',
+  SERVICES_PAGE: '/services',
+  SUNDAY_SCHOOL_PAGE: '/sunday-school',
+  UPCOMING_PROJECTS_PAGE: '/upcoming-projects'
+};
+
+// Colors
+export const APP_PRIMARY_COLOR = '#224a23';
+export const APP_SECONDARY_COLOR = '#89c68b';
+export const APP_TERTIARY_COLOR = '#ffdd40';
+
+// Services
+export const SERVICE_TYPES = {
+  CHAPLAINCY: 'chaplaincy',
+  FUNERAL: 'funeral',
+  INTERFAITH: 'interfaith',
+  MATRIMONIAL: 'matrimonial'
+};
+
+// Announcement types
+export const ANNOUNCEMENT_TYPES = {
+  ANNOUNCEMENTS: 'announcements',
+  EVENTS: 'events',
+  PRESS_RELEASES: 'press-releases'
+};

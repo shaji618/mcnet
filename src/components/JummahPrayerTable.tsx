@@ -1,12 +1,16 @@
 import Typography from '@mui/material/Typography';
-import ArchiveTable, { IRow } from '../layout/ArchiveTable';
+import ArchiveTable, { ArchiveTableRow } from '../layout/ArchiveTable';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import Box from '@mui/material/Box';
 import LinkIcon from '@mui/icons-material/Link';
 import Link from '@mui/material/Link';
+import { ReactElement } from 'react';
 
-const ExpandContent = (props: { khutbaUrl: string; recordingUrl: string }) => {
+const ExpandContent = (props: {
+  khutbaUrl: string;
+  recordingUrl: string;
+}): ReactElement => {
   return (
     <List sx={{ listStyleType: 'none' }}>
       <ListItem>
@@ -39,8 +43,8 @@ const ExpandContent = (props: { khutbaUrl: string; recordingUrl: string }) => {
   );
 };
 
-const JummahPrayerTable = () => {
-  const rows: IRow[] = [
+const JummahPrayerTable = (): ReactElement => {
+  const rows: ArchiveTableRow[] = [
     {
       columnOneData: 'Jabbar Ghazi',
       columnTwoData: 'September 2, 2023',

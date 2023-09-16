@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { appPrimaryColor, appSecondaryColor } from '../util/constants';
+import { ReactElement, useEffect, useState } from 'react';
+import { APP_PRIMARY_COLOR, APP_SECONDARY_COLOR } from '../util/constants';
 import { ReactComponent as Spinner } from '../assets/svg-icons/spinner.svg';
 import moment from 'moment';
 import Box from '@mui/material/Box';
@@ -17,7 +17,7 @@ import { getCurrentDate } from '../util/helpers';
 const requestUrl =
   'https://islamicfinder.us/index.php/api/prayer_times?country=US&zipcode=37604';
 
-const PrayerTimings = () => {
+const PrayerTimings = (): ReactElement => {
   const [prayerData, setPrayerData] = useState({
     results: { Fajr: '', Duha: '', Dhuhr: '', Asr: '', Maghrib: '', Isha: '' }
   });
@@ -28,11 +28,10 @@ const PrayerTimings = () => {
     getPrayerDataWithFetch();
   }, []);
 
-  const getPrayerDataWithFetch = async () => {
+  const getPrayerDataWithFetch = async (): Promise<void> => {
     const controller = new AbortController();
-    // TODO: create a GH issue to make this work
-    // @ts-ignore
-    const timeoutId = setTimeout(() => controller.abort(), 5000);
+
+    // const timeoutId = setTimeout(() => controller.abort(), 5000);
     try {
       const response = await fetch(requestUrl, { signal: controller.signal });
 
@@ -53,10 +52,10 @@ const PrayerTimings = () => {
     { name: 'Isha', timing: prayerData.results.Isha.replace(/%/g, '') }
   ];
 
-  const compareFormattedTimes = (inputTime: string) => {
-    const date = new Date();
+  const compareFormattedTimes = (inputTime: string): boolean => {
+    const date = getCurrentDate();
 
-    const currentFormattedTime = date.toTimeString().split(' ')[0];
+    const currentFormattedTime = date.todaysDate.toTimeString().split(' ')[0];
 
     const formattedInputTime = moment(inputTime, 'h:mm a').format('HH:mm:ss');
 
@@ -71,12 +70,12 @@ const PrayerTimings = () => {
       <TableContainer
         sx={{
           borderRadius: '1em',
-          boxShadow: `0 0 1em ${appPrimaryColor}`
+          boxShadow: `0 0 1em ${APP_PRIMARY_COLOR}`
         }}
       >
         <Table>
           <TableHead>
-            <TableRow sx={{ backgroundColor: appPrimaryColor }}>
+            <TableRow sx={{ backgroundColor: APP_PRIMARY_COLOR }}>
               <TableCell sx={{ color: '#fff' }}>Salat</TableCell>
               <TableCell sx={{ color: '#fff' }}>Time</TableCell>
             </TableRow>
@@ -87,7 +86,7 @@ const PrayerTimings = () => {
                 <TableRow
                   sx={{
                     '&:nth-of-type(even)': {
-                      backgroundColor: appSecondaryColor
+                      backgroundColor: APP_SECONDARY_COLOR
                     }
                   }}
                 >
