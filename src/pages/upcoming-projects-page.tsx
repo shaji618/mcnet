@@ -1,13 +1,14 @@
 import Grid from '@mui/material/Grid';
-import ProjectCard from '../components/ProjectCard';
+import ProjectCard from '../layout/ProjectCard';
 import Page from '../layout/Page';
 import { ReactComponent as Duplex } from '../assets/svg-icons/duplex.svg';
 import { ReactComponent as Construction } from '../assets/svg-icons/construction.svg';
 import Typography from '@mui/material/Typography';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
+import { ReactElement } from 'react';
 
-export const UpcomingProjects = () => {
+export const UpcomingProjects = (): ReactElement => {
   return (
     <Page headerText='UPCOMING PROJECTS'>
       <Grid container justifyContent='center' spacing={2}>

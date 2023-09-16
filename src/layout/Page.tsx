@@ -3,32 +3,31 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { createTheme, SxProps, ThemeProvider } from '@mui/material/styles';
 import {
-  appPrimaryColor,
-  appSecondaryColor,
-  appTertiaryColor
+  APP_PRIMARY_COLOR,
+  APP_SECONDARY_COLOR,
+  APP_TERTIARY_COLOR
 } from '../util/constants';
-import ConstructionIcon from '@mui/icons-material/Construction';
+import BodySubHeader from './BodySubheader';
 
 type Props = {
   children?: ReactNode;
   childrenBoxSx?: SxProps;
   headerBody?: string | ReactNode;
   headerText?: string;
-  isUnderConstruction?: boolean;
 };
 
 const pageTheme = createTheme({
   typography: {
     fontWeightRegular: 100,
     allVariants: {
-      color: appPrimaryColor
+      color: APP_PRIMARY_COLOR
     }
   },
   components: {
     MuiTableCell: {
       styleOverrides: {
         root: {
-          color: appPrimaryColor
+          color: APP_PRIMARY_COLOR
         }
       }
     },
@@ -44,18 +43,18 @@ const pageTheme = createTheme({
       styleOverrides: {
         root: {
           display: 'list-item',
-          color: appSecondaryColor
+          color: APP_SECONDARY_COLOR
         }
       }
     },
     MuiLink: {
       styleOverrides: {
         root: {
-          color: appSecondaryColor,
+          color: APP_SECONDARY_COLOR,
           textDecoration: 'inherit',
           '&:hover': {
             color: 'white',
-            textShadow: `-0.25px -0.25px 0 #224a23, 0.25px -0.25px 0 ${appPrimaryColor}, -0.25px 0.25px 0 ${appPrimaryColor}, 0.25px 0.25px 0 ${appPrimaryColor}`
+            textShadow: `-0.25px -0.25px 0 #224a23, 0.25px -0.25px 0 ${APP_PRIMARY_COLOR}, -0.25px 0.25px 0 ${APP_PRIMARY_COLOR}, 0.25px 0.25px 0 ${APP_PRIMARY_COLOR}`
           }
         }
       }
@@ -63,13 +62,13 @@ const pageTheme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          color: appPrimaryColor,
-          outlineColor: appPrimaryColor,
-          borderColor: appPrimaryColor,
+          color: APP_PRIMARY_COLOR,
+          outlineColor: APP_PRIMARY_COLOR,
+          borderColor: APP_PRIMARY_COLOR,
           '&:hover': {
-            backgroundColor: appSecondaryColor,
-            color: appPrimaryColor,
-            borderColor: appTertiaryColor
+            backgroundColor: APP_SECONDARY_COLOR,
+            color: APP_PRIMARY_COLOR,
+            borderColor: APP_TERTIARY_COLOR
           }
         }
       }
@@ -78,40 +77,14 @@ const pageTheme = createTheme({
 });
 
 const Page: FC<Props> = (props: Props) => {
-  const {
-    children,
-    childrenBoxSx,
-    headerBody,
-    headerText,
-    isUnderConstruction
-  } = props;
+  const { children, childrenBoxSx, headerBody, headerText } = props;
   return (
     <ThemeProvider theme={pageTheme}>
-      <Typography
-        sx={{
-          textAlign: 'center',
-          textDecoration: `underline ${appTertiaryColor} 1px`,
-          textUnderlineOffset: '0.3em'
-        }}
-        variant='h3'
-      >
-        {isUnderConstruction ? 'UNDER CONSTRUCTION' : headerText?.toUpperCase()}
-      </Typography>
+      <BodySubHeader variant='h3'>{headerText?.toUpperCase()}</BodySubHeader>
       <Typography component='div' mb={3} mt={3} textAlign='center'>
-        {isUnderConstruction ? 'This page is under construction.' : headerBody}
+        {headerBody}
       </Typography>
       <Box mb={3} mx={3} sx={{ ...childrenBoxSx }}>
-        {isUnderConstruction && (
-          <Box textAlign='center'>
-            <ConstructionIcon
-              sx={{
-                color: appPrimaryColor,
-                height: '50%',
-                width: '50%'
-              }}
-            />
-          </Box>
-        )}
         {children}
       </Box>
     </ThemeProvider>

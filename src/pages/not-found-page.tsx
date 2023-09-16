@@ -2,8 +2,9 @@ import Typography from '@mui/material/Typography';
 import Page from '../layout/Page';
 import Stack from '@mui/material/Stack';
 import { BackButton, HomeButton } from '../layout/Buttons';
+import { ReactElement } from 'react';
 
-const NotFoundPage = () => {
+const NotFoundPage = (): ReactElement => {
   return (
     <Page>
       <Typography textAlign='center' variant='h1'>

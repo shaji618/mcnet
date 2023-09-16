@@ -3,8 +3,9 @@ import FridayPrayerTable from '../components/JummahPrayerTable';
 import Page from '../layout/Page';
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
+import { ReactElement } from 'react';
 
-const JummahPrayers = () => {
+const JummahPrayers = (): ReactElement => {
   return (
     <Page
       headerText='JUMMAH PRAYERS'

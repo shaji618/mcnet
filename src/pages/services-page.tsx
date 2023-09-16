@@ -1,8 +1,9 @@
 import { Box } from '@mui/material';
-import ServicesList from '../components/ServicesList';
+import ServicesList from '../components/Services/ServicesList';
 import Page from '../layout/Page';
+import { ReactElement } from 'react';
 
-export const Services = () => {
+export const Services = (): ReactElement => {
   return (
     <Page
       headerText='MCNET SERVICES'

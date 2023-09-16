@@ -9,14 +9,15 @@ import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import CardMedia from '@mui/material/CardMedia';
-import { ReactNode, useState } from 'react';
+import { ReactElement, ReactNode, useState } from 'react';
 import {
-  appPrimaryColor,
-  appSecondaryColor,
-  appTertiaryColor
+  APP_PRIMARY_COLOR,
+  APP_SECONDARY_COLOR,
+  APP_TERTIARY_COLOR
 } from '../util/constants';
 import { ReactComponent as MCNETIcon } from '../assets/svg-icons/logo.svg';
 import Tooltip from '@mui/material/Tooltip';
+import Box from '@mui/material/Box';
 
 type Picker = 'address' | 'phoneNumber' | 'email';
 
@@ -26,7 +27,7 @@ const Picker = (props: {
   icon: ReactNode;
   onClick: () => void;
   textContent: ReactNode;
-}) => {
+}): ReactElement => {
   const { active, archerElId, icon, onClick, textContent } = props;
   return (
     <ArcherElement id={archerElId}>
@@ -42,13 +43,13 @@ const Picker = (props: {
             height: '50px',
             width: '50px',
             '&:hover': {
-              backgroundColor: appTertiaryColor,
-              color: appSecondaryColor,
+              backgroundColor: APP_TERTIARY_COLOR,
+              color: APP_SECONDARY_COLOR,
               cursor: 'pointer'
             },
             '&.active': {
-              backgroundColor: appTertiaryColor,
-              color: appSecondaryColor
+              backgroundColor: APP_TERTIARY_COLOR,
+              color: APP_SECONDARY_COLOR
             }
           }}
         >
@@ -60,11 +61,11 @@ const Picker = (props: {
   );
 };
 
-const ContactPicker = () => {
+const ContactPicker = (): ReactElement => {
   const [pickerState, setPickerState] = useState<Picker>('address');
 
   return (
-    <>
+    <Box>
       <ArcherContainer endMarker={false} strokeColor='#c6c6c6'>
         <Stack
           direction='row'
@@ -95,9 +96,15 @@ const ContactPicker = () => {
               }
             ]}
           >
-              <Avatar sx={{ height: '100px', width: '100px', bgcolor: appPrimaryColor }} >
-                  <MCNETIcon />
-              </Avatar>
+            <Avatar
+              sx={{
+                height: '100px',
+                width: '100px',
+                bgcolor: APP_PRIMARY_COLOR
+              }}
+            >
+              <MCNETIcon />
+            </Avatar>
           </ArcherElement>
           <Stack spacing={13}>
             <Picker
@@ -106,7 +113,7 @@ const ContactPicker = () => {
               icon={
                 <LocationOnOutlinedIcon sx={{ height: '50%', width: '50%' }} />
               }
-              onClick={() => setPickerState('address')}
+              onClick={(): void => setPickerState('address')}
               textContent={
                 <Stack ml={2}>
                   <Typography>3010 Antioch Rd</Typography>
@@ -118,14 +125,14 @@ const ContactPicker = () => {
               active={pickerState === 'phoneNumber'}
               archerElId='phoneNumber'
               icon={<PhoneOutlinedIcon sx={{ height: '50%', width: '50%' }} />}
-              onClick={() => setPickerState('phoneNumber')}
+              onClick={(): void => setPickerState('phoneNumber')}
               textContent={<Typography ml={2}>423.975.6681</Typography>}
             />
             <Picker
               active={pickerState === 'email'}
               archerElId='email'
               icon={<AlternateEmailIcon sx={{ height: '50%', width: '50%' }} />}
-              onClick={() => setPickerState('email')}
+              onClick={(): void => setPickerState('email')}
               textContent={<Typography ml={2}>whoever@whatever.com</Typography>}
             />
           </Stack>
@@ -151,8 +158,8 @@ const ContactPicker = () => {
                     height: 300,
                     width: 300,
                     '&:hover': {
-                      backgroundColor: appTertiaryColor,
-                      color: appPrimaryColor,
+                      backgroundColor: APP_TERTIARY_COLOR,
+                      color: APP_PRIMARY_COLOR,
                       cursor: 'pointer'
                     }
                   }}
@@ -175,8 +182,8 @@ const ContactPicker = () => {
                     height: 300,
                     width: 300,
                     '&:hover': {
-                      backgroundColor: appTertiaryColor,
-                      color: appPrimaryColor,
+                      backgroundColor: APP_TERTIARY_COLOR,
+                      color: APP_PRIMARY_COLOR,
                       cursor: 'pointer'
                     }
                   }}
@@ -188,7 +195,7 @@ const ContactPicker = () => {
           )}
         </Stack>
       </ArcherContainer>
-    </>
+    </Box>
   );
 };
 

@@ -1,6 +1,6 @@
 import Typography from '@mui/material/Typography';
-import ArchiveTable, { IRow } from '../layout/ArchiveTable';
-import { appSecondaryColor, appTertiaryColor } from '../util/constants';
+import ArchiveTable, { ArchiveTableRow } from '../layout/ArchiveTable';
+import { APP_SECONDARY_COLOR } from '../util/constants';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
@@ -8,13 +8,15 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import Link from '@mui/material/Link';
 import PhoneOutlinedIcon from '@mui/icons-material/PhoneOutlined';
+import BodySubHeader from '../layout/BodySubheader';
+import { ReactElement } from 'react';
 
-const ExpandComponent = (props: { email?: string }) => {
+const ExpandComponent = (props: { email?: string }): ReactElement => {
   return (
     <List>
       <ListItem>
         <Stack direction='row' overflow='visible'>
-          <ContactMailIcon sx={{ color: appSecondaryColor, mr: 1 }} />
+          <ContactMailIcon sx={{ color: APP_SECONDARY_COLOR, mr: 1 }} />
           <Link href={`mailto:${props.email || 'isnetschool@gmail.com'}`}>
             <Typography>{props.email || 'isnetschool@gmail.com'}</Typography>
           </Link>
@@ -22,7 +24,7 @@ const ExpandComponent = (props: { email?: string }) => {
       </ListItem>
       <ListItem>
         <Stack direction='row' overflow='visible'>
-          <PhoneOutlinedIcon sx={{ color: appSecondaryColor, mr: 1 }} />
+          <PhoneOutlinedIcon sx={{ color: APP_SECONDARY_COLOR, mr: 1 }} />
           <Typography>423.975.6681</Typography>
         </Stack>
       </ListItem>
@@ -30,8 +32,8 @@ const ExpandComponent = (props: { email?: string }) => {
   );
 };
 
-const SundaySchoolTeachersTable = () => {
-  const rows: IRow[] = [
+const SundaySchoolTeachersTable = (): ReactElement => {
+  const rows: ArchiveTableRow[] = [
     {
       columnOneData: 'Shirin Fadel',
       columnTwoData: (
@@ -90,16 +92,7 @@ const SundaySchoolTeachersTable = () => {
   ];
   return (
     <Stack width='100%'>
-      <Typography
-        mb={1}
-        sx={{
-          textDecoration: `underline ${appTertiaryColor} 1px`,
-          textUnderlineOffset: '0.3em'
-        }}
-        variant='h5'
-      >
-        MEET THE TEACHERS
-      </Typography>
+      <BodySubHeader>MEET THE TEACHERS</BodySubHeader>
       <Typography>
         Our volunteer staff is experienced teaching Arabic,{' '}
         <Box display='inline' fontStyle='italic'>

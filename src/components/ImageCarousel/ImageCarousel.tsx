@@ -4,6 +4,7 @@ import filteredMasjid from '../../assets/mosque-photos/filteredMasjid.jpg';
 import rainbowMasjid from '../../assets/mosque-photos/rainbowMasjid.jpg';
 import sundaySchool from '../../assets/mosque-photos/sundaySchool.jpg';
 import './ImageCarousel.css';
+import { ReactElement } from 'react';
 
 const images = [
   {
@@ -19,7 +20,7 @@ const images = [
 
 const shouldShowControls = images.length > 1;
 
-const ImageCarousel = () => {
+const ImageCarousel = (): ReactElement => {
   return (
     <ImageGallery
       autoPlay={shouldShowControls}

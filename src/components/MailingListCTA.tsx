@@ -5,8 +5,8 @@
  * TODO: wire this up to the back end
  */
 
-import { FormEvent, useState } from 'react';
-import { appTertiaryColor } from '../util/constants';
+import { FormEvent, ReactElement, useState } from 'react';
+import { APP_TERTIARY_COLOR } from '../util/constants';
 import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
@@ -18,7 +18,7 @@ import Snackbar from '@mui/material/Snackbar';
 import CloseIcon from '@mui/icons-material/Close';
 import IconButton from '@mui/material/IconButton';
 
-const MailingListCTA = () => {
+const MailingListCTA = (): ReactElement => {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [fullNameTouched, setFullNameTouched] = useState(false);
@@ -33,18 +33,17 @@ const MailingListCTA = () => {
 
   const [snackbarOpen, setSnackbarOpen] = useState(false);
 
-  const handleSnackbarClose = () => {
+  const handleSnackbarClose = (): void => {
     setSnackbarOpen(false);
   };
 
-  const handleSubmit = (event: FormEvent) => {
+  const handleSubmit = (event: FormEvent): void => {
     event.preventDefault();
     setSnackbarOpen(true);
     setFullName('');
     setFullNameTouched(false);
     setEmail('');
     setEmailTouched(false);
-    console.log('Email added to mailing list:', email, 'name: ', fullName);
   };
 
   return (
@@ -53,8 +52,8 @@ const MailingListCTA = () => {
         <CardMedia component='img' height='298' image={snowyMasjid} />
         <CardContent
           sx={{
-            bgcolor: `${appTertiaryColor}1F`,
-            borderTop: `1px solid ${appTertiaryColor}`
+            bgcolor: `${APP_TERTIARY_COLOR}1F`,
+            borderTop: `1px solid ${APP_TERTIARY_COLOR}`
           }}
         >
           <Typography fontWeight={500} variant='h5'>
@@ -73,8 +72,8 @@ const MailingListCTA = () => {
                 : ' '
             }
             label='Name'
-            onChange={(e) => setFullName(e.target.value)}
-            onFocus={() => setFullNameTouched(true)}
+            onChange={(e): void => setFullName(e.target.value)}
+            onFocus={(): void => setFullNameTouched(true)}
             required
             type='text'
             value={fullName}
@@ -88,8 +87,8 @@ const MailingListCTA = () => {
               emailErrorCondition ? 'Please enter a valid email address.' : ' '
             }
             label='Email'
-            onChange={(e) => setEmail(e.target.value)}
-            onFocus={() => setEmailTouched(true)}
+            onChange={(e): void => setEmail(e.target.value)}
+            onFocus={(): void => setEmailTouched(true)}
             required
             sx={{ mb: 0.8 }}
             type='email'

@@ -1,12 +1,13 @@
 import Box from '@mui/material/Box';
 import {
-  appPrimaryColor,
-  appSecondaryColor,
-  appTertiaryColor
+  APP_PRIMARY_COLOR,
+  APP_SECONDARY_COLOR,
+  APP_TERTIARY_COLOR
 } from '../util/constants';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Link from '@mui/material/Link';
+import { ReactElement } from 'react';
 
 const footerTheme = createTheme({
   typography: {
@@ -20,10 +21,10 @@ const footerTheme = createTheme({
     MuiLink: {
       styleOverrides: {
         root: {
-          color: appSecondaryColor,
+          color: APP_SECONDARY_COLOR,
           textDecoration: 'inherit',
           '&:hover': {
-            color: appTertiaryColor
+            color: APP_TERTIARY_COLOR
           }
         }
       }
@@ -31,10 +32,15 @@ const footerTheme = createTheme({
   }
 });
 
-const Footer = () => {
+const Footer = (): ReactElement => {
   return (
     <ThemeProvider theme={footerTheme}>
-      <Box bgcolor={appPrimaryColor} minHeight={'70px'} mt={2} overflow='auto'>
+      <Box
+        bgcolor={APP_PRIMARY_COLOR}
+        minHeight={'70px'}
+        mt={2}
+        overflow='auto'
+      >
         <Box my={2} textAlign='center'>
           <Typography>
             MCNET is a not-for-profit organization recognized as{' '}

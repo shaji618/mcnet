@@ -3,17 +3,16 @@ import SundaySchoolTeachersTable from '../components/SundaySchoolTeachersTable';
 import Page from '../layout/Page';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
-import { appTertiaryColor } from '../util/constants';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import Grid from '@mui/material/Grid';
-import Table from '@mui/material/Table';
-import TableRow from '@mui/material/TableRow';
-import TableCell from '@mui/material/TableCell';
-import TableHead from '@mui/material/TableHead';
+import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
+import '../style-sheets/SuperResponsiveTableStyle.css';
 import Chip from '@mui/material/Chip';
+import BodySubHeader from '../layout/BodySubheader';
+import { ReactElement } from 'react';
 
-export const SundaySchool = () => {
+export const SundaySchool = (): ReactElement => {
   return (
     <Page
       headerBody={
@@ -33,44 +32,68 @@ export const SundaySchool = () => {
             have students attending from as far as 75 miles away, from Abingdon,
             Norton, and Bristol, VA.
           </Typography>
-          <Typography
-            sx={{
-              textDecoration: `underline ${appTertiaryColor} 1px`,
-              textUnderlineOffset: '0.3em'
-            }}
-            variant='h5'
-          >
-            SCHEDULE
-          </Typography>
+          <BodySubHeader variant='h5'>SCHEDULE</BodySubHeader>
           <Table sx={{ mb: 2 }}>
-            <TableHead>
-              <TableRow>
-                <TableCell>Batch</TableCell>
-                <TableCell>Duration of Class</TableCell>
-                <TableCell>Class Details</TableCell>
-                <TableCell>Class Time</TableCell>
-                <TableCell>Days of Week</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableRow>
-              <TableCell>KE-B001</TableCell>
-              <TableCell>
-                <Chip
-                  label='1st April 2018 to 31st July 2018'
-                  variant='outlined'
-                />
-              </TableCell>
-              <TableCell>
-                Classes for Arabic language, Islamic studies and Quran
-                translation for kids
-              </TableCell>
-              <TableCell>
-                <Chip label='11:30 AM To 03:00 PM' variant='outlined' />
-              </TableCell>
-              <TableCell>
-                <Chip label='Sunday' variant='outlined' />
-              </TableCell>
-            </TableRow>
+            <Thead>
+              <Tr>
+                <Th>Batch</Th>
+                <Th>Duration of Class</Th>
+                <Th>Class Details</Th>
+                <Th>Class Time</Th>
+                <Th>Days of Week</Th>
+              </Tr>
+            </Thead>
+            <Tbody>
+              <Tr>
+                <Td>KE-B001</Td>
+                <Td>
+                  <Chip
+                    label='1st April 2018 to 31st July 2018'
+                    sx={{
+                      height: 'auto',
+                      textAlign: 'center',
+                      '& .MuiChip-label': {
+                        display: 'block',
+                        whiteSpace: 'normal'
+                      }
+                    }}
+                    variant='outlined'
+                  />
+                </Td>
+                <Td>
+                  Classes for Arabic language, Islamic studies and Quran
+                  translation for kids
+                </Td>
+                <Td>
+                  <Chip
+                    label='11:30 AM To 03:00 PM'
+                    sx={{
+                      height: 'auto',
+                      textAlign: 'center',
+                      '& .MuiChip-label': {
+                        display: 'block',
+                        whiteSpace: 'normal'
+                      }
+                    }}
+                    variant='outlined'
+                  />
+                </Td>
+                <Td>
+                  <Chip
+                    label='Sunday'
+                    sx={{
+                      height: 'auto',
+                      textAlign: 'center',
+                      '& .MuiChip-label': {
+                        display: 'block',
+                        whiteSpace: 'normal'
+                      }
+                    }}
+                    variant='outlined'
+                  />
+                </Td>
+              </Tr>
+            </Tbody>
           </Table>
           <Typography fontSize={22} fontWeight={500}>
             A LINK TO THE SCHOOL CHARTER CAN BE FOUND{' '}
@@ -91,16 +114,7 @@ export const SundaySchool = () => {
           <SundaySchoolTeachersTable />
         </Grid>
         <Grid item md={6}>
-          <Typography
-            mb={1}
-            sx={{
-              textDecoration: `underline ${appTertiaryColor} 1px`,
-              textUnderlineOffset: '0.3em'
-            }}
-            variant='h5'
-          >
-            HELPFUL LINKS FOR PARENTS
-          </Typography>
+          <BodySubHeader variant='h5'>HELPFUL LINKS FOR PARENTS</BodySubHeader>
           <List>
             <ListItem>
               <Typography>
@@ -141,16 +155,7 @@ export const SundaySchool = () => {
           </List>
         </Grid>
         <Grid item md={6}>
-          <Typography
-            mb={1}
-            sx={{
-              textDecoration: `underline ${appTertiaryColor} 1px`,
-              textUnderlineOffset: '0.3em'
-            }}
-            variant='h5'
-          >
-            TEACHING MATERIALS
-          </Typography>
+          <BodySubHeader variant='h5'>TEACHING MATERIALS</BodySubHeader>
           <List>
             <ListItem>
               <Typography>

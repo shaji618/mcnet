@@ -14,26 +14,37 @@ import { UpcomingProjects } from './pages/upcoming-projects-page';
 import Information from './pages/information-page';
 import NotFoundPage from './pages/not-found-page';
 import Footer from './layout/Footer';
+import { PATHS } from './util/constants';
+import ScrollToTop from './layout/ScrollToTop';
+import { ReactElement } from 'react';
 
-const Root = () => {
+const Root = (): ReactElement => {
   return (
     <>
       {/* <HashRouter basename={process.env.PUBLIC_URL}> */}
       <BrowserRouter>
         <PreNavBar />
         <NavBar />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/information' element={<Information />} />
-          <Route path='/about-us' element={<AboutUs />} />
-          <Route path='/services' element={<Services />} />
-          <Route path='/programs' element={<Programs />} />
-          <Route path='/sunday-school' element={<SundaySchool />} />
-          <Route path='/jummah-prayers' element={<JummahPrayers />} />
-          <Route path='/upcoming-projects' element={<UpcomingProjects />} />
-          <Route path='/contact-us' element={<ContactUs />} />
-          <Route path='*' element={<NotFoundPage />} />
-        </Routes>
+        <ScrollToTop>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path={PATHS.INFORMATION_PAGE} element={<Information />} />
+            <Route path={PATHS.ABOUT_US} element={<AboutUs />} />
+            <Route path={PATHS.SERVICES_PAGE} element={<Services />} />
+            <Route path={PATHS.PROGRAMS_PAGE} element={<Programs />} />
+            <Route path={PATHS.SUNDAY_SCHOOL_PAGE} element={<SundaySchool />} />
+            <Route
+              path={PATHS.JUMMAH_PRAYERS_PAGE}
+              element={<JummahPrayers />}
+            />
+            <Route
+              path={PATHS.UPCOMING_PROJECTS_PAGE}
+              element={<UpcomingProjects />}
+            />
+            <Route path={PATHS.CONTACT_US_PAGE} element={<ContactUs />} />
+            <Route path='*' element={<NotFoundPage />} />
+          </Routes>
+        </ScrollToTop>
         <Footer />
       </BrowserRouter>
       {/* </HashRouter> */}
