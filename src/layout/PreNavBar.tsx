@@ -10,13 +10,15 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import PhoneOutlinedIcon from '@mui/icons-material/PhoneOutlined';
-import { APP_PRIMARY_COLOR } from '../util/constants';
+import { APP_PRIMARY_COLOR, BLANK_PAGE_PATHS } from '../util/constants';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import Link from '@mui/material/Link';
+import { useLocation } from 'react-router-dom';
 
-function ResponsiveAppBar(): ReactElement {
+function ResponsiveAppBar(): ReactElement | null {
+  const urlPath = useLocation();
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
 
   const handleOpenUserMenu = (event: MouseEvent<HTMLElement>): void => {
@@ -27,7 +29,7 @@ function ResponsiveAppBar(): ReactElement {
     setAnchorElUser(null);
   };
 
-  return (
+  return BLANK_PAGE_PATHS.includes(urlPath.pathname) ? null : (
     <AppBar
       position='static'
       sx={{ backgroundColor: 'transparent', color: APP_PRIMARY_COLOR }}

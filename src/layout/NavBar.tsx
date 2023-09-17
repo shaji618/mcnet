@@ -1,4 +1,4 @@
-import { useState, MouseEvent } from 'react';
+import { useState, MouseEvent, ReactElement } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -9,9 +9,13 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import { APP_PRIMARY_COLOR, APP_SECONDARY_COLOR } from '../util/constants';
+import {
+  APP_PRIMARY_COLOR,
+  APP_SECONDARY_COLOR,
+  BLANK_PAGE_PATHS
+} from '../util/constants';
 import { ReactComponent as Logo } from '../assets/svg-icons/logo.svg';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import SvgIcon from '@mui/material/SvgIcon';
 import DonateButton from '../components/DonateButton';
 import SubAlertBar from './SubNavBar';
@@ -31,8 +35,9 @@ const StyledMenuItem = (props: {
   isMobile?: boolean;
   onClick: () => void;
   pageTitle: string;
-}) => {
+}): ReactElement => {
   const { isMobile, onClick, pageTitle } = props;
+
   return (
     <NavLink to={`/${pageTitle.toLowerCase().replace(/\s/g, '-')}`}>
       {isMobile ? (
@@ -69,18 +74,19 @@ const StyledMenuItem = (props: {
   );
 };
 
-const NavBar = () => {
+const NavBar = (): ReactElement | null => {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
+  const urlPath = useLocation();
 
-  const handleOpenNavMenu = (event: MouseEvent<HTMLElement>) => {
+  const handleOpenNavMenu = (event: MouseEvent<HTMLElement>): void => {
     setAnchorElNav(event.currentTarget);
   };
 
-  const handleCloseNavMenu = () => {
+  const handleCloseNavMenu = (): void => {
     setAnchorElNav(null);
   };
 
-  return (
+  return BLANK_PAGE_PATHS.includes(urlPath.pathname) ? null : (
     <>
       <AppBar position='sticky' sx={{ backgroundColor: APP_PRIMARY_COLOR }}>
         <Container maxWidth='xl'>

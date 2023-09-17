@@ -2,12 +2,14 @@ import Box from '@mui/material/Box';
 import {
   APP_PRIMARY_COLOR,
   APP_SECONDARY_COLOR,
-  APP_TERTIARY_COLOR
+  APP_TERTIARY_COLOR,
+  BLANK_PAGE_PATHS
 } from '../util/constants';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Link from '@mui/material/Link';
 import { ReactElement } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const footerTheme = createTheme({
   typography: {
@@ -32,8 +34,10 @@ const footerTheme = createTheme({
   }
 });
 
-const Footer = (): ReactElement => {
-  return (
+const Footer = (): ReactElement | null => {
+  const urlPath = useLocation();
+
+  return BLANK_PAGE_PATHS.includes(urlPath.pathname) ? null : (
     <ThemeProvider theme={footerTheme}>
       <Box
         bgcolor={APP_PRIMARY_COLOR}

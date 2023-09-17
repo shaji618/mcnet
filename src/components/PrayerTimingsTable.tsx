@@ -13,11 +13,15 @@ import TableBody from '@mui/material/TableBody';
 import SvgIcon from '@mui/material/SvgIcon';
 import Link from '@mui/material/Link';
 import { getCurrentDate } from '../util/helpers';
+import { SxProps } from '@mui/material/styles';
 
 const requestUrl =
   'https://islamicfinder.us/index.php/api/prayer_times?country=US&zipcode=37604';
 
-const PrayerTimings = (): ReactElement => {
+const PrayerTimingsTable = (props: {
+  boxSx?: SxProps;
+  hideMonthlyLink?: boolean;
+}): ReactElement => {
   const [prayerData, setPrayerData] = useState({
     results: { Fajr: '', Duha: '', Dhuhr: '', Asr: '', Maghrib: '', Isha: '' }
   });
@@ -63,7 +67,7 @@ const PrayerTimings = (): ReactElement => {
   };
 
   return (
-    <Box width='100%'>
+    <Box sx={{ ...props.boxSx }} width='100%'>
       <Typography textAlign='center' mb={1}>
         Prayer timings for {getCurrentDate().formatted}
       </Typography>
@@ -107,22 +111,26 @@ const PrayerTimings = (): ReactElement => {
                 </TableRow>
               );
             })}
-            <TableRow>
-              <TableCell colSpan={2}>
-                <Typography my={-1}>
-                  * Get a copy of monthly prayer timings{' '}
-                  <Link
-                    href={`https://www.islamicfinder.org/prayer-times/printmonthlyprayer/?timeInterval=month&month=${
-                      getCurrentDate().month
-                    }&year=${getCurrentDate().year}&calendarType=Gregorian`}
-                    rel='noreferrer'
-                    target='_blank'
-                  >
-                    here
-                  </Link>
-                </Typography>
-              </TableCell>
-            </TableRow>
+            {!props.hideMonthlyLink && (
+              <TableRow>
+                <TableCell colSpan={2}>
+                  <Typography my={-1}>
+                    * Get a copy of monthly prayer timings{' '}
+                    <Link
+                      color={APP_SECONDARY_COLOR}
+                      href={`https://www.islamicfinder.org/prayer-times/printmonthlyprayer/?timeInterval=month&month=${
+                        getCurrentDate().month
+                      }&year=${getCurrentDate().year}&calendarType=Gregorian`}
+                      rel='noreferrer'
+                      sx={{ textDecoration: 'inherit' }}
+                      target='_blank'
+                    >
+                      here
+                    </Link>
+                  </Typography>
+                </TableCell>
+              </TableRow>
+            )}
           </TableBody>
         </Table>
       </TableContainer>
@@ -130,4 +138,4 @@ const PrayerTimings = (): ReactElement => {
   );
 };
 
-export default PrayerTimings;
+export default PrayerTimingsTable;

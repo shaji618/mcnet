@@ -6,9 +6,12 @@ export const PATHS = {
   JUMMAH_PRAYERS_PAGE: '/jummah-prayers',
   PROGRAMS_PAGE: '/programs',
   SERVICES_PAGE: '/services',
+  STATUS_PAGE: '/status',
   SUNDAY_SCHOOL_PAGE: '/sunday-school',
   UPCOMING_PROJECTS_PAGE: '/upcoming-projects'
 };
+
+export const BLANK_PAGE_PATHS = [PATHS.STATUS_PAGE];
 
 // Colors
 export const APP_PRIMARY_COLOR = '#224a23';
