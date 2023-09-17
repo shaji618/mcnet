@@ -11,6 +11,7 @@ import '../style-sheets/SuperResponsiveTableStyle.css';
 import Chip from '@mui/material/Chip';
 import BodySubHeader from '../layout/BodySubheader';
 import { ReactElement } from 'react';
+import DailyClassSchedule from '../components/DailyClassSchedule';
 
 export const SundaySchool = (): ReactElement => {
   return (
@@ -32,8 +33,15 @@ export const SundaySchool = (): ReactElement => {
             have students attending from as far as 75 miles away, from Abingdon,
             Norton, and Bristol, VA.
           </Typography>
-          <BodySubHeader variant='h5'>SCHEDULE</BodySubHeader>
-          <Table sx={{ mb: 2 }}>
+          <Typography fontSize={22} fontWeight={500}>
+            A LINK TO THE SCHOOL CHARTER CAN BE FOUND{' '}
+            <Link href='' rel='noreferrer' target='_blank'>
+              HERE
+            </Link>
+            .
+          </Typography>
+          <BodySubHeader variant='h5'>TIMELINE</BodySubHeader>
+          <Table>
             <Thead>
               <Tr>
                 <Th>Batch</Th>
@@ -95,13 +103,6 @@ export const SundaySchool = (): ReactElement => {
               </Tr>
             </Tbody>
           </Table>
-          <Typography fontSize={22} fontWeight={500}>
-            A LINK TO THE SCHOOL CHARTER CAN BE FOUND{' '}
-            <Link href='' rel='noreferrer' target='_blank'>
-              HERE
-            </Link>
-            .
-          </Typography>
         </>
       }
       headerText='SUNDAY SCHOOL'
@@ -112,6 +113,9 @@ export const SundaySchool = (): ReactElement => {
         </Grid>
         <Grid item md={6}>
           <SundaySchoolTeachersTable />
+        </Grid>
+        <Grid item md={12}>
+          <DailyClassSchedule />
         </Grid>
         <Grid item md={6}>
           <BodySubHeader variant='h5'>HELPFUL LINKS FOR PARENTS</BodySubHeader>

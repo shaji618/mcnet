@@ -3,15 +3,13 @@ import MCNETHistory from '../components/MCNETHistory';
 import Shura from '../components/Shura';
 import Page from '../layout/Page';
 import Typography from '@mui/material/Typography';
-import {
-  ANNOUNCEMENT_TYPES,
-  APP_PRIMARY_COLOR,
-  PATHS
-} from '../util/constants';
+import { APP_PRIMARY_COLOR, PATHS } from '../util/constants';
 import { HashLink } from 'react-router-hash-link';
 import BodySubHeader from '../layout/BodySubheader';
 import { ReactElement } from 'react';
 import Button from '@mui/material/Button';
+
+const SHURA_ANCHOR_ID = 'shura';
 
 export const AboutUs = (): ReactElement => {
   return (
@@ -23,7 +21,7 @@ export const AboutUs = (): ReactElement => {
             <HashLink
               smooth
               style={{ color: APP_PRIMARY_COLOR }}
-              to={`${PATHS.INFORMATION_PAGE}#${ANNOUNCEMENT_TYPES.ANNOUNCEMENTS}`}
+              to={`${PATHS.ABOUT_US}#${SHURA_ANCHOR_ID}`}
             >
               Click here to jump to see the members of our board, the{' '}
               <Box display='inline' fontStyle='italic'>
@@ -34,7 +32,7 @@ export const AboutUs = (): ReactElement => {
         }
       >
         <MCNETHistory />
-        <Box id='shura' height='1px' width='1px' />
+        <Box id={SHURA_ANCHOR_ID} height='1px' width='1px' />
         <BodySubHeader variant='h3'>
           THE{' '}
           <Box display='inline' fontStyle='italic'>

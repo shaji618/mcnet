@@ -19,7 +19,7 @@ type CalendarDateValue =
   | [CalendarDateValuePiece, CalendarDateValuePiece];
 
 export type DailyEventsTableProps = {
-  eventDate: string;
+  eventDate: Date;
   eventTime: string;
   eventTitle: string;
 };
@@ -33,7 +33,7 @@ const Row = (props: DailyEventsTableProps): ReactElement => {
       </Td>
       <Td>
         <Chip
-          label={eventDate}
+          label={eventDate.toDateString()}
           sx={{
             height: 'auto',
             textAlign: 'center',

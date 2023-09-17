@@ -3,7 +3,7 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import WelcomeMessage from '../components/WelcomeMessage';
 import Page from '../layout/Page';
-import PrayerTimings from '../components/PrayerTimings';
+import PrayerTimingsTable from '../components/PrayerTimingsTable';
 import AnnouncementsOverview from '../components/AnnouncementsOverview';
 import Image from 'mui-image';
 import filteredMasjid from '../assets/mosque-photos/filteredMasjid.jpg';
@@ -24,7 +24,7 @@ export const Home = (): ReactElement => {
         <Grid item md={6}>
           <Grid container spacing={3}>
             <Grid item md={12} sx={{ margin: '0 auto' }}>
-              <PrayerTimings />
+              <PrayerTimingsTable />
             </Grid>
             <Grid
               item

@@ -17,6 +17,7 @@ import Footer from './layout/Footer';
 import { PATHS } from './util/constants';
 import ScrollToTop from './layout/ScrollToTop';
 import { ReactElement } from 'react';
+import MosqueStatus from './components/MosqueStatus';
 
 const Root = (): ReactElement => {
   return (
@@ -42,6 +43,7 @@ const Root = (): ReactElement => {
               element={<UpcomingProjects />}
             />
             <Route path={PATHS.CONTACT_US_PAGE} element={<ContactUs />} />
+            <Route path={PATHS.STATUS_PAGE} element={<MosqueStatus />} />
             <Route path='*' element={<NotFoundPage />} />
           </Routes>
         </ScrollToTop>
