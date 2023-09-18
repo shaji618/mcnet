@@ -1,9 +1,11 @@
+import { ReactElement } from 'react';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
-import MaterialLink from '@mui/material/Link';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
+import MaterialLink from '@mui/material/Link';
+import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -11,13 +13,13 @@ import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
+
+import BodySubHeader from '@layout/BodySubheader';
 import {
   APP_SECONDARY_COLOR,
   APP_TERTIARY_COLOR,
   PATHS
-} from '../../util/constants';
-import BodySubHeader from '../../layout/BodySubheader';
-import { ReactElement } from 'react';
+} from '@util/constants';
 
 const InterfaithAdvocacyContent = (): ReactElement => {
   return (
@@ -68,7 +70,7 @@ const InterfaithAdvocacyContent = (): ReactElement => {
         this is your first visit to a mosque. The following are a few tips are
         noted to make you more comfortable:
       </Typography>
-      <TableContainer>
+      <TableContainer component={Paper}>
         <Table>
           <TableBody>
             <TableRow>

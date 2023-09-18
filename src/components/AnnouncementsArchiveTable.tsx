@@ -1,13 +1,14 @@
-import Typography from '@mui/material/Typography';
-import ArchiveTable, { ArchiveTableRow } from '../layout/ArchiveTable';
+import { ReactElement } from 'react';
+import Box from '@mui/material/Box';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import Link from '@mui/material/Link';
-import Box from '@mui/material/Box';
 import { SxProps } from '@mui/material/styles';
-import BodySubHeader from '../layout/BodySubheader';
-import { ReactElement } from 'react';
-import { ANNOUNCEMENT_TYPES } from '../util/constants';
+import Typography from '@mui/material/Typography';
+
+import ArchiveTable, { ArchiveTableRow } from '@layout/ArchiveTable';
+import BodySubHeader from '@layout/BodySubheader';
+import { ANNOUNCEMENT_TYPES } from '@util/constants';
 
 const AnnouncementsArchiveTable = (props: {
   boxSx?: SxProps;

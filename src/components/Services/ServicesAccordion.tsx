@@ -1,20 +1,22 @@
-import { styled } from '@mui/material/styles';
+import { ReactElement, SyntheticEvent } from 'react';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import MuiAccordion, { AccordionProps } from '@mui/material/Accordion';
+import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import MuiAccordionSummary, {
   AccordionSummaryProps
 } from '@mui/material/AccordionSummary';
-import MuiAccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
 import { AliasesCSSProperties } from '@mui/system/styleFunctionSx/AliasesCSSProperties';
-import { ReactElement, SyntheticEvent } from 'react';
-import { Services } from './ServicesList';
+import { styled } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
+
 import Box from '@mui/material/Box';
-import ChaplaincyContent from './ChaplaincyContent';
-import MatrimonialContent from './MatrimonialContent';
-import FuneralContent from './FuneralContent';
-import InterfaithAdvocacyContent from './InterfaithAdvocacyContent';
-import { SERVICE_TYPES } from '../../util/constants';
+
+import ChaplaincyContent from '@components/services/ChaplaincyContent';
+import FuneralContent from '@components/services/FuneralContent';
+import InterfaithAdvocacyContent from '@components/services/InterfaithAdvocacyContent';
+import MatrimonialContent from '@components/services/MatrimonialContent';
+import { Services } from '@components/services/ServicesList';
+import { SERVICE_TYPES } from '@util/constants';
 
 const Accordion = styled((props: AccordionProps) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />

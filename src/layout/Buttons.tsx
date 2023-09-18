@@ -1,7 +1,7 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { ReactElement } from 'react';
 import Button from '@mui/material/Button';
 import { SxProps } from '@mui/material/styles';
-import { ReactElement } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 export const HomeButton = (props: { sx?: SxProps }): ReactElement => {
   return (

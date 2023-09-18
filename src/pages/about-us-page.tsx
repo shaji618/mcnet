@@ -1,13 +1,14 @@
-import Box from '@mui/material/Box';
-import MCNETHistory from '../components/MCNETHistory';
-import Shura from '../components/Shura';
-import Page from '../layout/Page';
-import Typography from '@mui/material/Typography';
-import { APP_PRIMARY_COLOR, PATHS } from '../util/constants';
-import { HashLink } from 'react-router-hash-link';
-import BodySubHeader from '../layout/BodySubheader';
 import { ReactElement } from 'react';
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import { HashLink } from 'react-router-hash-link';
+
+import MCNETHistory from '@components/MCNETHistory';
+import Shura from '@components/Shura';
+import BodySubHeader from '@layout/BodySubheader';
+import Page from '@layout/Page';
+import { APP_PRIMARY_COLOR, PATHS } from '@util/constants';
 
 const SHURA_ANCHOR_ID = 'shura';
 

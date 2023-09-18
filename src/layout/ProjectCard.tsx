@@ -1,20 +1,21 @@
+import { MouseEvent, ReactElement, ReactNode, useState } from 'react';
+import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
+import Badge from '@mui/material/Badge';
 import Box from '@mui/material/Box';
+import Chip from '@mui/material/Chip';
 import CircularProgress from '@mui/material/CircularProgress';
-import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+import ReactCardFlip from 'react-card-flip';
+
+import DonateButton from '@components/DonateButton';
 import {
   APP_PRIMARY_COLOR,
   APP_SECONDARY_COLOR,
   APP_TERTIARY_COLOR
-} from '../util/constants';
-import { MouseEvent, ReactElement, ReactNode, useState } from 'react';
-import Grid from '@mui/material/Grid';
-import ReactCardFlip from 'react-card-flip';
-import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
-import Badge from '@mui/material/Badge';
-import { currencyFormatter } from '../util/helpers';
-import DonateButton from '../components/DonateButton';
-import Chip from '@mui/material/Chip';
+} from '@util/constants';
+import { currencyFormatter } from '@util/helpers';
 
 const ProjectCard = (props: {
   backContent: ReactNode;

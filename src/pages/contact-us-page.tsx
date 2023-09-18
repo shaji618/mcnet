@@ -1,10 +1,11 @@
-import Page from '../layout/Page';
-import ContactPicker from '../components/ContactPicker';
-import ContactForm from '../components/ContactForm';
+import { ReactElement } from 'react';
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
-import MailingListCTA from '../components/MailingListCTA';
-import { ReactElement } from 'react';
+
+import ContactForm from '@components/ContactForm';
+import ContactPicker from '@components/ContactPicker';
+import MailingListCTA from '@components/MailingListCTA';
+import Page from '@layout/Page';
 
 export const ContactUs = (): ReactElement => {
   return (

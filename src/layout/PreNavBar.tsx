@@ -1,21 +1,22 @@
 import { MouseEvent, ReactElement, useState } from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import Container from '@mui/material/Container';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
-import PhoneOutlinedIcon from '@mui/icons-material/PhoneOutlined';
-import { APP_PRIMARY_COLOR, BLANK_PAGE_PATHS } from '../util/constants';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import FacebookIcon from '@mui/icons-material/Facebook';
+import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
+import PhoneOutlinedIcon from '@mui/icons-material/PhoneOutlined';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import IconButton from '@mui/material/IconButton';
 import Link from '@mui/material/Link';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import Toolbar from '@mui/material/Toolbar';
+import Tooltip from '@mui/material/Tooltip';
+import Typography from '@mui/material/Typography';
 import { useLocation } from 'react-router-dom';
+
+import { APP_PRIMARY_COLOR, BLANK_PAGE_PATHS } from '@util/constants';
 
 function ResponsiveAppBar(): ReactElement | null {
   const urlPath = useLocation();

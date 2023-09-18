@@ -1,9 +1,10 @@
+import { ReactElement } from 'react';
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import { NavLink } from 'react-router-dom';
-import { PATHS } from '../util/constants';
-import { ReactElement } from 'react';
+
+import { PATHS } from '@util/constants';
 
 const MCNETHistory = (): ReactElement => {
   return (

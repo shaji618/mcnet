@@ -1,23 +1,24 @@
-import NavBar from './layout/NavBar';
+import { ReactElement } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
 // import { HashRouter } from 'react-router-dom';
-import { Home } from './pages/home-page';
-import { AboutUs } from './pages/about-us-page';
-import { Services } from './pages/services-page';
-import { Programs } from './pages/programs-page';
-import { SundaySchool } from './pages/sunday-school-page';
-import { ContactUs } from './pages/contact-us-page';
-import PreNavBar from './layout/PreNavBar';
-import JummahPrayers from './pages/jummah-prayers-page';
-import { UpcomingProjects } from './pages/upcoming-projects-page';
-import Information from './pages/information-page';
-import NotFoundPage from './pages/not-found-page';
-import Footer from './layout/Footer';
-import { PATHS } from './util/constants';
-import ScrollToTop from './layout/ScrollToTop';
-import { ReactElement } from 'react';
-import MosqueStatus from './components/MosqueStatus';
+
+import MosqueStatus from '@components/MosqueStatus';
+import Footer from '@layout/Footer';
+import NavBar from '@layout/NavBar';
+import PreNavBar from '@layout/PreNavBar';
+import ScrollToTop from '@layout/ScrollToTop';
+import { AboutUs } from '@pages/about-us-page';
+import { ContactUs } from '@pages/contact-us-page';
+import { Home } from '@pages/home-page';
+import Information from '@pages/information-page';
+import JummahPrayers from '@pages/jummah-prayers-page';
+import NotFoundPage from '@pages/not-found-page';
+import { Programs } from '@pages/programs-page';
+import { Services } from '@pages/services-page';
+import { SundaySchool } from '@pages/sunday-school-page';
+import { UpcomingProjects } from '@pages/upcoming-projects-page';
+import { PATHS } from '@util/constants';
 
 const Root = (): ReactElement => {
   return (

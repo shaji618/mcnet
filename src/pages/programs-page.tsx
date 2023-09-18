@@ -1,6 +1,7 @@
 import { ReactElement } from 'react';
-import ProgramSelectMenu from '../components/Programs/ProgramSelectMenu';
-import Page from '../layout/Page';
+
+import ProgramSelectMenu from '@components/programs/ProgramSelectMenu';
+import Page from '@layout/Page';
 
 export const Programs = (): ReactElement => {
   return (

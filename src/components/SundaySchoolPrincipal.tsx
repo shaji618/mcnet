@@ -1,9 +1,11 @@
-import Typography from '@mui/material/Typography';
-import HeadshotCard from '../layout/HeadshotCard';
-import Stack from '@mui/material/Stack';
-import Grid from '@mui/material/Grid';
-import BodySubHeader from '../layout/BodySubheader';
 import { ReactElement } from 'react';
+import Grid from '@mui/material/Grid';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+
+import BodySubHeader from '@layout/BodySubheader';
+import HeadshotCard from '@layout/HeadshotCard';
+
 
 const SundaySchoolPrincipal = (): ReactElement => {
   return (

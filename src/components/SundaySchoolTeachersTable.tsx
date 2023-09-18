@@ -1,15 +1,17 @@
-import Typography from '@mui/material/Typography';
-import ArchiveTable, { ArchiveTableRow } from '../layout/ArchiveTable';
-import { APP_SECONDARY_COLOR } from '../util/constants';
-import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
+import { ReactElement } from 'react';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
+import PhoneOutlinedIcon from '@mui/icons-material/PhoneOutlined';
+import Box from '@mui/material/Box';
+import Link from '@mui/material/Link';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import Link from '@mui/material/Link';
-import PhoneOutlinedIcon from '@mui/icons-material/PhoneOutlined';
-import BodySubHeader from '../layout/BodySubheader';
-import { ReactElement } from 'react';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+
+import ArchiveTable, { ArchiveTableRow } from '@layout/ArchiveTable';
+import BodySubHeader from '@layout/BodySubheader';
+import { APP_SECONDARY_COLOR } from '@util/constants';
+
 
 const ExpandComponent = (props: { email?: string }): ReactElement => {
   return (

@@ -1,8 +1,10 @@
-import Grid from '@mui/material/Grid';
-import sMalikHeadshot from '../assets/headshots/sMalikHeadshot.jpg';
-import aWarsyHeadshot from '../assets/headshots/aWarsyHeadshot.png';
-import HeadshotCard from '../layout/HeadshotCard';
 import { ReactElement } from 'react';
+import Grid from '@mui/material/Grid';
+
+import aWarsyHeadshot from '@assets/headshots/aWarsyHeadshot.png';
+import sMalikHeadshot from '@assets/headshots/sMalikHeadshot.jpg';
+import HeadshotCard from '@layout/HeadshotCard';
+
 
 const Shura = (): ReactElement => {
   return (

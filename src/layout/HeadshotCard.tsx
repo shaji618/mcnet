@@ -1,14 +1,16 @@
+import { ReactElement } from 'react';
+import ContactMailIcon from '@mui/icons-material/ContactMail';
+import PersonIcon from '@mui/icons-material/Person';
+import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
 import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import PersonIcon from '@mui/icons-material/Person';
-import CardContent from '@mui/material/CardContent';
-import Stack from '@mui/material/Stack';
-import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
-import ContactMailIcon from '@mui/icons-material/ContactMail';
 import Link from '@mui/material/Link';
-import { APP_SECONDARY_COLOR } from '../util/constants';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+
+import { APP_SECONDARY_COLOR } from '@util/constants';
 
 const HeadshotCard = (props: {
   dimensions?: { height: string | number; width: string | number };
@@ -16,7 +18,7 @@ const HeadshotCard = (props: {
   img?: string;
   name: string;
   title: string;
-}) => {
+}): ReactElement => {
   const { dimensions, email, img, name, title } = props;
 
   return (

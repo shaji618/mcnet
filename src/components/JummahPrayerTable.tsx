@@ -1,11 +1,12 @@
-import Typography from '@mui/material/Typography';
-import ArchiveTable, { ArchiveTableRow } from '../layout/ArchiveTable';
+import { ReactElement } from 'react';
+import LinkIcon from '@mui/icons-material/Link';
+import Box from '@mui/material/Box';
+import Link from '@mui/material/Link';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import Box from '@mui/material/Box';
-import LinkIcon from '@mui/icons-material/Link';
-import Link from '@mui/material/Link';
-import { ReactElement } from 'react';
+import Typography from '@mui/material/Typography';
+
+import ArchiveTable, { ArchiveTableRow } from '@layout/ArchiveTable';
 
 const ExpandContent = (props: {
   khutbaUrl: string;

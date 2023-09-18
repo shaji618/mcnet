@@ -1,11 +1,12 @@
+import { ReactElement } from 'react';
 import Button from '@mui/material/Button';
+import { SxProps } from '@mui/material/styles';
+
 import {
   APP_PRIMARY_COLOR,
   APP_SECONDARY_COLOR,
   APP_TERTIARY_COLOR
-} from '../util/constants';
-import { SxProps } from '@mui/material/styles';
-import { ReactElement } from 'react';
+} from '@util/constants';
 
 // TODO: use https://www.npmjs.com/package/@paypal/react-paypal-js ?
 const DonateButton = (props: { sx?: SxProps }): ReactElement => {

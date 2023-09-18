@@ -1,6 +1,7 @@
-import Typography from '@mui/material/Typography';
-import BodySubHeader from '../../layout/BodySubheader';
 import { ReactElement } from 'react';
+import Typography from '@mui/material/Typography';
+
+import BodySubHeader from '@layout/BodySubheader';
 
 const AdultProgramContent = (): ReactElement => {
   return (

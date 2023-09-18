@@ -1,17 +1,20 @@
-import SundaySchoolPrincipal from '../components/SundaySchoolPrincipal';
-import SundaySchoolTeachersTable from '../components/SundaySchoolTeachersTable';
-import Page from '../layout/Page';
-import Typography from '@mui/material/Typography';
+import { ReactElement } from 'react';
+import Chip from '@mui/material/Chip';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
 import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
-import '../style-sheets/SuperResponsiveTableStyle.css';
-import Chip from '@mui/material/Chip';
-import BodySubHeader from '../layout/BodySubheader';
-import { ReactElement } from 'react';
-import DailyClassSchedule from '../components/DailyClassSchedule';
+
+import DailyClassSchedule from '@components/DailyClassSchedule';
+import SundaySchoolPrincipal from '@components/SundaySchoolPrincipal';
+import SundaySchoolTeachersTable from '@components/SundaySchoolTeachersTable';
+import BodySubHeader from '@layout/BodySubheader';
+import Page from '@layout/Page';
+
+import '@style-sheets/SuperResponsiveTableStyle.css';
 
 export const SundaySchool = (): ReactElement => {
   return (
@@ -41,68 +44,70 @@ export const SundaySchool = (): ReactElement => {
             .
           </Typography>
           <BodySubHeader variant='h5'>TIMELINE</BodySubHeader>
-          <Table>
-            <Thead>
-              <Tr>
-                <Th>Batch</Th>
-                <Th>Duration of Class</Th>
-                <Th>Class Details</Th>
-                <Th>Class Time</Th>
-                <Th>Days of Week</Th>
-              </Tr>
-            </Thead>
-            <Tbody>
-              <Tr>
-                <Td>KE-B001</Td>
-                <Td>
-                  <Chip
-                    label='1st April 2018 to 31st July 2018'
-                    sx={{
-                      height: 'auto',
-                      textAlign: 'center',
-                      '& .MuiChip-label': {
-                        display: 'block',
-                        whiteSpace: 'normal'
-                      }
-                    }}
-                    variant='outlined'
-                  />
-                </Td>
-                <Td>
-                  Classes for Arabic language, Islamic studies and Quran
-                  translation for kids
-                </Td>
-                <Td>
-                  <Chip
-                    label='11:30 AM To 03:00 PM'
-                    sx={{
-                      height: 'auto',
-                      textAlign: 'center',
-                      '& .MuiChip-label': {
-                        display: 'block',
-                        whiteSpace: 'normal'
-                      }
-                    }}
-                    variant='outlined'
-                  />
-                </Td>
-                <Td>
-                  <Chip
-                    label='Sunday'
-                    sx={{
-                      height: 'auto',
-                      textAlign: 'center',
-                      '& .MuiChip-label': {
-                        display: 'block',
-                        whiteSpace: 'normal'
-                      }
-                    }}
-                    variant='outlined'
-                  />
-                </Td>
-              </Tr>
-            </Tbody>
-          </Table>
+          <Paper>
+            <Table>
+              <Thead>
+                <Tr>
+                  <Th>Batch</Th>
+                  <Th>Duration of Class</Th>
+                  <Th>Class Details</Th>
+                  <Th>Class Time</Th>
+                  <Th>Days of Week</Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                <Tr>
+                  <Td>KE-B001</Td>
+                  <Td>
+                    <Chip
+                      label='1st April 2018 to 31st July 2018'
+                      sx={{
+                        height: 'auto',
+                        textAlign: 'center',
+                        '& .MuiChip-label': {
+                          display: 'block',
+                          whiteSpace: 'normal'
+                        }
+                      }}
+                      variant='outlined'
+                    />
+                  </Td>
+                  <Td>
+                    Classes for Arabic language, Islamic studies and Quran
+                    translation for kids
+                  </Td>
+                  <Td>
+                    <Chip
+                      label='11:30 AM To 03:00 PM'
+                      sx={{
+                        height: 'auto',
+                        textAlign: 'center',
+                        '& .MuiChip-label': {
+                          display: 'block',
+                          whiteSpace: 'normal'
+                        }
+                      }}
+                      variant='outlined'
+                    />
+                  </Td>
+                  <Td>
+                    <Chip
+                      label='Sunday'
+                      sx={{
+                        height: 'auto',
+                        textAlign: 'center',
+                        '& .MuiChip-label': {
+                          display: 'block',
+                          whiteSpace: 'normal'
+                        }
+                      }}
+                      variant='outlined'
+                    />
+                  </Td>
+                </Tr>
+              </Tbody>
+            </Table>
+          </Paper>
         </>
       }
       headerText='SUNDAY SCHOOL'

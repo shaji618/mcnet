@@ -1,9 +1,10 @@
-import Typography from '@mui/material/Typography';
-import FridayPrayerTable from '../components/JummahPrayerTable';
-import Page from '../layout/Page';
+import { ReactElement } from 'react';
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
-import { ReactElement } from 'react';
+import Typography from '@mui/material/Typography';
+
+import FridayPrayerTable from '@components/JummahPrayerTable';
+import Page from '@layout/Page';
 
 const JummahPrayers = (): ReactElement => {
   return (

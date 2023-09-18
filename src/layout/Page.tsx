@@ -1,13 +1,14 @@
 import { FC, ReactNode } from 'react';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import { createTheme, SxProps, ThemeProvider } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
+
+import BodySubHeader from '@layout/BodySubheader';
 import {
   APP_PRIMARY_COLOR,
   APP_SECONDARY_COLOR,
   APP_TERTIARY_COLOR
-} from '../util/constants';
-import BodySubHeader from './BodySubheader';
+} from '@util/constants';
 
 type Props = {
   children?: ReactNode;
