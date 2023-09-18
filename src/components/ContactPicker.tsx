@@ -1,23 +1,25 @@
-import { ArcherContainer, ArcherElement } from 'react-archer';
-import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
-import PhoneOutlinedIcon from '@mui/icons-material/PhoneOutlined';
-import PhonelinkRingIcon from '@mui/icons-material/PhonelinkRing';
-import MailOutlineIcon from '@mui/icons-material/MailOutline';
-import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
-import Stack from '@mui/material/Stack';
-import Avatar from '@mui/material/Avatar';
-import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
-import CardMedia from '@mui/material/CardMedia';
 import { ReactElement, ReactNode, useState } from 'react';
+import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
+import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import PhonelinkRingIcon from '@mui/icons-material/PhonelinkRing';
+import PhoneOutlinedIcon from '@mui/icons-material/PhoneOutlined';
+import Avatar from '@mui/material/Avatar';
+import CardMedia from '@mui/material/CardMedia';
+import Link from '@mui/material/Link';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+import { ArcherContainer, ArcherElement } from 'react-archer';
+
+import Tooltip from '@mui/material/Tooltip';
+import Box from '@mui/material/Box';
+
+import { ReactComponent as MCNETIcon } from '@assets/svg-icons/logo.svg';
 import {
   APP_PRIMARY_COLOR,
   APP_SECONDARY_COLOR,
   APP_TERTIARY_COLOR
-} from '../util/constants';
-import { ReactComponent as MCNETIcon } from '../assets/svg-icons/logo.svg';
-import Tooltip from '@mui/material/Tooltip';
-import Box from '@mui/material/Box';
+} from '@util/constants';
 
 type Picker = 'address' | 'phoneNumber' | 'email';
 

@@ -1,14 +1,14 @@
 // TODO: wire this up to the back end
-
 import { ChangeEvent, FormEvent, ReactElement, useState } from 'react';
-import { APP_SECONDARY_COLOR } from '../util/constants';
-import Card from '@mui/material/Card';
-import Typography from '@mui/material/Typography';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import Snackbar from '@mui/material/Snackbar';
-import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
+import Button from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import IconButton from '@mui/material/IconButton';
+import Snackbar from '@mui/material/Snackbar';
+import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
+
+import { APP_SECONDARY_COLOR } from '@util/constants';
 
 const ContactForm = (): ReactElement => {
   const [fullName, setFullName] = useState('');

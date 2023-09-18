@@ -4,6 +4,15 @@
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
+    "paths": {
+      "@assets/*": ["./src/assets/*"],
+      "@components/*": ["./src/components/*"],
+      "@data/*": ["./src/data/*"],
+      "@layout/*": ["./src/layout/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@style-sheets/*": ["./src/style-sheets/*"],
+      "@util/*": ["./src/util/*"]
+    },
     "skipLibCheck": true,
     "types": ["vite-plugin-svgr/client", "node"],
 

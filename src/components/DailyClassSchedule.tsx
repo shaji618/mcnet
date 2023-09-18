@@ -1,6 +1,7 @@
-import BodySubHeader from '../layout/BodySubheader';
-import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import { ReactElement } from 'react';
+import { DataGrid, GridColDef } from '@mui/x-data-grid';
+
+import BodySubHeader from '@layout/BodySubheader';
 
 const columns: GridColDef[] = [
   { field: 'time', headerName: 'Time', flex: 0.2 },

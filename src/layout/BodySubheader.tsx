@@ -1,6 +1,7 @@
-import Typography from '@mui/material/Typography';
-import { APP_TERTIARY_COLOR } from '../util/constants';
 import { PropsWithChildren, ReactElement } from 'react';
+import Typography from '@mui/material/Typography';
+
+import { APP_TERTIARY_COLOR } from '@util/constants';
 
 const BodySubHeader = (
   props: PropsWithChildren<{

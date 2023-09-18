@@ -1,15 +1,3 @@
-import Avatar from '@mui/material/Avatar';
-import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
-import {
-  APP_PRIMARY_COLOR,
-  APP_SECONDARY_COLOR,
-  SERVICE_TYPES
-} from '../../util/constants';
-import { ReactComponent as PrayerHands } from '../../assets/svg-icons/prayerHands.svg';
-import { ReactComponent as WeddingRings } from '../../assets/svg-icons/wedding.svg';
-import { ReactComponent as Funeral } from '../../assets/svg-icons/funeral.svg';
 import {
   ReactElement,
   ReactNode,
@@ -18,8 +6,21 @@ import {
   useState
 } from 'react';
 import Diversity1Icon from '@mui/icons-material/Diversity1';
-import ServicesAccordion from './ServicesAccordion';
+import Avatar from '@mui/material/Avatar';
+import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 import { useLocation } from 'react-router-dom';
+
+import { ReactComponent as Funeral } from '@assets/svg-icons/funeral.svg';
+import { ReactComponent as PrayerHands } from '@assets/svg-icons/prayerHands.svg';
+import { ReactComponent as WeddingRings } from '@assets/svg-icons/wedding.svg';
+import ServicesAccordion from '@components/services/ServicesAccordion';
+import {
+  APP_PRIMARY_COLOR,
+  APP_SECONDARY_COLOR,
+  SERVICE_TYPES
+} from '@util/constants';
 
 export type Services = (typeof SERVICE_TYPES)[keyof typeof SERVICE_TYPES];
 

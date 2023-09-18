@@ -6,17 +6,18 @@
  */
 
 import { FormEvent, ReactElement, useState } from 'react';
-import { APP_TERTIARY_COLOR } from '../util/constants';
-import Card from '@mui/material/Card';
-import Typography from '@mui/material/Typography';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import CardMedia from '@mui/material/CardMedia';
-import snowyMasjid from '../assets/mosque-photos/snowyMasjid.jpg';
-import CardContent from '@mui/material/CardContent';
-import Snackbar from '@mui/material/Snackbar';
 import CloseIcon from '@mui/icons-material/Close';
+import Button from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
 import IconButton from '@mui/material/IconButton';
+import Snackbar from '@mui/material/Snackbar';
+import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
+
+import snowyMasjid from '@assets/mosque-photos/snowyMasjid.jpg';
+import { APP_TERTIARY_COLOR } from '@util/constants';
 
 const MailingListCTA = (): ReactElement => {
   const [fullName, setFullName] = useState('');

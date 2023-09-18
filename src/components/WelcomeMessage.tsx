@@ -1,11 +1,12 @@
+import { ReactElement } from 'react';
 import Image from 'mui-image';
-import { Link } from 'react-router-dom';
-import { APP_SECONDARY_COLOR, PATHS, SERVICE_TYPES } from '../util/constants';
-import croppedRainbowMasjid from '../assets/mosque-photos/croppedRainbowMasjid.png';
-import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import { ReactElement } from 'react';
+import Typography from '@mui/material/Typography';
+import { Link } from 'react-router-dom';
+
+import croppedRainbowMasjid from '@assets/mosque-photos/croppedRainbowMasjid.png';
+import { APP_SECONDARY_COLOR, PATHS, SERVICE_TYPES } from '@util/constants';
 
 // TODO: fix the mobile layout here
 const WelcomeText = (): ReactElement => {

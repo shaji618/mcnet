@@ -1,15 +1,12 @@
-import AnnouncementsArchiveTable from '../components/AnnouncementsArchiveTable';
-import PressReleasesArchiveTable from '../components/PressReleasesArchiveTable';
-import Page from '../layout/Page';
-import { HashLink } from 'react-router-hash-link';
-import {
-  ANNOUNCEMENT_TYPES,
-  APP_PRIMARY_COLOR,
-  PATHS
-} from '../util/constants';
 import { ReactElement } from 'react';
-import EventsCalendar from '../components/EventsCalendar';
 import Button from '@mui/material/Button';
+import { HashLink } from 'react-router-hash-link';
+
+import AnnouncementsArchiveTable from '@components/AnnouncementsArchiveTable';
+import EventsCalendar from '@components/EventsCalendar';
+import PressReleasesArchiveTable from '@components/PressReleasesArchiveTable';
+import Page from '@layout/Page';
+import { ANNOUNCEMENT_TYPES, APP_PRIMARY_COLOR, PATHS } from '@util/constants';
 
 export const Information = (): ReactElement => {
   return (

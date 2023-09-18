@@ -1,9 +1,10 @@
-import Typography from '@mui/material/Typography';
-import ArchiveTable, { ArchiveTableRow } from '../layout/ArchiveTable';
-import Box from '@mui/material/Box';
-import BodySubHeader from '../layout/BodySubheader';
 import { ReactElement } from 'react';
-import { ANNOUNCEMENT_TYPES } from '../util/constants';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+
+import ArchiveTable, { ArchiveTableRow } from '@layout/ArchiveTable';
+import BodySubHeader from '@layout/BodySubheader';
+import { ANNOUNCEMENT_TYPES } from '@util/constants';
 
 const PressReleasesArchiveTable = (): ReactElement => {
   const rows: ArchiveTableRow[] = [

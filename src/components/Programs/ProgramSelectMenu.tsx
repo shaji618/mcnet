@@ -1,14 +1,15 @@
+import { ReactElement, useState } from 'react';
 import Box from '@mui/material/Box';
+import FormControl from '@mui/material/FormControl';
+import FormHelperText from '@mui/material/FormHelperText';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-import { ReactElement, useState } from 'react';
-import FormHelperText from '@mui/material/FormHelperText';
-import YouthProgramContent from './YouthProgramContent';
-import AdultProgramContent from './AdultProgramContent';
-import SistersProgramContent from './SistersProgramContent';
-import WeekendQuranClassContent from './WeekendQuranClassContent';
+
+import AdultProgramContent from '@components/programs/AdultProgramContent';
+import SistersProgramContent from '@components/programs/SistersProgramContent';
+import WeekendQuranClassContent from '@components/programs/WeekendQuranClassContent';
+import YouthProgramContent from '@components/programs/YouthProgramContent';
 
 type ProgramType =
   | 'youth-program'

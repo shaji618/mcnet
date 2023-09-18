@@ -1,12 +1,13 @@
+import { ReactElement } from 'react';
 import Grid from '@mui/material/Grid';
-import ProjectCard from '../layout/ProjectCard';
-import Page from '../layout/Page';
-import { ReactComponent as Duplex } from '../assets/svg-icons/duplex.svg';
-import { ReactComponent as Construction } from '../assets/svg-icons/construction.svg';
-import Typography from '@mui/material/Typography';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import { ReactElement } from 'react';
+import Typography from '@mui/material/Typography';
+
+import { ReactComponent as Duplex } from '@assets/svg-icons/duplex.svg';
+import { ReactComponent as Construction } from '@assets/svg-icons/construction.svg';
+import Page from '@layout/Page';
+import ProjectCard from '@layout/ProjectCard';
 
 export const UpcomingProjects = (): ReactElement => {
   return (

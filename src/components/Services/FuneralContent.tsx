@@ -1,17 +1,18 @@
+import { ReactElement } from 'react';
 import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import Divider from '@mui/material/Divider';
-import MaterialLink from '@mui/material/Link';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
+import MaterialLink from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
+
 import {
   APP_SECONDARY_COLOR,
   APP_TERTIARY_COLOR,
   PATHS
-} from '../../util/constants';
-import { ReactElement } from 'react';
+} from '@util/constants';
 
 const FuneralContent = (): ReactElement => {
   return (

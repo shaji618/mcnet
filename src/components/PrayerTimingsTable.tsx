@@ -1,19 +1,20 @@
 import { ReactElement, useEffect, useState } from 'react';
-import { APP_PRIMARY_COLOR, APP_SECONDARY_COLOR } from '../util/constants';
-import { ReactComponent as Spinner } from '../assets/svg-icons/spinner.svg';
 import moment from 'moment';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import TableContainer from '@mui/material/TableContainer';
-import Table from '@mui/material/Table';
-import TableRow from '@mui/material/TableRow';
-import TableHead from '@mui/material/TableHead';
-import TableCell from '@mui/material/TableCell';
-import TableBody from '@mui/material/TableBody';
-import SvgIcon from '@mui/material/SvgIcon';
 import Link from '@mui/material/Link';
-import { getCurrentDate } from '../util/helpers';
 import { SxProps } from '@mui/material/styles';
+import SvgIcon from '@mui/material/SvgIcon';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Typography from '@mui/material/Typography';
+
+import { ReactComponent as Spinner } from '@assets/svg-icons/spinner.svg';
+import { APP_PRIMARY_COLOR, APP_SECONDARY_COLOR } from '@util/constants';
+import { getCurrentDate } from '@util/helpers';
 
 const requestUrl =
   'https://islamicfinder.us/index.php/api/prayer_times?country=US&zipcode=37604';
@@ -88,6 +89,7 @@ const PrayerTimingsTable = (props: {
             {prayerRows.map((row) => {
               return (
                 <TableRow
+                  key={Math.random()}
                   sx={{
                     '&:nth-of-type(even)': {
                       backgroundColor: APP_SECONDARY_COLOR

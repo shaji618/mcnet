@@ -1,16 +1,17 @@
 import { MouseEvent, ReactElement, ReactNode, useState } from 'react';
-import ReactCardFlip from 'react-card-flip';
+import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
+import Diversity3Icon from '@mui/icons-material/Diversity3';
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
+import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
+import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
-import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
-import { APP_SECONDARY_COLOR, APP_TERTIARY_COLOR } from '../util/constants';
-import { ReactComponent as Logo } from '../assets/svg-icons/logo.svg';
-import Diversity3Icon from '@mui/icons-material/Diversity3';
-import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
-import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
+import ReactCardFlip from 'react-card-flip';
+
+import { ReactComponent as Logo } from '@assets/svg-icons/logo.svg';
+import { APP_SECONDARY_COLOR, APP_TERTIARY_COLOR } from '@util/constants';
 
 const HomePageFlipCard = (props: {
   backContent: ReactNode;

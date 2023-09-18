@@ -1,22 +1,23 @@
-import { ReactComponent as Megaphone } from '../assets/svg-icons/loudspeaker.svg';
-import { ReactComponent as Microphone } from '../assets/svg-icons/microphone.svg';
-import { ReactComponent as CalendarIcon } from '../assets/svg-icons/calendar.svg';
 import { ReactElement, ReactNode, useState } from 'react';
+import Avatar from '@mui/material/Avatar';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+import { HashLink } from 'react-router-hash-link';
+
+import { ReactComponent as CalendarIcon } from '@assets/svg-icons/calendar.svg';
+import { ReactComponent as Megaphone } from '@assets/svg-icons/loudspeaker.svg';
+import { ReactComponent as Microphone } from '@assets/svg-icons/microphone.svg';
+import { DailyEventsTable } from '@components/EventsCalendar';
+import { dailyEventRows } from '@data/dailyEventRows';
 import {
   ANNOUNCEMENT_TYPES,
   APP_TERTIARY_COLOR,
   PATHS
-} from '../util/constants';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import Avatar from '@mui/material/Avatar';
-import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import { HashLink } from 'react-router-hash-link';
-import { DailyEventsTable } from './EventsCalendar';
-import { dailyEventRows } from '../data/dailyEventRows';
+} from '@util/constants';
 
 export type Announcements =
   (typeof ANNOUNCEMENT_TYPES)[keyof typeof ANNOUNCEMENT_TYPES];

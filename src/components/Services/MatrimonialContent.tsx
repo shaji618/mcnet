@@ -1,7 +1,8 @@
+import { ReactElement } from 'react';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
-import { PATHS } from '../../util/constants';
-import { ReactElement } from 'react';
+
+import { PATHS } from '@util/constants';
 
 const MatrimonialContent = (): ReactElement => {
   return (

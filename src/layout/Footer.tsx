@@ -1,15 +1,16 @@
+import { ReactElement } from 'react';
 import Box from '@mui/material/Box';
+import Link from '@mui/material/Link';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
+import { useLocation } from 'react-router-dom';
+
 import {
   APP_PRIMARY_COLOR,
   APP_SECONDARY_COLOR,
   APP_TERTIARY_COLOR,
   BLANK_PAGE_PATHS
-} from '../util/constants';
-import Typography from '@mui/material/Typography';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Link from '@mui/material/Link';
-import { ReactElement } from 'react';
-import { useLocation } from 'react-router-dom';
+} from '@util/constants';
 
 const footerTheme = createTheme({
   typography: {

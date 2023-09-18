@@ -1,13 +1,14 @@
+import { ReactElement } from 'react';
 import Box from '@mui/material/Box';
+import Chip from '@mui/material/Chip';
+import Divider from '@mui/material/Divider';
+import Typography from '@mui/material/Typography';
+
 import {
   APP_PRIMARY_COLOR,
   APP_SECONDARY_COLOR,
   APP_TERTIARY_COLOR
-} from '../util/constants';
-import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
-import Chip from '@mui/material/Chip';
-import { ReactElement } from 'react';
+} from '@util/constants';
 
 const SubAlertBar = (): ReactElement => {
   return (

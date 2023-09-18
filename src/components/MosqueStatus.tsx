@@ -1,12 +1,13 @@
-import Grid from '@mui/material/Grid';
 import { ReactElement } from 'react';
-import PrayerTimingsTable from './PrayerTimingsTable';
-import { ReactComponent as PayPalQR } from '../assets/svg-icons/example-paypal-qr.svg';
-import { ReactComponent as WiFiQR } from '../assets/svg-icons/example-wifi-qr.svg';
-import CircularProgress from '@mui/material/CircularProgress';
-import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Page from '../layout/Page';
+import CircularProgress from '@mui/material/CircularProgress';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
+
+import { ReactComponent as PayPalQR } from '@assets/svg-icons/example-paypal-qr.svg';
+import { ReactComponent as WiFiQR } from '@assets/svg-icons/example-wifi-qr.svg';
+import PrayerTimingsTable from '@components/PrayerTimingsTable';
+import Page from '@layout/Page';
 
 const MosqueStatus = (): ReactElement => {
   const dollarsRaised = 5803.1;

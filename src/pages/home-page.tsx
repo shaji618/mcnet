@@ -1,16 +1,17 @@
+import { ReactElement } from 'react';
+import Image from 'mui-image';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import WelcomeMessage from '../components/WelcomeMessage';
-import Page from '../layout/Page';
-import PrayerTimingsTable from '../components/PrayerTimingsTable';
-import AnnouncementsOverview from '../components/AnnouncementsOverview';
-import Image from 'mui-image';
-import filteredMasjid from '../assets/mosque-photos/filteredMasjid.jpg';
-import HomePageFlipCards from '../components/HomePageFlipCards';
 import Link from '@mui/material/Link';
-import BodySubHeader from '../layout/BodySubheader';
-import { ReactElement } from 'react';
+import Typography from '@mui/material/Typography';
+
+import filteredMasjid from '@assets/mosque-photos/filteredMasjid.jpg';
+import AnnouncementsOverview from '@components/AnnouncementsOverview';
+import HomePageFlipCards from '@components/HomePageFlipCards';
+import PrayerTimingsTable from '@components/PrayerTimingsTable';
+import WelcomeMessage from '@components/WelcomeMessage';
+import BodySubHeader from '@layout/BodySubheader';
+import Page from '@layout/Page';
 
 export const Home = (): ReactElement => {
   return (

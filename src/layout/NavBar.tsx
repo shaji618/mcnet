@@ -1,24 +1,25 @@
 import { useState, MouseEvent, ReactElement } from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
+import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
+import Container from '@mui/material/Container';
+import Box from '@mui/material/Box';
+import IconButton from '@mui/material/IconButton';
+import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import SvgIcon from '@mui/material/SvgIcon';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import { NavLink, useLocation } from 'react-router-dom';
+
+import { ReactComponent as Logo } from '@assets/svg-icons/logo.svg';
+import DonateButton from '@components/DonateButton';
+import SubAlertBar from '@layout/SubNavBar';
 import {
   APP_PRIMARY_COLOR,
   APP_SECONDARY_COLOR,
   BLANK_PAGE_PATHS
-} from '../util/constants';
-import { ReactComponent as Logo } from '../assets/svg-icons/logo.svg';
-import { NavLink, useLocation } from 'react-router-dom';
-import SvgIcon from '@mui/material/SvgIcon';
-import DonateButton from '../components/DonateButton';
-import SubAlertBar from './SubNavBar';
+} from '@util/constants';
 
 const pages = [
   'Information',
@@ -145,6 +146,7 @@ const NavBar = (): ReactElement | null => {
                 {pages.map((page) => (
                   <StyledMenuItem
                     isMobile
+                    key={Math.random()}
                     pageTitle={page}
                     onClick={handleCloseNavMenu}
                   />
@@ -178,7 +180,11 @@ const NavBar = (): ReactElement | null => {
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
               {pages.map((page) => (
-                <StyledMenuItem pageTitle={page} onClick={handleCloseNavMenu} />
+                <StyledMenuItem
+                  key={Math.random()}
+                  pageTitle={page}
+                  onClick={handleCloseNavMenu}
+                />
               ))}
             </Box>
 

@@ -1,16 +1,19 @@
 import { ReactElement, useState } from 'react';
-import Calendar from 'react-calendar';
-import '../style-sheets/react-calendar.css';
-import BodySubHeader from '../layout/BodySubheader';
-import { ANNOUNCEMENT_TYPES } from '../util/constants';
-import Grid from '@mui/material/Grid';
 import moment from 'moment';
-import { getCurrentDate } from '../util/helpers';
-import Typography from '@mui/material/Typography';
-import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
-import '../style-sheets/SuperResponsiveTableStyle.css';
 import Chip from '@mui/material/Chip';
-import { dailyEventRows } from '../data/dailyEventRows';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+import Calendar from 'react-calendar';
+import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
+
+import { dailyEventRows } from '@data/dailyEventRows';
+import BodySubHeader from '@layout/BodySubheader';
+import { ANNOUNCEMENT_TYPES } from '@util/constants';
+import { getCurrentDate } from '@util/helpers';
+
+import '@style-sheets/react-calendar.css';
+import '@style-sheets/SuperResponsiveTableStyle.css';
 
 type CalendarDateValuePiece = Date | null;
 
@@ -81,7 +84,7 @@ export const DailyEventsTable = (props: {
   rows: DailyEventsTableProps[];
 }): ReactElement => {
   return (
-    <>
+    <Paper>
       <Table>
         <Thead>
           <Tr>
@@ -98,12 +101,13 @@ export const DailyEventsTable = (props: {
                 eventDate={row.eventDate}
                 eventTime={row.eventTime}
                 eventTitle={row.eventTitle}
+                key={Math.random()}
               />
             );
           })}
         </Tbody>
       </Table>
-    </>
+    </Paper>
   );
 };
 
@@ -112,12 +116,10 @@ const EventsCalendar = (): ReactElement => {
   const [calendarDate, setCalendarDate] =
     useState<CalendarDateValue>(todaysDate);
 
-  /* eslint-disable @typescript-eslint/no-unused-vars */
   // @ts-ignore
-  const hack = moment(calendarDate as Date).isSame(
+  const hack = moment(calendarDate as Date).isSame( // eslint-disable-line @typescript-eslint/no-unused-vars
     moment(todaysDate.setHours(0, 0, 0, 0))
   );
-  /* eslint-disable @typescript-eslint/no-unused-vars */
 
   return (
     <>

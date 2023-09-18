@@ -1,5 +1,5 @@
-import { DailyEventsTableProps } from '../components/EventsCalendar';
-import { getCurrentDate } from '../util/helpers';
+import { DailyEventsTableProps } from '@components/EventsCalendar';
+import { getCurrentDate } from '@util/helpers';
 
 export const dailyEventRows: DailyEventsTableProps[] = [
   {
