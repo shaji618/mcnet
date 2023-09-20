@@ -6,10 +6,10 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
-import AdultProgramContent from '@components/programs/AdultProgramContent';
-import SistersProgramContent from '@components/programs/SistersProgramContent';
-import WeekendQuranClassContent from '@components/programs/WeekendQuranClassContent';
-import YouthProgramContent from '@components/programs/YouthProgramContent';
+import AdultProgramContent from '@components/Programs/AdultProgramContent';
+import SistersProgramContent from '@components/Programs/SistersProgramContent';
+import WeekendQuranClassContent from '@components/Programs/WeekendQuranClassContent';
+import YouthProgramContent from '@components/Programs/YouthProgramContent';
 
 type ProgramType =
   | 'youth-program'

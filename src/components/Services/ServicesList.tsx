@@ -15,7 +15,7 @@ import { useLocation } from 'react-router-dom';
 import { ReactComponent as Funeral } from '@assets/svg-icons/funeral.svg';
 import { ReactComponent as PrayerHands } from '@assets/svg-icons/prayerHands.svg';
 import { ReactComponent as WeddingRings } from '@assets/svg-icons/wedding.svg';
-import ServicesAccordion from '@components/services/ServicesAccordion';
+import ServicesAccordion from '@components/Services/ServicesAccordion';
 import {
   APP_PRIMARY_COLOR,
   APP_SECONDARY_COLOR,

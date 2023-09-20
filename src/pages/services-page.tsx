@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import Box from '@mui/material/Box';
 
-import ServicesList from '@components/services/ServicesList';
+import ServicesList from '@components/Services/ServicesList';
 import Page from '@layout/Page';
 
 export const Services = (): ReactElement => {
