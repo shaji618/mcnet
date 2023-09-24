@@ -19,6 +19,8 @@ import { getCurrentDate } from '@util/helpers';
 const requestUrl =
   'https://islamicfinder.us/index.php/api/prayer_times?country=US&zipcode=37604';
 
+let numBolded = 0
+
 const PrayerTimingsTable = (props: {
   boxSx?: SxProps;
   hideMonthlyLink?: boolean;
@@ -64,7 +66,11 @@ const PrayerTimingsTable = (props: {
 
     const formattedInputTime = moment(inputTime, 'h:mm a').format('HH:mm:ss');
 
-    return currentFormattedTime > formattedInputTime;
+    if (currentFormattedTime < formattedInputTime) {
+      numBolded++
+    }
+
+    return currentFormattedTime < formattedInputTime;
   };
 
   return (
@@ -98,14 +104,14 @@ const PrayerTimingsTable = (props: {
                 >
                   <TableCell
                     sx={{
-                      fontWeight: compareFormattedTimes(row.timing) ? 300 : 700
+                      fontWeight: (compareFormattedTimes(row.timing) && 0<numBolded && numBolded<3) ? 700 : 300
                     }}
                   >
                     {row.name}
                   </TableCell>
                   <TableCell
                     sx={{
-                      fontWeight: compareFormattedTimes(row.timing) ? 300 : 700
+                      fontWeight: (compareFormattedTimes(row.timing) && 0<numBolded && numBolded<3) ? 700 : 300
                     }}
                   >
                     {loading ? <SvgIcon component={Spinner} /> : row.timing}
