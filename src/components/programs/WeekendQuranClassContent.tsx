@@ -101,7 +101,7 @@ const WeekendQuranClassContent = (): ReactElement => {
         </Box>{' '}
         CLASSES
       </BodySubHeader>
-      <Typography>
+      <Typography component='div'>
         <Box display='inline' fontStyle='italic'>
           Tajweed
         </Box>{' '}

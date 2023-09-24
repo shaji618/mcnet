@@ -27,8 +27,8 @@ const MCNETHistory = (): ReactElement => {
         Memphis came to Johnson City with to begin his first job as a
         pharmacist.
       </Typography>
-      <Typography mt={2}>
-        The locals knew very little of Islam or Muslims; the presence of any
+      <Typography component='div' mt={2}>
+        The locals knew very little of Islam or Muslims; the presence of any{' '}
         <Box fontStyle='italic' display='inline'>
           should
         </Box>{' '}
@@ -46,7 +46,7 @@ const MCNETHistory = (): ReactElement => {
         their Friday prayers, kick-starting the unofficial establishment of
         MCNET.
       </Typography>
-      <Typography mt={2}>
+      <Typography component='div' mt={2}>
         As more Muslim students enrolled in ETSU, it became a fertile campus for
         the local MSA (Muslim Student Association) chapter. Some of the
         obligatory Islamic activities (e.g. Ramadan prayers and{' '}
@@ -130,7 +130,7 @@ const MCNETHistory = (): ReactElement => {
         visitors. People contributed generously only to help the faith flourish
         within their families and future generations.
       </Typography>
-      <Typography mt={2}>
+      <Typography component='div' mt={2}>
         Today, MCNET provides year-round services for more than 500 local
         Muslims. New and existing programs continuously widen its outreach and
         evangelizes the teaching of sharing, sacrificing and standing by not
