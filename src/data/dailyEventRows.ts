@@ -1,9 +1,8 @@
 import { DailyEventsTableProps } from '@components/EventsCalendar';
-import { getCurrentDate } from '@util/helpers';
 
 export const dailyEventRows: DailyEventsTableProps[] = [
   {
-    eventDate: getCurrentDate().todaysDate,
+    eventDate: new Date(),
     eventTitle: 'Carnival 🎡🎪🎠',
     eventTime: '04:00 pm to 11:00 pm'
   }

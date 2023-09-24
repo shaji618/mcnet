@@ -84,13 +84,13 @@ const ProjectCard = (props: {
                     value={fundsNeededRatio * 100}
                     variant='determinate'
                   />
-                  <Typography fontWeight={700} mt={2}>
+                  <Typography component='div' fontWeight={700} mt={2}>
                     Funds raised:{' '}
                     <Box display='inline' fontWeight={100}>
                       {currencyFormatter.format(fundsRaised)}
                     </Box>
                   </Typography>
-                  <Typography fontWeight={700}>
+                  <Typography component='div' fontWeight={700}>
                     Fundraising target:{' '}
                     <Box display='inline' fontWeight={100}>
                       {currencyFormatter.format(fundTarget)}

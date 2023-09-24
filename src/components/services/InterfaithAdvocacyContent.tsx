@@ -78,7 +78,7 @@ const InterfaithAdvocacyContent = (): ReactElement => {
                 <Typography fontWeight={700}>The Mosque</Typography>
               </TableCell>
               <TableCell>
-                <Typography>
+                <Typography component='div'>
                   Although the term "mosque" is commonly and widely used to
                   describe the place where Muslims worship, Muslims often use
                   the term{' '}
@@ -134,7 +134,7 @@ const InterfaithAdvocacyContent = (): ReactElement => {
                 <Typography fontWeight={700}>Ablution</Typography>
               </TableCell>
               <TableCell>
-                <Typography>
+                <Typography component='div'>
                   In order to pray, Muslim men and women perform{' '}
                   <MaterialLink
                     href='https://en.wikipedia.org/wiki/Wudu'
@@ -179,10 +179,10 @@ const InterfaithAdvocacyContent = (): ReactElement => {
                 <Typography fontWeight={700}>Worship</Typography>
               </TableCell>
               <TableCell>
-                <Typography>
+                <Typography component='div'>
                   Visitors are welcome to observe prayers in progress. The
                   prayer generally lasts five to ten minutes and is led by the{' '}
-                  <Typography>
+                  <Typography component='div'>
                     <MaterialLink
                       href='https://en.wikipedia.org/wiki/Imam'
                       rel='noreferrer'
@@ -197,7 +197,7 @@ const InterfaithAdvocacyContent = (): ReactElement => {
                 </Typography>
                 <List sx={{ ml: 2 }}>
                   <ListItem>
-                    <Typography>
+                    <Typography component='div'>
                       The{' '}
                       <Box fontStyle='italic' display='inline'>
                         Imam
@@ -223,7 +223,7 @@ const InterfaithAdvocacyContent = (): ReactElement => {
                     </Typography>
                   </ListItem>
                   <ListItem>
-                    <Typography>
+                    <Typography component='div'>
                       The{' '}
                       <Box fontStyle='italic' display='inline'>
                         Imam
@@ -252,7 +252,7 @@ const InterfaithAdvocacyContent = (): ReactElement => {
                     </Typography>
                   </ListItem>
                   <ListItem>
-                    <Typography>
+                    <Typography component='div'>
                       There are no sacred or holy objects in the masjid, except
                       copies of the{' '}
                       <Box fontStyle='italic' display='inline'>
@@ -263,7 +263,7 @@ const InterfaithAdvocacyContent = (): ReactElement => {
                     </Typography>
                   </ListItem>
                   <ListItem>
-                    <Typography>
+                    <Typography component='div'>
                       Muslims do not make sacred offerings or carry out blessing
                       of food during{' '}
                       <MaterialLink

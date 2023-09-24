@@ -84,7 +84,7 @@ const FuneralContent = (): ReactElement => {
           </Typography>
         </ListItem>
         <ListItem>
-          <Typography>
+          <Typography component='div'>
             Provide{' '}
             <Box fontStyle='italic' display='inline'>
               kafan
@@ -93,7 +93,7 @@ const FuneralContent = (): ReactElement => {
           </Typography>
         </ListItem>
         <ListItem>
-          <Typography>
+          <Typography component='div'>
             Arrange the{' '}
             <Box fontStyle='italic' display='inline'>
               salaatul janazah

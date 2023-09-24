@@ -11,7 +11,7 @@ const JummahPrayers = (): ReactElement => {
     <Page
       headerText='JUMMAH PRAYERS'
       headerBody={
-        <Typography>
+        <Typography component='div'>
           Friday (in Arabic,{' '}
           <Box display='inline' fontStyle='italic'>
             Jummah

@@ -12,7 +12,6 @@ import ArchiveTable, { ArchiveTableRow } from '@layout/ArchiveTable';
 import BodySubHeader from '@layout/BodySubheader';
 import { APP_SECONDARY_COLOR } from '@util/constants';
 
-
 const ExpandComponent = (props: { email?: string }): ReactElement => {
   return (
     <List>
@@ -95,7 +94,7 @@ const SundaySchoolTeachersTable = (): ReactElement => {
   return (
     <Stack width='100%'>
       <BodySubHeader>MEET THE TEACHERS</BodySubHeader>
-      <Typography>
+      <Typography component='div'>
         Our volunteer staff is experienced teaching Arabic,{' '}
         <Box display='inline' fontStyle='italic'>
           Seerah

@@ -14,18 +14,32 @@ import Typography from '@mui/material/Typography';
 
 import { ReactComponent as Spinner } from '@assets/svg-icons/spinner.svg';
 import { APP_PRIMARY_COLOR, APP_SECONDARY_COLOR } from '@util/constants';
-import { getCurrentDate } from '@util/helpers';
 
-const requestUrl =
-  'https://islamicfinder.us/index.php/api/prayer_times?country=US&zipcode=37604';
+interface ApiResponseTimings {
+  Fajr: string;
+  Sunrise: string;
+  Dhuhr: string;
+  Asr: string;
+  Sunset: string;
+  Maghrib: string;
+  Isha: string;
+  Imsak: string;
+  Midnight: string;
+  Firstthird: string;
+  Lastthird: string;
+}
+
+const todaysDate = new Date();
+
+const requestUrl = `https://api.aladhan.com/v1/timingsByCity/${moment(
+  todaysDate
+).format('DD-MM-YYYY')}?city=Johnson%20City&state=TN&country=US`;
 
 const PrayerTimingsTable = (props: {
   boxSx?: SxProps;
   hideMonthlyLink?: boolean;
 }): ReactElement => {
-  const [prayerData, setPrayerData] = useState({
-    results: { Fajr: '', Duha: '', Dhuhr: '', Asr: '', Maghrib: '', Isha: '' }
-  });
+  const [prayerData, setPrayerData] = useState<ApiResponseTimings>();
 
   const [loading, setLoading] = useState(true);
 
@@ -39,38 +53,35 @@ const PrayerTimingsTable = (props: {
     // const timeoutId = setTimeout(() => controller.abort(), 5000);
     try {
       const response = await fetch(requestUrl, { signal: controller.signal });
-
       const jsonData = await response.json();
-      setPrayerData(jsonData);
+      setPrayerData(jsonData.data.timings);
       setLoading(false);
     } catch (err) {
       console.log(err);
     }
   };
 
-  const prayerRows = [
-    { name: 'Fajr', timing: prayerData.results.Fajr.replace(/%/g, '') },
-    { name: 'Sunrise', timing: prayerData.results.Duha.replace(/%/g, '') },
-    { name: 'Dhuhr', timing: prayerData.results.Dhuhr.replace(/%/g, '') },
-    { name: 'Asr', timing: prayerData.results.Asr.replace(/%/g, '') },
-    { name: 'Maghrib', timing: prayerData.results.Maghrib.replace(/%/g, '') },
-    { name: 'Isha', timing: prayerData.results.Isha.replace(/%/g, '') }
+  const rows = [
+    { name: 'Fajr', time: prayerData?.Fajr },
+    { name: 'Sunrise', time: prayerData?.Sunrise },
+    { name: 'Dhuhr', time: prayerData?.Dhuhr },
+    { name: 'Asr', time: prayerData?.Asr },
+    { name: 'Sunset', time: prayerData?.Sunset },
+    { name: 'Maghrib', time: prayerData?.Maghrib },
+    { name: 'Isha', time: prayerData?.Isha }
   ];
 
-  const compareFormattedTimes = (inputTime: string): boolean => {
-    const date = getCurrentDate();
-
-    const currentFormattedTime = date.todaysDate.toTimeString().split(' ')[0];
-
-    const formattedInputTime = moment(inputTime, 'h:mm a').format('HH:mm:ss');
-
-    return currentFormattedTime > formattedInputTime;
+  const getBoldedRow = (): { name: string; time: string | undefined } => {
+    const matchingRows = rows.filter((row) => {
+      return moment(todaysDate, 'HH:mm').isBefore(moment(row.time, 'HH:mm'));
+    });
+    return matchingRows[0];
   };
 
   return (
-    <Box sx={{ ...props.boxSx }} width='100%'>
+    <Box sx={{ ...props.boxSx }} width='auto'>
       <Typography textAlign='center' mb={1}>
-        Prayer timings for {getCurrentDate().formatted}
+        Prayer timings for {moment(todaysDate).format('dddd, MMMM Do YYYY')}
       </Typography>
       <TableContainer
         sx={{
@@ -81,12 +92,19 @@ const PrayerTimingsTable = (props: {
         <Table>
           <TableHead>
             <TableRow sx={{ backgroundColor: APP_PRIMARY_COLOR }}>
-              <TableCell sx={{ color: '#fff' }}>Salat</TableCell>
-              <TableCell sx={{ color: '#fff' }}>Time</TableCell>
+              <TableCell align='center' sx={{ color: '#fff' }}>
+                Salat
+              </TableCell>
+              <TableCell align='center' sx={{ color: '#fff' }}>
+                Time
+              </TableCell>
+              <TableCell align='center' sx={{ color: '#fff' }}>
+                Iqama
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {prayerRows.map((row) => {
+            {rows.map((row) => {
               return (
                 <TableRow
                   key={Math.random()}
@@ -97,32 +115,55 @@ const PrayerTimingsTable = (props: {
                   }}
                 >
                   <TableCell
+                    align='center'
                     sx={{
-                      fontWeight: compareFormattedTimes(row.timing) ? 300 : 700
+                      fontWeight: row === getBoldedRow() ? 700 : 300
                     }}
                   >
                     {row.name}
                   </TableCell>
                   <TableCell
+                    align='center'
                     sx={{
-                      fontWeight: compareFormattedTimes(row.timing) ? 300 : 700
+                      fontWeight: row === getBoldedRow() ? 700 : 300
                     }}
                   >
-                    {loading ? <SvgIcon component={Spinner} /> : row.timing}
+                    {loading ? (
+                      <SvgIcon component={Spinner} />
+                    ) : (
+                      moment(row.time, 'HH:mm').format('h:mm a')
+                    )}
+                  </TableCell>
+                  <TableCell
+                    align='center'
+                    sx={{
+                      fontWeight: row === getBoldedRow() ? 700 : 300
+                    }}
+                  >
+                    {loading ? (
+                      <SvgIcon component={Spinner} />
+                    ) : row.name === 'Sunrise' ||
+                      row.name === 'Sunset' ? null : (
+                      moment(row.time, 'HH:mm')
+                        .add(15, 'minutes')
+                        .format('h:mm a')
+                    )}
                   </TableCell>
                 </TableRow>
               );
             })}
             {!props.hideMonthlyLink && (
               <TableRow>
-                <TableCell colSpan={2}>
+                <TableCell colSpan={3} sx={{ bgcolor: '#ededed' }}>
                   <Typography my={-1}>
                     * Get a copy of monthly prayer timings{' '}
                     <Link
                       color={APP_SECONDARY_COLOR}
-                      href={`https://www.islamicfinder.org/prayer-times/printmonthlyprayer/?timeInterval=month&month=${
-                        getCurrentDate().month
-                      }&year=${getCurrentDate().year}&calendarType=Gregorian`}
+                      href={`https://www.islamicfinder.org/prayer-times/printmonthlyprayer/?timeInterval=month&month=${moment(
+                        todaysDate
+                      ).get('month')}&year=${moment(todaysDate).get(
+                        'year'
+                      )}&calendarType=Gregorian`}
                       rel='noreferrer'
                       sx={{ textDecoration: 'inherit' }}
                       target='_blank'

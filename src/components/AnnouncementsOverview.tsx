@@ -13,11 +13,7 @@ import { ReactComponent as Megaphone } from '@assets/svg-icons/loudspeaker.svg';
 import { ReactComponent as Microphone } from '@assets/svg-icons/microphone.svg';
 import { DailyEventsTable } from '@components/EventsCalendar';
 import { dailyEventRows } from '@data/dailyEventRows';
-import {
-  ANNOUNCEMENT_TYPES,
-  APP_TERTIARY_COLOR,
-  PATHS
-} from '@util/constants';
+import { ANNOUNCEMENT_TYPES, APP_TERTIARY_COLOR, PATHS } from '@util/constants';
 
 export type Announcements =
   (typeof ANNOUNCEMENT_TYPES)[keyof typeof ANNOUNCEMENT_TYPES];

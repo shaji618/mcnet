@@ -10,7 +10,6 @@ import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
 import { dailyEventRows } from '@data/dailyEventRows';
 import BodySubHeader from '@layout/BodySubheader';
 import { ANNOUNCEMENT_TYPES } from '@util/constants';
-import { getCurrentDate } from '@util/helpers';
 
 import '@style-sheets/react-calendar.css';
 import '@style-sheets/SuperResponsiveTableStyle.css';
@@ -112,7 +111,7 @@ export const DailyEventsTable = (props: {
 };
 
 const EventsCalendar = (): ReactElement => {
-  const todaysDate = getCurrentDate().todaysDate;
+  const todaysDate = new Date();
   const [calendarDate, setCalendarDate] =
     useState<CalendarDateValue>(todaysDate);
 
@@ -129,7 +128,6 @@ const EventsCalendar = (): ReactElement => {
         id={ANNOUNCEMENT_TYPES.EVENTS}
         justifyContent='center'
         mb={2}
-        md={12}
         spacing={2}
       >
         <Grid item md={4} xs={12}>

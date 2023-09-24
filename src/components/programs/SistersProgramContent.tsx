@@ -14,7 +14,7 @@ const SistersProgramContent = (): ReactElement => {
           HALAQA
         </Box>
       </BodySubHeader>
-      <Typography>
+      <Typography component='div'>
         "Reviving the Hearts with{' '}
         <Box display='inline' fontStyle='italic'>
           Seerat An Nabi

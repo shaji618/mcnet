@@ -10,6 +10,7 @@ const BodySubHeader = (
 ): ReactElement => {
   return (
     <Typography
+      component='div'
       mb={2}
       sx={{
         textAlign: 'center',
