@@ -11,11 +11,11 @@ import Typography from '@mui/material/Typography';
 
 import Box from '@mui/material/Box';
 
-import ChaplaincyContent from '@components/Services/ChaplaincyContent';
-import FuneralContent from '@components/Services/FuneralContent';
-import InterfaithAdvocacyContent from '@components/Services/InterfaithAdvocacyContent';
-import MatrimonialContent from '@components/Services/MatrimonialContent';
-import { Services } from '@components/Services/ServicesList';
+import ChaplaincyContent from '@components/services/ChaplaincyContent';
+import FuneralContent from '@components/services/FuneralContent';
+import InterfaithAdvocacyContent from '@components/services/InterfaithAdvocacyContent';
+import MatrimonialContent from '@components/services/MatrimonialContent';
+import { Services } from '@components/services/ServicesList';
 import { SERVICE_TYPES } from '@util/constants';
 
 const Accordion = styled((props: AccordionProps) => (
