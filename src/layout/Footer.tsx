@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -35,7 +35,7 @@ const footerTheme = createTheme({
   }
 });
 
-const Footer = (): ReactElement | null => {
+const Footer: FC = () => {
   const urlPath = useLocation();
 
   return BLANK_PAGE_PATHS.includes(urlPath.pathname) ? null : (

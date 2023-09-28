@@ -1,5 +1,5 @@
 // TODO: wire this up to the back end
-import { ChangeEvent, FormEvent, ReactElement, useState } from 'react';
+import { ChangeEvent, FC, FormEvent, useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 
 import { APP_SECONDARY_COLOR } from '@util/constants';
 
-const ContactForm = (): ReactElement => {
+const ContactForm: FC = () => {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');

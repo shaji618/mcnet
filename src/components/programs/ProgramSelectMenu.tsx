@@ -1,4 +1,4 @@
-import { ReactElement, useState } from 'react';
+import { FC, useState } from 'react';
 import Box from '@mui/material/Box';
 import FormControl from '@mui/material/FormControl';
 import FormHelperText from '@mui/material/FormHelperText';
@@ -17,7 +17,7 @@ type ProgramType =
   | 'sisters-programs'
   | 'weekend-quran-class';
 
-const ProgramSelectMenu = (): ReactElement => {
+const ProgramSelectMenu: FC = () => {
   const [selectState, setSelectState] = useState<ProgramType>('youth-program');
 
   const handleChange = (event: SelectChangeEvent): void => {

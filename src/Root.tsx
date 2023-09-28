@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
 // import { HashRouter } from 'react-router-dom';
@@ -20,7 +20,7 @@ import { SundaySchool } from '@pages/sunday-school-page';
 import { UpcomingProjects } from '@pages/upcoming-projects-page';
 import { PATHS } from '@util/constants';
 
-const Root = (): ReactElement => {
+const Root: FC = () => {
   return (
     <>
       {/* <HashRouter basename={process.env.PUBLIC_URL}> */}

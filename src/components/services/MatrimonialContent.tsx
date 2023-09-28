@@ -1,10 +1,10 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
 
 import { PATHS } from '@util/constants';
 
-const MatrimonialContent = (): ReactElement => {
+const MatrimonialContent: FC = () => {
   return (
     <>
       <Typography>

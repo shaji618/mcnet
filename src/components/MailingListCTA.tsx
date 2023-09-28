@@ -5,7 +5,7 @@
  * TODO: wire this up to the back end
  */
 
-import { FormEvent, ReactElement, useState } from 'react';
+import { FC, FormEvent, useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
@@ -19,7 +19,7 @@ import Typography from '@mui/material/Typography';
 import snowyMasjid from '@assets/mosque-photos/snowyMasjid.jpg';
 import { APP_TERTIARY_COLOR } from '@util/constants';
 
-const MailingListCTA = (): ReactElement => {
+const MailingListCTA: FC = () => {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [fullNameTouched, setFullNameTouched] = useState(false);

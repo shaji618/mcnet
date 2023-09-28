@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode, useState } from 'react';
+import { FC, ReactNode, useState } from 'react';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Box from '@mui/material/Box';
@@ -18,8 +18,7 @@ export interface ArchiveTableRow {
   expand: { child: ReactNode };
 }
 
-const Row = (props: { row: ArchiveTableRow }): ReactElement => {
-  const { row } = props;
+const Row: FC<{ row: ArchiveTableRow }> = ({ row }) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -51,24 +50,24 @@ const Row = (props: { row: ArchiveTableRow }): ReactElement => {
   );
 };
 
-const ArchiveTable = (
-  props: { rows: ArchiveTableRow[] } & {
+const ArchiveTable: FC<
+  { rows: ArchiveTableRow[] } & {
     columnOneHeader: string;
     columnTwoHeader: string;
   }
-): ReactElement => {
+> = ({ rows, columnOneHeader, columnTwoHeader }) => {
   return (
     <TableContainer component={Paper}>
       <Table aria-label='collapsible table'>
         <TableHead>
           <TableRow>
             <TableCell>Expand</TableCell>
-            <TableCell>{props.columnOneHeader}</TableCell>
-            <TableCell>{props.columnTwoHeader}</TableCell>
+            <TableCell>{columnOneHeader}</TableCell>
+            <TableCell>{columnTwoHeader}</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {props.rows.map((row) => (
+          {rows.map((row) => (
             <Row key={Math.random()} row={row} />
           ))}
         </TableBody>

@@ -1,11 +1,11 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import Typography from '@mui/material/Typography';
 
 import BodySubHeader from '@layout/BodySubheader';
 
-const SistersProgramContent = (): ReactElement => {
+const SistersProgramContent: FC = () => {
   return (
     <>
       <BodySubHeader>

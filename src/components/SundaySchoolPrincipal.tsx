@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
@@ -6,8 +6,7 @@ import Typography from '@mui/material/Typography';
 import BodySubHeader from '@layout/BodySubheader';
 import HeadshotCard from '@layout/HeadshotCard';
 
-
-const SundaySchoolPrincipal = (): ReactElement => {
+const SundaySchoolPrincipal: FC = () => {
   return (
     <Stack>
       <BodySubHeader>MEET THE PRINCIPAL</BodySubHeader>

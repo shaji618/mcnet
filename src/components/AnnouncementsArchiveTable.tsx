@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import Box from '@mui/material/Box';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -10,9 +10,9 @@ import ArchiveTable, { ArchiveTableRow } from '@layout/ArchiveTable';
 import BodySubHeader from '@layout/BodySubheader';
 import { ANNOUNCEMENT_TYPES } from '@util/constants';
 
-const AnnouncementsArchiveTable = (props: {
+const AnnouncementsArchiveTable: FC<{
   boxSx?: SxProps;
-}): ReactElement => {
+}> = ({ boxSx }) => {
   const rows: ArchiveTableRow[] = [
     {
       columnOneData: 'Eid 2023',
@@ -485,7 +485,7 @@ const AnnouncementsArchiveTable = (props: {
   ];
 
   return (
-    <Box id={ANNOUNCEMENT_TYPES.ANNOUNCEMENTS} sx={{ ...props.boxSx }}>
+    <Box id={ANNOUNCEMENT_TYPES.ANNOUNCEMENTS} sx={{ ...boxSx }}>
       <BodySubHeader>ANNOUNCEMENTS ARCHIVE</BodySubHeader>
       <ArchiveTable
         rows={rows}

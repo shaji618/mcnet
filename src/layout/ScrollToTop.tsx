@@ -1,13 +1,15 @@
-import { PropsWithChildren, ReactElement, useEffect } from 'react';
+import { FC, ReactElement, ReactNode, useEffect } from 'react';
 import { useLocation } from 'react-router';
 
-const ScrollToTop = (props: PropsWithChildren): ReactElement => {
+const ScrollToTop: FC<{ children?: ReactNode }> = ({
+  children
+}): ReactElement => {
   const location = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
 
-  return <>{props.children}</>;
+  return <>{children}</>;
 };
 
 export default ScrollToTop;

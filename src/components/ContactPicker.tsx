@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode, useState } from 'react';
+import { FC, ReactNode, useState } from 'react';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
@@ -21,16 +21,23 @@ import {
   APP_TERTIARY_COLOR
 } from '@util/constants';
 
-type Picker = 'address' | 'phoneNumber' | 'email';
+type PickerOptions = 'address' | 'phoneNumber' | 'email';
 
-const Picker = (props: {
+type PickerProps = {
   active: boolean;
-  archerElId: Picker;
+  archerElId: PickerOptions;
   icon: ReactNode;
   onClick: () => void;
   textContent: ReactNode;
-}): ReactElement => {
-  const { active, archerElId, icon, onClick, textContent } = props;
+};
+
+const Picker: FC<PickerProps> = ({
+  active,
+  archerElId,
+  icon,
+  onClick,
+  textContent
+}) => {
   return (
     <ArcherElement id={archerElId}>
       <Stack
@@ -63,8 +70,8 @@ const Picker = (props: {
   );
 };
 
-const ContactPicker = (): ReactElement => {
-  const [pickerState, setPickerState] = useState<Picker>('address');
+const ContactPicker: FC = () => {
+  const [pickerState, setPickerState] = useState<PickerOptions>('address');
 
   return (
     <Box>

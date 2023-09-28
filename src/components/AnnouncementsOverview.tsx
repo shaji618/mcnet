@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode, useState } from 'react';
+import { FC, ReactNode, useState } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -18,12 +18,13 @@ import { ANNOUNCEMENT_TYPES, APP_TERTIARY_COLOR, PATHS } from '@util/constants';
 export type Announcements =
   (typeof ANNOUNCEMENT_TYPES)[keyof typeof ANNOUNCEMENT_TYPES];
 
-const HeaderIcon = (props: {
+type HeaderIconProps = {
   active?: boolean;
   icon: ReactNode;
   headerText: string;
-}): ReactElement => {
-  const { active, icon, headerText } = props;
+};
+
+const HeaderIcon: FC<HeaderIconProps> = ({ active, icon, headerText }) => {
   return (
     <Grid item md={4}>
       <Box>
@@ -57,7 +58,7 @@ const HeaderIcon = (props: {
   );
 };
 
-const AnnouncementsOverview = (): ReactElement => {
+const AnnouncementsOverview: FC = () => {
   const [announcementState, setAnnouncementState] = useState<Announcements>(
     ANNOUNCEMENT_TYPES.ANNOUNCEMENTS
   );

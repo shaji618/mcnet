@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import Divider from '@mui/material/Divider';
@@ -14,7 +14,7 @@ import {
   PATHS
 } from '@util/constants';
 
-const FuneralContent = (): ReactElement => {
+const FuneralContent: FC = () => {
   return (
     <>
       <MaterialLink

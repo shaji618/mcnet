@@ -1,4 +1,4 @@
-import { MouseEvent, ReactElement, ReactNode, useState } from 'react';
+import { FC, MouseEvent, ReactNode, useState } from 'react';
 import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
 import Badge from '@mui/material/Badge';
 import Box from '@mui/material/Box';
@@ -17,16 +17,23 @@ import {
 } from '@util/constants';
 import { currencyFormatter } from '@util/helpers';
 
-const ProjectCard = (props: {
+type ProjectCardProps = {
   backContent: ReactNode;
   fundsRaised: number;
   fundTarget: number;
   headerText: string;
   image: ReactNode;
   status: 'GOAL MET' | 'FUNDRAISING' | 'PLANNING';
-}): ReactElement => {
-  const { backContent, fundsRaised, fundTarget, headerText, image, status } =
-    props;
+};
+
+const ProjectCard: FC<ProjectCardProps> = ({
+  backContent,
+  fundsRaised,
+  fundTarget,
+  headerText,
+  image,
+  status
+}) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const fundsNeededRatio = fundsRaised / fundTarget;

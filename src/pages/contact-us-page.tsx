@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 
@@ -7,7 +7,7 @@ import ContactPicker from '@components/ContactPicker';
 import MailingListCTA from '@components/MailingListCTA';
 import Page from '@layout/Page';
 
-export const ContactUs = (): ReactElement => {
+export const ContactUs: FC = () => {
   return (
     <Page
       childrenBoxSx={{ display: 'grid', justifyItems: 'center' }}

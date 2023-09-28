@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import Image from 'mui-image';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -13,7 +13,7 @@ import WelcomeMessage from '@components/WelcomeMessage';
 import BodySubHeader from '@layout/BodySubheader';
 import Page from '@layout/Page';
 
-export const Home = (): ReactElement => {
+export const Home: FC = () => {
   return (
     <Page>
       <WelcomeMessage />

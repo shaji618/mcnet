@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import Image from 'mui-image';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -9,7 +9,7 @@ import croppedRainbowMasjid from '@assets/mosque-photos/croppedRainbowMasjid.png
 import { APP_SECONDARY_COLOR, PATHS, SERVICE_TYPES } from '@util/constants';
 
 // TODO: fix the mobile layout here
-const WelcomeText = (): ReactElement => {
+const WelcomeText: FC = () => {
   return (
     <>
       <Typography sx={{ mb: 2, mt: 1 }}>
@@ -54,7 +54,7 @@ const WelcomeText = (): ReactElement => {
   );
 };
 
-const WelcomeMessage = (): ReactElement => {
+const WelcomeMessage: FC = () => {
   return (
     <Box mb={2} sx={{ flexGrow: 1, margin: '0 auto' }}>
       <Grid

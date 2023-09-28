@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import Button from '@mui/material/Button';
 import { SxProps } from '@mui/material/styles';
 
@@ -9,7 +9,7 @@ import {
 } from '@util/constants';
 
 // TODO: use https://www.npmjs.com/package/@paypal/react-paypal-js ?
-const DonateButton = (props: { sx?: SxProps }): ReactElement => {
+const DonateButton: FC<{ sx?: SxProps }> = ({ sx }) => {
   return (
     <Button
       variant='outlined'
@@ -23,7 +23,7 @@ const DonateButton = (props: { sx?: SxProps }): ReactElement => {
           color: APP_PRIMARY_COLOR,
           borderColor: APP_TERTIARY_COLOR
         },
-        ...props.sx
+        ...sx
       }}
     >
       DONATE

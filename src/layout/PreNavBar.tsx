@@ -1,4 +1,4 @@
-import { MouseEvent, ReactElement, useState } from 'react';
+import { FC, MouseEvent, useState } from 'react';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
@@ -18,7 +18,7 @@ import { useLocation } from 'react-router-dom';
 
 import { APP_PRIMARY_COLOR, BLANK_PAGE_PATHS } from '@util/constants';
 
-function ResponsiveAppBar(): ReactElement | null {
+const ResponsiveAppBar: FC = () => {
   const urlPath = useLocation();
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
 
@@ -109,5 +109,5 @@ function ResponsiveAppBar(): ReactElement | null {
       </Container>
     </AppBar>
   );
-}
+};
 export default ResponsiveAppBar;

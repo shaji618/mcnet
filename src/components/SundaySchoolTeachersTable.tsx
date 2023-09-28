@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import PhoneOutlinedIcon from '@mui/icons-material/PhoneOutlined';
 import Box from '@mui/material/Box';
@@ -12,14 +12,14 @@ import ArchiveTable, { ArchiveTableRow } from '@layout/ArchiveTable';
 import BodySubHeader from '@layout/BodySubheader';
 import { APP_SECONDARY_COLOR } from '@util/constants';
 
-const ExpandComponent = (props: { email?: string }): ReactElement => {
+const ExpandComponent: FC<{ email?: string }> = ({ email }) => {
   return (
     <List>
       <ListItem>
         <Stack direction='row' overflow='visible'>
           <ContactMailIcon sx={{ color: APP_SECONDARY_COLOR, mr: 1 }} />
-          <Link href={`mailto:${props.email || 'isnetschool@gmail.com'}`}>
-            <Typography>{props.email || 'isnetschool@gmail.com'}</Typography>
+          <Link href={`mailto:${email || 'isnetschool@gmail.com'}`}>
+            <Typography>{email || 'isnetschool@gmail.com'}</Typography>
           </Link>
         </Stack>
       </ListItem>
@@ -33,7 +33,7 @@ const ExpandComponent = (props: { email?: string }): ReactElement => {
   );
 };
 
-const SundaySchoolTeachersTable = (): ReactElement => {
+const SundaySchoolTeachersTable: FC = () => {
   const rows: ArchiveTableRow[] = [
     {
       columnOneData: 'Shirin Fadel',

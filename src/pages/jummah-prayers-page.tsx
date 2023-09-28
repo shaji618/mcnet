@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import FridayPrayerTable from '@components/JummahPrayerTable';
 import Page from '@layout/Page';
 
-const JummahPrayers = (): ReactElement => {
+const JummahPrayers: FC = () => {
   return (
     <Page
       headerText='JUMMAH PRAYERS'
