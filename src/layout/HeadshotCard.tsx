@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import PersonIcon from '@mui/icons-material/Person';
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
@@ -12,15 +12,21 @@ import Typography from '@mui/material/Typography';
 
 import { APP_SECONDARY_COLOR } from '@util/constants';
 
-const HeadshotCard = (props: {
+type HeadshotCardProps = {
   dimensions?: { height: string | number; width: string | number };
   email: string;
   img?: string;
   name: string;
   title: string;
-}): ReactElement => {
-  const { dimensions, email, img, name, title } = props;
+};
 
+const HeadshotCard: FC<HeadshotCardProps> = ({
+  dimensions,
+  email,
+  img,
+  name,
+  title
+}) => {
   return (
     <Grid item md={3} mr={1}>
       <Card sx={dimensions || { height: 420, width: 300 }}>

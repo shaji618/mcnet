@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import Grid from '@mui/material/Grid';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -9,7 +9,7 @@ import { ReactComponent as Construction } from '@assets/svg-icons/construction.s
 import Page from '@layout/Page';
 import ProjectCard from '@layout/ProjectCard';
 
-export const UpcomingProjects = (): ReactElement => {
+export const UpcomingProjects: FC = () => {
   return (
     <Page headerText='UPCOMING PROJECTS'>
       <Grid container justifyContent='center' spacing={2}>

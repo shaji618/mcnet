@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import Button from '@mui/material/Button';
 import { HashLink } from 'react-router-hash-link';
 
@@ -8,7 +8,7 @@ import PressReleasesArchiveTable from '@components/PressReleasesArchiveTable';
 import Page from '@layout/Page';
 import { ANNOUNCEMENT_TYPES, APP_PRIMARY_COLOR, PATHS } from '@util/constants';
 
-export const Information = (): ReactElement => {
+export const Information: FC = () => {
   return (
     <Page
       headerBody={

@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import Divider from '@mui/material/Divider';
@@ -10,7 +10,7 @@ import {
   APP_TERTIARY_COLOR
 } from '@util/constants';
 
-const SubAlertBar = (): ReactElement => {
+const SubAlertBar: FC = () => {
   return (
     <Box sx={{ my: 1, display: { xs: 'none', sm: 'none', md: 'block' } }}>
       <Typography

@@ -1,9 +1,9 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import Typography from '@mui/material/Typography';
 
 import BodySubHeader from '@layout/BodySubheader';
 
-const YouthProgramContent = (): ReactElement => {
+const YouthProgramContent: FC = () => {
   return (
     <>
       <BodySubHeader>YOUTH PROGRAM</BodySubHeader>

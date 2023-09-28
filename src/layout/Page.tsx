@@ -77,8 +77,12 @@ const pageTheme = createTheme({
   }
 });
 
-const Page: FC<Props> = (props: Props) => {
-  const { children, childrenBoxSx, headerBody, headerText } = props;
+const Page: FC<Props> = ({
+  children,
+  childrenBoxSx,
+  headerBody,
+  headerText
+}) => {
   return (
     <ThemeProvider theme={pageTheme}>
       <BodySubHeader variant='h3'>{headerText?.toUpperCase()}</BodySubHeader>

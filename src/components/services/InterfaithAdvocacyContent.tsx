@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
@@ -21,7 +21,7 @@ import {
   PATHS
 } from '@util/constants';
 
-const InterfaithAdvocacyContent = (): ReactElement => {
+const InterfaithAdvocacyContent: FC = () => {
   return (
     <>
       <MaterialLink

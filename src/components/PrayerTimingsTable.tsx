@@ -1,4 +1,4 @@
-import { ReactElement, useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import moment from 'moment';
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
@@ -35,10 +35,10 @@ const requestUrl = `https://api.aladhan.com/v1/timingsByCity/${moment(
   todaysDate
 ).format('DD-MM-YYYY')}?city=Johnson%20City&state=TN&country=US`;
 
-const PrayerTimingsTable = (props: {
+const PrayerTimingsTable: FC<{
   boxSx?: SxProps;
   hideMonthlyLink?: boolean;
-}): ReactElement => {
+}> = ({ boxSx, hideMonthlyLink }) => {
   const [prayerData, setPrayerData] = useState<ApiResponseTimings>();
 
   const [loading, setLoading] = useState(true);
@@ -79,7 +79,7 @@ const PrayerTimingsTable = (props: {
   };
 
   return (
-    <Box sx={{ ...props.boxSx }} width='auto'>
+    <Box sx={{ ...boxSx }} width='auto'>
       <Typography textAlign='center' mb={1}>
         Prayer timings for {moment(todaysDate).format('dddd, MMMM Do YYYY')}
       </Typography>
@@ -152,7 +152,7 @@ const PrayerTimingsTable = (props: {
                 </TableRow>
               );
             })}
-            {!props.hideMonthlyLink && (
+            {!hideMonthlyLink && (
               <TableRow>
                 <TableCell colSpan={3} sx={{ bgcolor: '#ededed' }}>
                   <Typography my={-1}>

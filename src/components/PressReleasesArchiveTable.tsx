@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
@@ -6,7 +6,7 @@ import ArchiveTable, { ArchiveTableRow } from '@layout/ArchiveTable';
 import BodySubHeader from '@layout/BodySubheader';
 import { ANNOUNCEMENT_TYPES } from '@util/constants';
 
-const PressReleasesArchiveTable = (): ReactElement => {
+const PressReleasesArchiveTable: FC = () => {
   const rows: ArchiveTableRow[] = [
     {
       columnOneData: 'Islam Forbids Extremism',

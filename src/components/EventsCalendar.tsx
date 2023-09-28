@@ -1,4 +1,4 @@
-import { ReactElement, useState } from 'react';
+import { FC, useState } from 'react';
 import moment from 'moment';
 import Chip from '@mui/material/Chip';
 import Grid from '@mui/material/Grid';
@@ -26,8 +26,11 @@ export type DailyEventsTableProps = {
   eventTitle: string;
 };
 
-const Row = (props: DailyEventsTableProps): ReactElement => {
-  const { eventDate, eventTime, eventTitle } = props;
+const Row: FC<DailyEventsTableProps> = ({
+  eventDate,
+  eventTime,
+  eventTitle
+}) => {
   return (
     <Tr>
       <Td>
@@ -79,9 +82,9 @@ const Row = (props: DailyEventsTableProps): ReactElement => {
   );
 };
 
-export const DailyEventsTable = (props: {
-  rows: DailyEventsTableProps[];
-}): ReactElement => {
+export const DailyEventsTable: FC<{ rows: DailyEventsTableProps[] }> = ({
+  rows
+}) => {
   return (
     <Paper>
       <Table>
@@ -94,7 +97,7 @@ export const DailyEventsTable = (props: {
           </Tr>
         </Thead>
         <Tbody>
-          {props.rows.map((row) => {
+          {rows.map((row) => {
             return (
               <Row
                 eventDate={row.eventDate}
@@ -110,7 +113,7 @@ export const DailyEventsTable = (props: {
   );
 };
 
-const EventsCalendar = (): ReactElement => {
+const EventsCalendar: FC = () => {
   const todaysDate = new Date();
   const [calendarDate, setCalendarDate] =
     useState<CalendarDateValue>(todaysDate);

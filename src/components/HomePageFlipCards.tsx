@@ -1,4 +1,4 @@
-import { MouseEvent, ReactElement, ReactNode, useState } from 'react';
+import { FC, MouseEvent, ReactNode, useState } from 'react';
 import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
 import Diversity3Icon from '@mui/icons-material/Diversity3';
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
@@ -13,12 +13,17 @@ import ReactCardFlip from 'react-card-flip';
 import { ReactComponent as Logo } from '@assets/svg-icons/logo.svg';
 import { APP_SECONDARY_COLOR, APP_TERTIARY_COLOR } from '@util/constants';
 
-const HomePageFlipCard = (props: {
+type HomePageFlipCardProps = {
   backContent: ReactNode;
   frontIcon: ReactNode;
   title: string;
-}): ReactElement => {
-  const { backContent, frontIcon, title } = props;
+};
+
+const HomePageFlipCard: FC<HomePageFlipCardProps> = ({
+  backContent,
+  frontIcon,
+  title
+}) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const handleClick = (event: MouseEvent<HTMLElement>): void => {
@@ -79,7 +84,7 @@ const HomePageFlipCard = (props: {
   );
 };
 
-const HomePageFlipCards = (): ReactElement => {
+const HomePageFlipCards: FC = () => {
   return (
     <Grid container justifyContent='center' spacing={12}>
       <Grid item>

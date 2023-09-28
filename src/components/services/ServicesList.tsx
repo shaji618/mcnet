@@ -1,10 +1,4 @@
-import {
-  ReactElement,
-  ReactNode,
-  SyntheticEvent,
-  useEffect,
-  useState
-} from 'react';
+import { FC, ReactNode, SyntheticEvent, useEffect, useState } from 'react';
 import Diversity1Icon from '@mui/icons-material/Diversity1';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
@@ -24,13 +18,17 @@ import {
 
 export type Services = (typeof SERVICE_TYPES)[keyof typeof SERVICE_TYPES];
 
-const IconSelector = (props: {
+type IconSelectorProps = {
   active?: boolean;
   svgComponent: ReactNode;
   title: string;
-}): ReactElement => {
-  const { active, svgComponent, title } = props;
+};
 
+const IconSelector: FC<IconSelectorProps> = ({
+  active,
+  svgComponent,
+  title
+}) => {
   return (
     <Stack>
       <Avatar
@@ -65,7 +63,7 @@ const IconSelector = (props: {
   );
 };
 
-const ServicesList = (): ReactElement => {
+const ServicesList: FC = () => {
   const { hash } = useLocation();
 
   const [serviceActive, setServiceActive] = useState<Services | false>(

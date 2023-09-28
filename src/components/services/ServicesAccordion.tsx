@@ -1,4 +1,4 @@
-import { ReactElement, SyntheticEvent } from 'react';
+import { FC, MouseEvent, SyntheticEvent } from 'react';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import MuiAccordion, { AccordionProps } from '@mui/material/Accordion';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
@@ -17,6 +17,16 @@ import InterfaithAdvocacyContent from '@components/services/InterfaithAdvocacyCo
 import MatrimonialContent from '@components/services/MatrimonialContent';
 import { Services } from '@components/services/ServicesList';
 import { SERVICE_TYPES } from '@util/constants';
+
+type ServicesAccordionProps = {
+  expanded: Services | false;
+  handleChange: (
+    panel: Services
+  ) => (event: SyntheticEvent, newExpanded: boolean) => void;
+  onClick: (event: MouseEvent<HTMLElement>, panel: Services) => void;
+  serviceActive: Services | false;
+  sx?: AliasesCSSProperties;
+};
 
 const Accordion = styled((props: AccordionProps) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -54,16 +64,13 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   borderTop: '1px solid rgba(0, 0, 0, .125)'
 }));
 
-const ServicesAccordion = (props: {
-  expanded: Services | false;
-  handleChange: (
-    panel: Services
-  ) => (event: SyntheticEvent, newExpanded: boolean) => void;
-  onClick: (event: React.MouseEvent<HTMLElement>, panel: Services) => void;
-  serviceActive: Services | false;
-  sx?: AliasesCSSProperties;
-}): ReactElement => {
-  const { expanded, handleChange, onClick, serviceActive, sx } = props;
+const ServicesAccordion: FC<ServicesAccordionProps> = ({
+  expanded,
+  handleChange,
+  onClick,
+  serviceActive,
+  sx
+}) => {
   return (
     <Box sx={sx}>
       <Accordion

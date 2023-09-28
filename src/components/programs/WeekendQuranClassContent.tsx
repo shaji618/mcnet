@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import Paper from '@mui/material/Paper';
@@ -10,7 +10,7 @@ import BodySubHeader from '@layout/BodySubheader';
 
 import '@style-sheets/SuperResponsiveTableStyle.css';
 
-const WeekendQuranClassContent = (): ReactElement => {
+const WeekendQuranClassContent: FC = () => {
   return (
     <>
       <BodySubHeader>WEEKEND QUR'AN CLASS LIST</BodySubHeader>

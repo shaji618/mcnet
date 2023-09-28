@@ -1,12 +1,11 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import Grid from '@mui/material/Grid';
 
 import aWarsyHeadshot from '@assets/headshots/aWarsyHeadshot.png';
 import sMalikHeadshot from '@assets/headshots/sMalikHeadshot.jpg';
 import HeadshotCard from '@layout/HeadshotCard';
 
-
-const Shura = (): ReactElement => {
+const Shura: FC = () => {
   return (
     <>
       <Grid justifyContent='center' container mt={2} spacing={2}>

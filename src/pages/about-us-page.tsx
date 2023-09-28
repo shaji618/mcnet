@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
@@ -12,7 +12,7 @@ import { APP_PRIMARY_COLOR, PATHS } from '@util/constants';
 
 const SHURA_ANCHOR_ID = 'shura';
 
-export const AboutUs = (): ReactElement => {
+export const AboutUs: FC = () => {
   return (
     <>
       <Page

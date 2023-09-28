@@ -1,9 +1,9 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import Typography from '@mui/material/Typography';
 
 import BodySubHeader from '@layout/BodySubheader';
 
-const AdultProgramContent = (): ReactElement => {
+const AdultProgramContent: FC = () => {
   return (
     <>
       <BodySubHeader>MUSLIM EDUCATION AND SUPPORT GROUP CLASS</BodySubHeader>

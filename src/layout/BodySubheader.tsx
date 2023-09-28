@@ -1,13 +1,12 @@
-import { PropsWithChildren, ReactElement } from 'react';
+import { FC, ReactElement, ReactNode } from 'react';
 import Typography from '@mui/material/Typography';
 
 import { APP_TERTIARY_COLOR } from '@util/constants';
 
-const BodySubHeader = (
-  props: PropsWithChildren<{
-    variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-  }>
-): ReactElement => {
+const BodySubHeader: FC<{
+  children?: ReactNode;
+  variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+}> = ({ children, variant }): ReactElement => {
   return (
     <Typography
       component='div'
@@ -17,9 +16,9 @@ const BodySubHeader = (
         textDecoration: `underline ${APP_TERTIARY_COLOR} 1px`,
         textUnderlineOffset: '0.3em'
       }}
-      variant={props.variant || 'h4'}
+      variant={variant || 'h4'}
     >
-      {props.children}
+      {children}
     </Typography>
   );
 };

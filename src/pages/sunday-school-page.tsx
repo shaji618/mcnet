@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import Chip from '@mui/material/Chip';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
@@ -16,7 +16,7 @@ import Page from '@layout/Page';
 
 import '@style-sheets/SuperResponsiveTableStyle.css';
 
-export const SundaySchool = (): ReactElement => {
+export const SundaySchool: FC = () => {
   return (
     <Page
       headerBody={

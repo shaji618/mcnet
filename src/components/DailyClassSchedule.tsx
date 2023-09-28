@@ -1,7 +1,15 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 
 import BodySubHeader from '@layout/BodySubheader';
+
+type DailyClassScheduleRow = {
+  time: string;
+  subject: string;
+  level: number;
+  teacher: string;
+  location: string;
+};
 
 const columns: GridColDef[] = [
   { field: 'time', headerName: 'Time', flex: 0.2 },
@@ -11,7 +19,7 @@ const columns: GridColDef[] = [
   { field: 'location', headerName: 'Location', flex: 0.2 }
 ];
 
-const rows = [
+const rows: DailyClassScheduleRow[] = [
   {
     time: '11:30 am',
     subject: 'Arabic',
@@ -56,7 +64,7 @@ const rows = [
   }
 ];
 
-export default function DataTable(): ReactElement {
+const DailyClassSchedule: FC = () => {
   return (
     <>
       <BodySubHeader>DAILY CLASS SCHEDULE</BodySubHeader>
@@ -68,4 +76,6 @@ export default function DataTable(): ReactElement {
       />
     </>
   );
-}
+};
+
+export default DailyClassSchedule;

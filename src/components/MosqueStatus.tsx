@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -9,7 +9,7 @@ import { ReactComponent as WiFiQR } from '@assets/svg-icons/example-wifi-qr.svg'
 import PrayerTimingsTable from '@components/PrayerTimingsTable';
 import Page from '@layout/Page';
 
-const MosqueStatus = (): ReactElement => {
+const MosqueStatus: FC = () => {
   const dollarsRaised = 5803.1;
   const dollarsNeeded = 6500;
   const dollarRatio =

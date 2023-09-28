@@ -1,4 +1,4 @@
-import { useState, MouseEvent, ReactElement } from 'react';
+import { FC, useState, MouseEvent } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
@@ -21,7 +21,13 @@ import {
   BLANK_PAGE_PATHS
 } from '@util/constants';
 
-const pages = [
+type StyledMenuItemProps = {
+  isMobile?: boolean;
+  onClick: () => void;
+  pageTitle: string;
+};
+
+const pages: string[] = [
   'Information',
   'About Us',
   'Services',
@@ -32,13 +38,11 @@ const pages = [
   'Contact Us'
 ];
 
-const StyledMenuItem = (props: {
-  isMobile?: boolean;
-  onClick: () => void;
-  pageTitle: string;
-}): ReactElement => {
-  const { isMobile, onClick, pageTitle } = props;
-
+const StyledMenuItem: FC<StyledMenuItemProps> = ({
+  isMobile,
+  onClick,
+  pageTitle
+}) => {
   return (
     <NavLink to={`/${pageTitle.toLowerCase().replace(/\s/g, '-')}`}>
       {isMobile ? (
@@ -75,7 +79,7 @@ const StyledMenuItem = (props: {
   );
 };
 
-const NavBar = (): ReactElement | null => {
+const NavBar: FC = () => {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
   const urlPath = useLocation();
 

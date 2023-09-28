@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import LinkIcon from '@mui/icons-material/Link';
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
@@ -8,10 +8,10 @@ import Typography from '@mui/material/Typography';
 
 import ArchiveTable, { ArchiveTableRow } from '@layout/ArchiveTable';
 
-const ExpandContent = (props: {
+const ExpandContent: FC<{
   khutbaUrl: string;
   recordingUrl: string;
-}): ReactElement => {
+}> = ({ khutbaUrl, recordingUrl }) => {
   return (
     <List sx={{ listStyleType: 'none' }}>
       <ListItem>
@@ -21,7 +21,7 @@ const ExpandContent = (props: {
             Khutba:
           </Typography>
           <Typography>
-            <Link href={props.khutbaUrl} rel='noreferrer' target='_blank'>
+            <Link href={khutbaUrl} rel='noreferrer' target='_blank'>
               Link
             </Link>
           </Typography>
@@ -34,7 +34,7 @@ const ExpandContent = (props: {
             Recording:
           </Typography>
           <Typography>
-            <Link href={props.recordingUrl} rel='noreferrer' target='_blank'>
+            <Link href={recordingUrl} rel='noreferrer' target='_blank'>
               Link
             </Link>
           </Typography>
@@ -44,7 +44,7 @@ const ExpandContent = (props: {
   );
 };
 
-const JummahPrayerTable = (): ReactElement => {
+const JummahPrayerTable: FC = () => {
   const rows: ArchiveTableRow[] = [
     {
       columnOneData: 'Jabbar Ghazi',
