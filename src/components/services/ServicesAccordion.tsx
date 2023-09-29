@@ -19,7 +19,6 @@ import { Services } from '@components/services/ServicesList';
 import { SERVICE_TYPES } from '@util/constants';
 
 type ServicesAccordionProps = {
-  expanded: Services | false;
   handleChange: (
     panel: Services
   ) => (event: SyntheticEvent, newExpanded: boolean) => void;
@@ -65,7 +64,6 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 }));
 
 const ServicesAccordion: FC<ServicesAccordionProps> = ({
-  expanded,
   handleChange,
   onClick,
   serviceActive,
@@ -89,7 +87,7 @@ const ServicesAccordion: FC<ServicesAccordionProps> = ({
         </AccordionDetails>
       </Accordion>
       <Accordion
-        expanded={expanded === SERVICE_TYPES.MATRIMONIAL}
+        expanded={serviceActive === SERVICE_TYPES.MATRIMONIAL}
         onChange={handleChange(SERVICE_TYPES.MATRIMONIAL)}
       >
         <AccordionSummary
@@ -104,7 +102,7 @@ const ServicesAccordion: FC<ServicesAccordionProps> = ({
         </AccordionDetails>
       </Accordion>
       <Accordion
-        expanded={expanded === SERVICE_TYPES.FUNERAL}
+        expanded={serviceActive === SERVICE_TYPES.FUNERAL}
         onChange={handleChange(SERVICE_TYPES.FUNERAL)}
       >
         <AccordionSummary
@@ -119,7 +117,7 @@ const ServicesAccordion: FC<ServicesAccordionProps> = ({
         </AccordionDetails>
       </Accordion>
       <Accordion
-        expanded={expanded === SERVICE_TYPES.INTERFAITH}
+        expanded={serviceActive === SERVICE_TYPES.INTERFAITH}
         onChange={handleChange(SERVICE_TYPES.INTERFAITH)}
       >
         <AccordionSummary

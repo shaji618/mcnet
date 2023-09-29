@@ -69,14 +69,10 @@ const ServicesList: FC = () => {
   const [serviceActive, setServiceActive] = useState<Services | false>(
     SERVICE_TYPES.CHAPLAINCY
   );
-  const [expanded, setExpanded] = useState<Services | false>(
-    SERVICE_TYPES.CHAPLAINCY
-  );
 
   useEffect(() => {
     if (hash) {
       setServiceActive(hash.replace('#', ''));
-      setExpanded(hash.replace('#', ''));
     }
   }, [hash]);
 
@@ -84,10 +80,9 @@ const ServicesList: FC = () => {
     (panel: Services) =>
     (
       // @ts-ignore
-      event: SyntheticEvent,
-      newExpanded: boolean
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      event: SyntheticEvent
     ) => {
-      setExpanded(newExpanded ? panel : false);
       setServiceActive(serviceActive !== panel ? panel : false);
     };
 
@@ -100,7 +95,6 @@ const ServicesList: FC = () => {
       window.history.replaceState('', document.title, window.location.pathname);
     }
 
-    setExpanded(expanded === panel ? false : panel);
     setServiceActive(serviceActive !== panel ? panel : false);
   };
 
@@ -159,7 +153,6 @@ const ServicesList: FC = () => {
         </Box>
       </Stack>
       <ServicesAccordion
-        expanded={expanded}
         handleChange={handleChange}
         onClick={handleClick}
         serviceActive={serviceActive}
