@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
 // import { HashRouter } from 'react-router-dom';
 
-import MosqueStatus from '@components/MosqueStatus';
+import MosqueStatus from '@layout/MosqueStatus';
 import Footer from '@layout/Footer';
 import NavBar from '@layout/NavBar';
 import PreNavBar from '@layout/PreNavBar';

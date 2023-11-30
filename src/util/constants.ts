@@ -11,7 +11,7 @@ export const PATHS = {
   UPCOMING_PROJECTS_PAGE: '/upcoming-projects'
 };
 
-export const BLANK_PAGE_PATHS = [PATHS.STATUS_PAGE];
+export const BLANK_PAGE_PATHS = [PATHS.STATUS_PAGE, '/status2'];
 
 // Colors
 export const APP_PRIMARY_COLOR = '#224a23';

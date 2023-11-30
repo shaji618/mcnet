@@ -43,6 +43,15 @@ const PrayerTimingsTable: FC<{
 
   const [loading, setLoading] = useState(true);
 
+  const [date, setDate] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => setDate(new Date()), 1000);
+    return function cleanup() {
+      clearInterval(timer);
+    };
+  });
+
   useEffect(() => {
     getPrayerDataWithFetch();
   }, []);
@@ -80,9 +89,12 @@ const PrayerTimingsTable: FC<{
 
   return (
     <Box sx={{ ...boxSx }} width='auto'>
-      <Typography textAlign='center' mb={1}>
-        Prayer timings for {moment(todaysDate).format('dddd, MMMM Do YYYY')}
-      </Typography>
+      <Box display='flex' justifyContent='space-between'>
+        <Typography mb={1}>
+          Prayer timings for {moment(todaysDate).format('dddd, MMMM Do YYYY')}
+        </Typography>
+        <Typography> Current time: {date.toLocaleTimeString()}</Typography>
+      </Box>
       <TableContainer
         sx={{
           borderRadius: '1em',
